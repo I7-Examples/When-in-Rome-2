@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>When in Rome 2: Far from Home - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">When in Rome 2: Far from Home</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_11.html">Previous</a><br><a href="source_13.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 2 - The Label</b>
+<br>
+
+<br>
+Understand &quot;<font color=#000080>write on/out [text]</font>&quot; as a mistake (&quot;<font color=#000080>You need to write the name of a home-world -- for instance, WRITE LUNA ON...</font>&quot;). Understand &quot;<font color=#000080>fill out/in [text]</font>&quot; as a mistake (&quot;<font color=#000080>You need to write the name of a home-world -- for instance, WRITE LUNA ON THE LABEL.</font>&quot;). 
+<br>
+
+<br>
+Understand &quot;<font color=#000080>write [moon] on [something]</font>&quot; as filling it out on.
+<br>
+
+<br>
+Filling it out on is an action applying to one moon and one thing.
+<br>
+
+<br>
+Instead of filling moon understood out on egg when blank label is stuck to egg:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try filling moon understood out on blank label.
+<br>
+
+<br>
+Instead of filling moon understood out on egg when filled label is stuck to egg:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try filling moon understood out on filled label.
+<br>
+
+<br>
+Before filling moon understood out on filled label:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>First you cross out </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if filled label is alien-marked, say &quot;<font color=#000080>[fixed letter spacing][tattoo-mark of the moon of the creature][variable letter spacing]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>[moon of filled label]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> vigorously with many strokes of the pen...</font>&quot;
+<br>
+
+<br>
+Before filling moon understood out on filled label when the player does not have the pen:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the pen is visible
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try taking the pen;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+
+<br>
+Check filling it out on:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is not carrying the ballpoint
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the ballpoint is visible, try taking the ballpoint;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>Now where did you set down your pen, anyway?</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is not carrying the ballpoint, stop the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the second noun is not the blank label and the second noun is not the filled label, say &quot;<font color=#000080>You can't fill out [the second noun], only the label.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Carry out filling moon understood out on the blank label:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fix blank label.
+<br>
+
+<br>
+To fix blank label:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the blank label is part of something (called the parent)
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the filled label is part of the parent; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move the filled label to the holder of the blank label;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the blank label is stuck to the egg
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the filled label is stuck to the egg;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the blank label is not stuck to the egg; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;remove the blank label from play;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change the second noun to the filled label.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Carry out filling it out on:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the second noun is human-marked;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change moon of the second noun to the moon understood.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report filling it out on:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You write [moon understood] firmly on the label.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before a creature trying filling moon understood out on the blank label when the person asked is not carrying the pen:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying taking the pen instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before a creature trying filling  moon understood out on the blank label when the person asked cannot touch the blank label:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying taking the blank label instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Carry out a creature trying filling the moon of the creature out on the blank label:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fix blank label;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the filled label is alien-marked;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change moon of the second noun to the moon of the creature.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report a creature trying filling the moon of the creature out on something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let destination be the moon of the creature;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;choose row with a moon column of destination in Table of Alien Characteristics; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Tongue caught between its teeth, [the creature] writes [fixed letter spacing][tattoo-mark entry][variable letter spacing] on [the second noun].</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+The description of the filled label is &quot;<font color=#000080>[if human-marked]In your familiar handwriting it registers the origin of the creature as [moon of the filled label][otherwise]In alien writing it says [fixed letter spacing][tattoo-mark of the moon of the creature][variable letter spacing][end if].</font>&quot; The filled label can be alien-marked or human-marked.
+<br>
+
+<br>
+The description of the blank label is &quot;<font color=#000080>Intended to identify the alien to whatever interplanetary post office is responsible for these shipments.</font>&quot;
+<br>
+
+<br>
+
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

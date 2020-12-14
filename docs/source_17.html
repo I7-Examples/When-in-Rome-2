@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>When in Rome 2: Far from Home - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">When in Rome 2: Far from Home</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_16.html">Previous</a><br><a href="source_18.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 3 - Final scene</b>
+<br>
+
+<br>
+
+<br>
+
+<br>
+Sending is a scene. Sending begins when play begins. Sending ends when Esther is in Reception.
+<br>
+
+<br>
+
+<br>
+A person has a table-name called conversation.  
+<br>
+
+<br>
+Instead of asking someone about something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the source be the conversation of the noun;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if topic understood is a topic listed in source
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if there is a turn stamp entry
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The noun] has already told you [summary entry].</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change turn stamp entry to the turn count;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[reply entry][paragraph break]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The noun] stares at you blankly.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if. 
+<br>
+
+<br>
+Definition: a person is other if it is not the player.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>ask [someone] about [something]</font>&quot; as asking it about specified object. Understand &quot;<font color=#000080>tell [someone] about [something]</font>&quot; as asking it about specified object. Asking it about specified object is an action applying to two visible things. Carry out asking it about specified object: say &quot;<font color=#000080>[The noun] just shrugs.</font>&quot; Asking something about specified object something is useless action. 
+<br>
+
+<br>
+Instead of asking Esther about specified object something: say &quot;<font color=#000080>'It's just [a second noun],' Esther says. 'That's not the point.'</font>&quot; 
+<br>
+
+<br>
+Understand &quot;<font color=#000080>recap</font>&quot; or &quot;<font color=#000080>recall</font>&quot; or &quot;<font color=#000080>review</font>&quot; as recalling conversations. 
+<br>
+
+<br>
+Recalling conversations is an action applying to nothing. 
+<br>
+ 
+<br>
+Carry out recalling conversations:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat with speaker running through other people
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let source be the conversation of the speaker;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sort source in turn stamp order;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The speaker] has so far told you: [line break]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let index be 0;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;repeat through source
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if there is a turn stamp entry
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let index be 1;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>  [summary entry][line break]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if index is 0, say &quot;<font color=#000080>  absolutely nothing[line break]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say line break;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+The conversation of Esther is Table of Esther Conversation.
+<br>
+
+<br>
+After reading a command:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;while the player's command includes &quot;<font color=#000080>the</font>&quot;, cut the matched text;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;while the player's command includes &quot;<font color=#000080>a</font>&quot;, cut the matched text. <font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+
+<br>
+<b>Table of Esther Conversation</b>
+<br>
+<table><tr><td halign="left" valign="top"><u>topic</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> reply</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> summary</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> turn stamp</u></td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>point/danger/purpose/direction/meaning</font>&quot; or &quot;<font color=#000080>her point</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>'Are you working around to a point of some kind?' you ask.</td></tr>
+</font><font color=#000080></table>
+<br>
+</font><font color=#000080>'I don't trust the A. P. boys, that's all,' she says. 'Or rather, I don't like how they don't trust me.'</font>&quot; &quot;<font color=#000080>that you would be better off as a detective</font>&quot; a number
+<br>
+&quot;<font color=#000080>boys/men/agents</font>&quot; or &quot;<font color=#000080>a p</font>&quot; or &quot;<font color=#000080>alien protocol</font>&quot; &quot;<font color=#000080>'Let me put it this way,' you say, after thinking a moment. 'Given that they do what they do, could they be any different than they are?'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>'They could not look at me like some kind of slug,' she says. Interesting. This sounds like a specific grievance.</font>&quot; &quot;<font color=#000080>that they are creepy</font>&quot; --
+<br>
+&quot;<font color=#000080>grievance/specific/story/slug</font>&quot; or &quot;<font color=#000080>some kind of slug</font>&quot; &quot;<font color=#000080>'Has someone from the A. P. Office done something to you?'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>She just frowns more deeply and does not answer. This is evidently not the conversational direction she wanted to take.</font>&quot;
+<br>
+ 
+<br>
+Instead of waiting during Final Chat: say &quot;<font color=#000080>You wait. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>'The aliens are dangerous and the Office is worse,' she says finally.</font>&quot;
+<br>
+
+<br>
+Final Chat is a scene. Final Chat begins when Sending ends. When Final Chat begins: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;move the player to Reception, without printing a room description;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>'I think you should think about quitting.' It's leaving time, a week later; but Esther's hovered around being about to say something just about every afternoon, and you might as well get it over with now.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>You turn back. 'I'm not sure the Office of Alien Protocol accepts resignations, Esther,' you say. 'Besides, I thought you hated your previous job.'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>'I did,' she says, vigorously marking boxes on a requisition form so as not to look at you. It appears that she is ordering a life-time supply of tinned meats. When she finishes, she folds this and puts it away; then she says: 'All the same, these things are dangerous.' 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Presumably she does have a point here, but it's taking her quite a while to get to.</font>&quot;
+<br>
+
+<br>
+Final Chat ends when the time since Final Chat began is 3 minutes. When Final Chat ends: say &quot;<font color=#000080>Esther hesitates an even longer time; then she says, 'I was married. Before.'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>You blink. 'What brings on this confidence?'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>She leans forward. 'The point is, I have lived with people -- one person -- who -- I'm used to people that lie. And these people are lying to us.'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>She is so wide-eyed and earnest. You want to tell her not to be so naive, that everyone lies, that government secret agents probably lie in their sleep and on the toilet; but at the same time she is making you a little nervous. All the same, you could tell her a thing or two with living in the presence of lies. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>A man from A. P. appears in the doorway: not Max, but one of his lower-browed subordinates. 'Bad news, kids,' he says. 'We have a situation out in the City, and you--' He points at you with gun-fingers, as though he were five years old. '--are going to have to do the dog-catcher scenario we talked about.'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Esther raises her eyebrows and mouths, 'Dog-catcher scenario?'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Yes, this should be good for your dignity...</font>&quot;; end the game saying &quot;<font color=#000080>To be continued</font>&quot;.
+<br>
+
+<br>
+A persuasion rule for asking Esther to try doing something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>'Funny,' says Esther, brushing you off.</font>&quot;
+<br>
+
+<br>
+Reception is a room. &quot;<font color=#000080>This is Esther's area, with its table and typewriter, its lamps and relatively scar-less walls.</font>&quot; The small round table, the typewriter, the telephone, and the lamps are scenery. The small round table is in Reception. The typewriter and the telephone are on the table. The lamps are in Reception. Understand &quot;<font color=#000080>light</font>&quot; or &quot;<font color=#000080>lamp</font>&quot; as the lamps. The initial appearance of Esther is &quot;<font color=#000080>Esther is hovering, obviously having something she wants to tell you.</font>&quot;
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Note</i><p>
+<A name="note1"><font color=#404040>[1].  Again, some trimming for ease of topic-handling.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>When in Rome 2: Far from Home - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">When in Rome 2: Far from Home</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_8.html">Previous</a><br><a href="source_10.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Chapter 3 - The Player's Clothing and Inventory</b>
+<br>
+
+<br>
+The slide is a thing. 
+<br>
+
+<br>
+ The salami is edible and stinky and fleshy. Understand &quot;<font color=#000080>bow</font>&quot; or &quot;<font color=#000080>ribbon</font>&quot; or &quot;<font color=#000080>sausage</font>&quot; or &quot;<font color=#000080>meat</font>&quot; as the salami. The description of the salami is &quot;<font color=#000080>Rich in garlic and meatiness.</font>&quot;
+<br>
+
+<br>
+The printed name of the slide is &quot;<font color=#000080>slide rule</font>&quot;. Understand &quot;<font color=#000080>rule</font>&quot; as the slide. The description of the slide is &quot;<font color=#000080>One of those things you've carried around instinctively since college. Esther likes to make fun of you for it, but you never know when you're going to have to calculate something.</font>&quot;
+<br>
+
+<br>
+The player wears a fedora, a jacket, a shirt, an undershirt, a pair of slacks, a pair of undershorts, a pair of socks, and a pair of shoes. The socks are stinky. Understand &quot;<font color=#000080>shorts</font>&quot; as the undershorts. Understand &quot;<font color=#000080>pants</font>&quot; or &quot;<font color=#000080>trousers</font>&quot; as the slacks. Understand &quot;<font color=#000080>hat</font>&quot; as the fedora. The fedora, the jacket,  and the shoes are leathery. The collar is leathery. The description of the collar is &quot;<font color=#000080>An ordinary strap with a buckle, the kind you might put on a dog.</font>&quot;
+<br>
+
+<br>
+Instead of wearing the collar: say &quot;<font color=#000080>Your neck is insufficiently willowy.</font>&quot;
+<br>
+
+<br>
+Instead of examining something which underlies something (called the covering): say &quot;<font color=#000080>It is hard to see [the noun] under [the covering].</font>&quot; 
+<br>
+Report taking off undershorts for the first time:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You strip off your shorts, feeling distinctly self-conscious.</font>&quot; instead.
+<br>
+
+<br>
+Instead of taking inventory:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You're carrying [list of things carried by the player][if the player wears something]. You are wearing [list of uppermost things worn by the player][end if].</font>&quot;
+<br>
+
+<br>
+Instead of examining the player:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player wears the jacket and the player wears the slacks and the player wears the fedora, say &quot;<font color=#000080>You look sharp in your suit and fedora.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the number of things worn by the player is 0, say &quot;<font color=#000080>You are down to your birthday suit.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the number of things worn by the player is 1
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player wears the fedora, say &quot;<font color=#000080>Aside from your stylish hat, you are nude.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player wears the undershorts, say &quot;<font color=#000080>At least you still have your undershorts.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player wears the undershirt, say &quot;<font color=#000080>You're down to only your undershirt, and it is not as long as it could be.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is indecent, say &quot;<font color=#000080>You're not quite decently clad, put it that way.</font>&quot; instead; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You are feeling a little wilted in the heat.</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Definition: a person is nude if the number of things worn by it is 0. Definition: a person is indecent if it is not wearing the slacks.
+<br>
+
+<br>
+Definition: a thing is uppermost if it is not under something.
+<br>
+
+<br>
+Underlying relates one thing to various things. The verb to underlie (it underlies, they underlie, it is underlying, it is underlaid) implies the underlying relation. The verb to be under implies the underlying relation.
+<br>
+
+<br>
+The shirt underlies the jacket. The pair of socks underlies the pair of shoes. The undershorts underlie the slacks. The undershirt underlies the shirt.
+<br>
+
+<br>
+Check taking off:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the noun underlies something (called the impediment) which is worn by the player, say &quot;<font color=#000080>[The impediment] is in the way.</font>&quot; instead.
+<br>
+
+<br>
+Carry out taking off:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the noun is not underlaid by anything.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report taking off something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You take off [the noun], and are now wearing [list of uppermost things worn by the player].</font>&quot; instead.
+<br>
+
+<br>
+Overlying relates one thing to various things. The verb to overlie (it overlies, they overlie, it is overlying) implies the overlying relation. 
+<br>
+
+<br>
+The jacket overlies the shirt. The shoes overlie the socks. The slacks overlie the undershorts. The shirt overlies the undershirt.
+<br>
+
+<br>
+Before wearing something when something (called the impediment) which overlies the noun is worn by the player: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try taking off the impediment;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is wearing the impediment, stop the action.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before taking off something which underlies something (called the impediment) which is worn by the player: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try taking off the impediment;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the impediment is worn by the player, stop the action.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Carry out wearing:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the noun overlies something (called the hidden item) worn by the player, now the hidden item underlies the noun.
+<br>
+
+<br>
+Instead of looking under something which is worn by the player:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if something (called the underwear) underlies the noun, say &quot;<font color=#000080>You peek at [the underwear]. Yup, still there.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>Just you in there.</font>&quot;.
+<br>
+
+<br>
+
+<br>
+The ballpoint pen is a thing. The description of the pen is &quot;<font color=#000080>It's a Parker 'Jotter', and cost you five dollars, which the Office of Alien Protocol was too mean to pick up, though they were the ones who suggested you avoid fountain pens in your office. [paragraph break]It is not quite out of ink yet.</font>&quot;
+<br>
+
+<br>
+The brown paper sack is a container. In the brown paper sack is some bread, and a wedge of cheese.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>bag</font>&quot; as the sack. The description of the sack is &quot;<font color=#000080>An ordinary lunch bag, such as anyone might take to work.</font>&quot; The sack is papery. The sack is openable and closed. After opening the sack when a stinky thing is in the sack: say &quot;<font color=#000080>As you open the sack, you catch the pungent smell of [the list of stinky things in the sack] inside[if something which is not stinky is in the sack]. Less offensive to the nostrils [is/are the list of inoffensive things in the sack][end if].</font>&quot;
+<br>
+
+<br>
+The cheese is edible and stinky. The description of the cheese is &quot;<font color=#000080>Pungent: you conclude it must be European cheese. You certainly haven't seen anything like that since Italy.</font>&quot; The bread is edible. The description of the bread is &quot;<font color=#000080>A round and crusty roll.</font>&quot; Understand &quot;<font color=#000080>round</font>&quot; and &quot;<font color=#000080>crusty</font>&quot; and &quot;<font color=#000080>roll</font>&quot; as the bread.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+The tube of holdall glue is a stinky thing. The description is &quot;<font color=#000080>A truly miraculous substance that sets up rock-hard and air-tight in a matter of milliseconds. It is also covered with toxicity warnings.</font>&quot;
+<br>
+
+<br>
+Instead of eating the holdall glue:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You decide to disregard the numerous warnings on the outside of the tube and experiment with the taste of the glue. It turns out that it produces a strong burning sensation in the lining of the mouth and throat, accompanied by lung-filling noxious fumes and coughing. Your eyes water and then you fall into a semi-comatose state for a long, long time. The good news is that there is not permanent brain damage, just a lot of misery.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end the game saying &quot;<font color=#000080>Esther has to take you to the hospital, which is never a good end to the day</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report eating a poisoned edible thing:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You eat [the noun], careful to avoid the blob of glue, of course.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of putting the glue on something which is not a supporter:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is not carrying the glue, try taking the glue;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is not carrying the glue, stop the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the second noun is poisoned;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You apply a dab of [the glue] to [the second noun].</font>&quot;
+<br>
+
+<br>
+The blank label is a thing.
+<br>
+
+<br>
+The Guide is a thing. The printed name of the guide is &quot;<font color=#000080>Guide to Alien Habitats</font>&quot;. Understand &quot;<font color=#000080>book</font>&quot; or &quot;<font color=#000080>guidebook</font>&quot; or &quot;<font color=#000080>Guide to Alien Habitats</font>&quot; or &quot;<font color=#000080>alien habitats</font>&quot; or &quot;<font color=#000080>guide to habitats</font>&quot; as the Guide. 
+<br>
+
+<br>
+The description of the guide is &quot;<font color=#000080>A Guide To Alien Habitats, for use in the identification and labeling of your little Visitors. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>The table of contents reveals that the book contains the following charts:</font>&quot;.
+<br>
+
+<br>
+After examining the guide:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat through Table of Guide Information
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [category entry]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say paragraph break.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+header is a kind of value. The headers are Roughness, Reflexes, Power, Atmosphere, Behavior, and Digestion. Understand &quot;<font color=#000080>period</font>&quot; or &quot;<font color=#000080>periodicity</font>&quot; or &quot;<font color=#000080>day</font>&quot; or &quot;<font color=#000080>days</font>&quot; or &quot;<font color=#000080>year</font>&quot; or &quot;<font color=#000080>years</font>&quot; as reflexes. Understand &quot;<font color=#000080>surface</font>&quot; or &quot;<font color=#000080>roughness</font>&quot; or &quot;<font color=#000080>surface roughness</font>&quot; as roughness. Understand &quot;<font color=#000080>gravity</font>&quot; or &quot;<font color=#000080>equatorial</font>&quot; or &quot;<font color=#000080>mass</font>&quot; or &quot;<font color=#000080>equatorial gravity</font>&quot; or &quot;<font color=#000080>surface gravity</font>&quot; or &quot;<font color=#000080>gravities</font>&quot; or &quot;<font color=#000080>equatorial surface gravity</font>&quot; as Power. Understand &quot;<font color=#000080>air</font>&quot; or &quot;<font color=#000080>atmospheres</font>&quot; or &quot;<font color=#000080>smell</font>&quot; or &quot;<font color=#000080>smells</font>&quot; as atmosphere. Understand &quot;<font color=#000080>mood</font>&quot; or &quot;<font color=#000080>attitude</font>&quot; or &quot;<font color=#000080>attitudes</font>&quot; or &quot;<font color=#000080>behaviour</font>&quot; as Behavior. Understand &quot;<font color=#000080>food</font>&quot; as digestion.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>look up [header] in [something]</font>&quot; as studying in it about (with nouns reversed). Understand &quot;<font color=#000080>consult [something] on/about [header]</font>&quot; as studying in it about. Understand &quot;<font color=#000080>read about [header] in [something]</font>&quot; as studying in it about (with nouns reversed). Understand &quot;<font color=#000080>read [header] in [something]</font>&quot; as studying in it about (with nouns reversed). Understand &quot;<font color=#000080>read about [header] in [guide]</font>&quot; as studying in it about (with nouns reversed). Understand &quot;<font color=#000080>read [header] in [guide]</font>&quot; as studying in it about (with nouns reversed).
+<br>
+
+<br>
+Understand &quot;<font color=#000080>look up [header]</font>&quot; as wondering about.
+<br>
+
+<br>
+Wondering about is an action applying to one header. Before wondering about when the player can see the Guide and the player is not carrying the guide: try taking the guide; if the player is not carrying the guide, stop the action. Check wondering about: if the player is not carrying the guide, say &quot;<font color=#000080>You don't have the Guide, in which you do most of your current research.</font>&quot; instead. Carry out wondering about: try studying in the Guide about the header understood.
+<br>
+
+<br>
+Studying in it about is an action applying to one thing and one header. Carry out studying in something about: say &quot;<font color=#000080>You find no useful information.</font>&quot; 
+<br>
+
+<br>
+Instead of studying in the Guide about:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if there is a category of the header understood in the Table of Guide Information
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You flip through the Guide and find the following:[paragraph break]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; choose row with a category of the header understood in the Table of Guide Information; say &quot;<font color=#000080>[reply entry][paragraph break]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You flip through the guide unavailingly, though you do notice that a few pages have apparently been ripped out.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<b>Table of Guide Information</b>
+<br>
+<table><tr><td halign="left" valign="top"><u>category</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> difficulty</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> reply</u></td></tr>
+<tr><td halign="left" valign="top">Atmosphere&nbsp;&nbsp;</td><td halign="left" valign="top"> medium&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>Note: Sense of smell is likely to occur only where atmosphere is present. [paragraph break][atmospheres]</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">Behavior&nbsp;&nbsp;</td><td halign="left" valign="top"> medium&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>A creature with hostile or friendly feelings has frequent human contact, thus probably from one of the inner planetary systems[if Luna-X is a moon listed in the Table of Alien Characteristics]. In particular, creatures from the Earth-X system are hostile[end if]. Creatures from Mars and Luna are always friendly. </td></tr>
+</font><font color=#000080></table>
+<br>
+</font><font color=#000080>A creature with curious or frightened feelings is more likely from one of the systems beyond the Asteroids; Tritonians are known to be curious, those from Pluto quite timid and easily scared.</font>&quot;
+<br>
+Digestion easy &quot;<font color=#000080>Note: The colder and more distant its home-world, the slower its feed time is likely to be (though note Venus is hotter than Mercury). May be difficult to judge relevance of this factor without experience. [paragraph break][systems][paragraph break][foods]</font>&quot;
+<br>
+Power medium &quot;<font color=#000080>Note: The greater the surface gravity of the home-world, the stronger the inhabitant will be. Lighter/smaller creatures are also more susceptible to poisons. [paragraph break][gravities]</font>&quot;
+<br>
+Reflexes easy &quot;<font color=#000080>Note:  Speed of reflexes appear to correlate roughly with the periodicity of the home-world -- planetary days or period of orbit for moons. Those from faster orbits are thus likely to move more quickly. [paragraph break][periodicities]</font>&quot;
+<br>
+Roughness easy &quot;<font color=#000080>Note: The rougher the world, the more likely that it will breed creatures built for climbing and grasping. Second note (added in agitated marker): Gas giant critters have two arms anyway! [paragraph break][roughnesses]</font>&quot;
+<br>
+
+<br>
+
+<br>
+To say foods:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>List of Alien Home-worlds in Sol System (by Food type):[line break]</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let current food be meaty; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat through Table of Alien Characteristics in taste column order
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if taste entry is not current food
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change current food to taste entry;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type][current food][roman type]: </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>, </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[moon entry]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say paragraph break.
+<br>
+
+<br>
+To say roughnesses:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>List of Alien Home-worlds in Sol System (by Roughness):[line break]</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let count be -1;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat through Table of Alien Characteristics in arms column order
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if arms entry is not count
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change count to arms entry;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type][count as roughness][roman type]: </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>, </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[moon entry]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say paragraph break.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To say (count - a number) as roughness:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if count is 0, say &quot;<font color=#000080>Gaseous</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if count is 1, say &quot;<font color=#000080>Very smooth</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if count is 2, say &quot;<font color=#000080>Smooth</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if count is greater than 2 and count is less than 5, say &quot;<font color=#000080>Rough/cratered</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if count is greater than 4, say &quot;<font color=#000080>Very rough/cratered</font>&quot;;
+<br>
+
+<br>
+To say systems:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>List of Alien Home-worlds in Sol System (by System):[line break]</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let planetoid be Pluto;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat through Table of Alien Characteristics in system column order
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if system entry is not planetoid
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change planetoid to system entry;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type][planetoid][roman type]: </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>, </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[moon entry]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say paragraph break.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To say atmospheres:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>List of Alien Home-worlds in Sol System (by Atmosphere):[line break]</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let scent be inverse; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat through Table of Alien Characteristics in nostrils column order
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if nostrils entry is not scent
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change scent to nostrils entry;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type][scent in words][roman type]: </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>, </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[moon entry]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say paragraph break.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To say (scent - an odor sensitivity) in words:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if scent is weak, say &quot;<font color=#000080>None</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if scent is strong, say &quot;<font color=#000080>Primarily oxygen, hydrogen, or nitrogen</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if scent is inverse, say &quot;<font color=#000080>Significant sulfuric or methane components</font>&quot;;
+<br>
+
+<br>
+To say periodicities:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>List of Alien Home-worlds in Sol System (by periodicity category):[line break]</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let rapidity be lightning; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat through Table of Alien Characteristics in dexterity column order
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if dexterity entry is not rapidity
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change rapidity to dexterity entry;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type][rapidity in words][roman type]: </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>, </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[moon entry]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say paragraph break.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To say (rapidity - a speed) in words:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if rapidity is lightning, say &quot;<font color=#000080>Less than one Earth day</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if rapidity is fast, say &quot;<font color=#000080>One to six Earth days</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if rapidity is moderate, say &quot;<font color=#000080>One Earth week to one Earth month</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if rapidity is slow, say &quot;<font color=#000080>More than one Earth month</font>&quot;.
+<br>
+
+<br>
+To say gravities:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>List of Alien Home-worlds in Sol System (by effective weight at surface):[line break]</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let size be negligible; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat through Table of Alien Characteristics in reverse mass column order
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if mass entry is not size
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change size to mass entry;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]  [bold type][size][roman type]: </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>, </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[moon entry]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say paragraph break.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Color is a kind of value. The colors are red, orange, yellow,  green, cyan, blue, indigo, purple,  tan, black, white, and grey. The creature has a color.
+<br>
+
+<br>
+The creature is an animal. The description is &quot;<font color=#000080>It's an attractive shade of [color of creature], really, when you think about it, and it looks a little bit like a [if the creature is slothful]sloth[otherwise]chimpanzee[end if][if the carrying capacity of the creature is not 2] -- with [carrying capacity of the creature in words] arm[s], and [otherwise]. Only with [end if]a [if the odor sensitivity of the creature is strong or the odor sensitivity of the creature is inverse]larger, more sensitive[otherwise]smaller[end if] nose, and ears that come to points, and [tongue of creature]... [paragraph break][if the creature has something]It carries [list of things carried by the creature]. It wears [list of things worn by the creature].[otherwise]Odd, really.[end if]</font>&quot; 
+<br>
+
+<br>
+Understand the color property as describing the creature. 
+<br>
+
+<br>
+The creature has a moon. The creature has a speed. The creature has an intelligence.  The creature has a food. The metabolism of the creature is 50.
+<br>
+
+<br>
+The creature wears a collar. Understand &quot;<font color=#000080>Visitor</font>&quot; or &quot;<font color=#000080>animal</font>&quot; or &quot;<font color=#000080>alien</font>&quot; or &quot;<font color=#000080>arms</font>&quot; or &quot;<font color=#000080>arm</font>&quot; or &quot;<font color=#000080>paw</font>&quot; or &quot;<font color=#000080>paws</font>&quot; or &quot;<font color=#000080>nose</font>&quot; or &quot;<font color=#000080>tongue</font>&quot; or &quot;<font color=#000080>teeth</font>&quot; as the creature.  The creature has a property called tongue. The tongue of the creature is &quot;<font color=#000080>raspy tongue</font>&quot;.
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

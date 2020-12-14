@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>When in Rome 2: Far from Home - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">When in Rome 2: Far from Home</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_14.html">Previous</a><br><a href="source_16.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Chapter 10 - The Plot</b>
+<br>
+
+<br>
+<b>Section 1 - Accounting for Time</b>
+<br>
+
+<br>
+To decide whether we are dead: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(- (deadflag &gt; 0) -);
+<br>
+
+<br>
+Waiting more is an action applying to one number.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>wait [number] minutes/turns</font>&quot; or &quot;<font color=#000080>wait for [number] minutes/turns</font>&quot; or &quot;<font color=#000080>wait [number]</font>&quot; as waiting more.
+<br>
+
+<br>
+Carry out waiting more:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let duration be the number understood - 1;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat with X running from 1 to duration
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the creature is dying or we are dead, do nothing;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise follow the turn sequence rules;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat. 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report waiting more:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if we are dead, do nothing;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>It is now [time of day + 1 minute].</font>&quot; 
+<br>
+
+<br>
+Check waiting more:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the number understood &gt; 59, say &quot;<font color=#000080>You really haven't got that kind of patience.</font>&quot; instead.
+<br>
+
+<br>
+Hanging around until is an action applying to one time.
+<br>
+
+<br>
+Check hanging around until:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the time of day is the time understood, say &quot;<font color=#000080>It is [time understood] now!</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the time of day is after the time understood, say &quot;<font color=#000080>It is too late for that now.</font>&quot; instead.
+<br>
+
+<br>
+Carry out hanging around until:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;while the time of day is before time understood 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the creature is dying or we are dead, do nothing;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise follow the turn sequence rules;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end while.
+<br>
+
+<br>
+Report hanging around until:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if we are dead, do nothing;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>You yawn until [time understood].</font>&quot;
+<br>
+
+<br>
+Understand &quot;<font color=#000080>wait until [time]</font>&quot; as hanging around until.
+<br>
+ 
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

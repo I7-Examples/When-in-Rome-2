@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>When in Rome 2: Far from Home - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">When in Rome 2: Far from Home</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_0.html">Previous</a><br><a href="source_2.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 2 - Hunger</b>
+<br>
+
+<br>
+A person has a number called the last feed time. The last feed time of a person is usually -20.
+<br>
+
+<br>
+A person has a number called metabolism. The metabolism of the player is 180. 
+<br>
+
+<br>
+A person has a number called breath count. The breath count of a person is usually 1000.
+<br>
+
+<br>
+Definition: a person is scaly if its metabolism is 10 or less. 
+<br>
+
+<br>
+Definition: a person is furry if its metabolism is 15 or more.
+<br>
+
+<br>
+Definition: a person is cold:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if it is not scaly, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if it is wearing the jacket, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the number of things worn by it is less than 4, yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;no.
+<br>
+
+<br>
+Definition: a person is hungry if it was last fed more than metabolism of it minutes back.
+<br>
+
+<br>
+Definition: a person is starving:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if it lies within the pod and the life-support is stuck to the pod and the life-support is switched on, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if it was last fed too long ago, yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;no.
+<br>
+
+<br>
+Definition: a person is dying if it was last fed way too long ago.
+<br>
+
+<br>
+To decide whether (critter - a person) was last fed more than (count - a number) minutes back:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let X be the last feed time of the creature;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let Y be the turn count - X;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if Y &gt; count, yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;no.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To decide whether (critter - a person) was last fed too long ago:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let X be the last feed time of the creature;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let count be the metabolism of the creature;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let count be count times two;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let Y be the turn count - X;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if Y &gt; count, yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;no.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To decide whether (critter - a person) was last fed way too long ago:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let X be the last feed time of the creature;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let multiplier be 5; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the metabolism of the creature is less than ten, let the multiplier be 7;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the metabolism of the creature is greater than 30, let the multiplier be 3;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let count be the metabolism of the creature; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let count be count times multiplier; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let Y be the turn count - X;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if Y &gt; count, yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;no.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To decide whether (critter - a person) is suffocating:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the breath count of the critter is 1000, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if life-support is stuck to the egg and the critter is in the egg and life-support is switched on, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;yes.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Definition: a thing is delicious if it fits metabolic parameters.
+<br>
+
+<br>
+To decide whether (item - a thing) fits metabolic parameters:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the item is leathery and the item is pointless, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the food of the creature is meaty and the item is fleshy, yes; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the food of the creature is meaty and the item is a person, yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the food of the creature is wood-pulpy and the item is papery, yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the food of the creature is earthly and item is edible, yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the food of the creature is textile and the item is wearable, yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;no.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Food is a kind of value. The foods are textile, earthly, meaty, and wood-pulpy.
+<br>
+
+<br>
+A thing can be fleshy or unfleshy. A thing is usually unfleshy.
+<br>
+
+<br>
+A thing can be poisoned or safe. A thing is usually safe.
+<br>
+  
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

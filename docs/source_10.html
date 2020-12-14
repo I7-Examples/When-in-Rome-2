@@ -1,0 +1,604 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>When in Rome 2: Far from Home - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">When in Rome 2: Far from Home</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_9.html">Previous</a><br><a href="source_11.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Chapter 4 - The Office </b>
+<br>
+
+<br>
+Esther is a woman. Esther's utterance is some text that varies. Esther's utterance is &quot;<font color=#000080>blank</font>&quot;.  
+<br>
+
+<br>
+Understand &quot;<font color=#000080>ask Esther [text]</font>&quot; or &quot;<font color=#000080>tell Esther [text]</font>&quot; or &quot;<font color=#000080>talk to esther</font>&quot; as a mistake (&quot;<font color=#000080>[if the player is in the office]The noises from Esther's office pause just long enough that you know she heard you and isn't answering[otherwise]Not really an option just now[end if].</font>&quot;) when Sending is happening. 
+<br>
+
+<br>
+Understand &quot;<font color=#000080>call [any thing]</font>&quot; or &quot;<font color=#000080>summon [any thing]</font>&quot; or &quot;<font color=#000080>shout to/for/at [any thing]</font>&quot; or &quot;<font color=#000080>call to/for [any thing]</font>&quot; or &quot;<font color=#000080>yell to/for/at [any thing]</font>&quot; as summoning.
+<br>
+
+<br>
+Summoning is an action applying to one thing.
+<br>
+
+<br>
+Carry out summoning: say &quot;<font color=#000080>There is no answer.</font>&quot;
+<br>
+
+<br>
+Instead of summoning a timid creature: say &quot;<font color=#000080>[The creature] flinches, covering its ears.</font>&quot;
+<br>
+ 
+<br>
+
+<br>
+Instead of summoning Esther for the first time: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>'Oh, no you don't,' Esther shouts back. 'I'm not coming in there to help you even once more.'</font>&quot;
+<br>
+
+<br>
+Instead of summoning Esther: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You yell plaintively to Esther, but she doesn't come in.</font>&quot;
+<br>
+
+<br>
+Instead of going nowhere from the Office: say &quot;<font color=#000080>You really can't go anywhere while the Visitor is still here to be looked after.</font>&quot; Instead of going outside from Office on Floor Fifty-One: say &quot;<font color=#000080>Not until the creature is dealt with.</font>&quot;
+<br>
+
+<br>
+Grim Hallway is a room. &quot;<font color=#000080>Months of your peculiar line of work have brought certain changes. Most of the decorations have been stripped from the walls, giving it a bare, prison-like feel. There is nothing that a particularly vicious creature could take, eat, throw, or use as a weapon. One or two patches in the plaster testify to hasty repair jobs.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Just inside is your office.</font>&quot;  The player is in Grim Hallway.
+<br>
+
+<br>
+Instead of listening to the Grim Hallway: say &quot;<font color=#000080>Esther's typing is audible from the other room. It's either a very long expense report or a novella.</font>&quot;
+<br>
+
+<br>
+The potted plant is fixed in place in the Grim Hallway. Understand &quot;<font color=#000080>bush</font>&quot; or &quot;<font color=#000080>cactus</font>&quot; or &quot;<font color=#000080>tree</font>&quot; or &quot;<font color=#000080>christmas</font>&quot; or &quot;<font color=#000080>spindly</font>&quot; or &quot;<font color=#000080>woebegone</font>&quot; or &quot;<font color=#000080>dirt</font>&quot; or &quot;<font color=#000080>pot</font>&quot; as the plant. &quot;<font color=#000080>A [potted plant] lurks in the corner, perennially a little dry.</font>&quot; The description of the plant is &quot;<font color=#000080>The dirt is often useful for concealing things you need to keep from Esther: she has the duty of cleaning out your office.</font>&quot; 
+<br>
+
+<br>
+Burying relates various things to various things. The verb to disguise (it disguises, they disguise, he is disguising) implies the burying relation.  Instead of digging the potted plant when the potted plant disguises something (called target): say &quot;<font color=#000080>You dig through the dirt of [the potted plant] and retrieve [the target].</font>&quot;; move the target to the player; now the plant does not disguise the target. Instead of digging the potted plant: say &quot;<font color=#000080>You don't turn up any hidden treasures this time.</font>&quot;
+<br>
+
+<br>
+Instead of searching the potted plant: say &quot;<font color=#000080>A preliminary look turns up nothing, but you'd have to dig into the dirt to see whether anything is deeper in.</font>&quot;
+<br>
+
+<br>
+<font color=#404040>[And because beta-testers wanted to be able to rebury things:</font>]
+<br>
+
+<br>
+Understand &quot;<font color=#000080>conceal [something] in [something]</font>&quot; or &quot;<font color=#000080>hide [something] in [something]</font>&quot; or &quot;<font color=#000080>bury [something] in [something]</font>&quot; as hiding it in. Hiding it in is an action applying to two things. Check hiding it in: if the second noun is not a container, say &quot;<font color=#000080>[The second noun] will not conceal much.</font>&quot; instead; if the second noun is not openable, say &quot;<font color=#000080>[The second noun] cannot be closed.</font>&quot; instead; if the player does not carry the noun, try taking the noun; if the player does not carry the noun, stop the action. Carry out hiding it in: try inserting the noun into the second noun; if the noun is in the second noun and the second noun is openable, try closing the second noun.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>dig in [something]</font>&quot; as digging. Understand &quot;<font color=#000080>dig [something]</font>&quot; as digging. <font color=#404040>[Digging is an action applying to one thing.</font>] Carry out digging: say &quot;<font color=#000080>Pointless.</font>&quot;
+<br>
+
+<br>
+Before hiding something in the potted plant when the player does not carry the noun:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player wears the noun, try taking off the noun;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise try taking the noun;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player does not carry the noun, stop the action.
+<br>
+
+<br>
+Instead of hiding something in the potted plant: remove the noun from play; now the potted plant disguises the noun; say &quot;<font color=#000080>You bury [the noun] out of sight in the dirt of the potted plant.</font>&quot;.
+<br>
+
+<br>
+The potted plant disguises the packet of Atomic Fireballs. 
+<br>
+ 
+<br>
+Instead of waiting in the Grim Hallway: say &quot;<font color=#000080>You try postponing the inevitable, but the critter does await you inside.</font>&quot;
+<br>
+
+<br>
+Instead of going nowhere from the Hallway, say &quot;<font color=#000080>In seems to be the operative direction here.</font>&quot;
+<br>
+
+<br>
+Office on Floor Fifty-One is inside from Grim Hallway. &quot;<font color=#000080>Your office[if the number of scenery things in the office is less than three]. Recent remodeling efforts have left it positively spacious, with only [the list of scenery things in the office] as permanent features[otherwise]. It's cramped, what with [the list of scenery things in the office], but it's got a great view down Fifth Avenue[end if].</font>&quot;
+<br>
+
+<br>
+The window is scenery in the office. Understand &quot;<font color=#000080>view</font>&quot; as the window. The description is &quot;<font color=#000080>Fair and hot, the temperatures in the eighties and the sky hazy. In short, it's a good day to be in Cleveland. You're not.</font>&quot; Instead of searching the window, try examining the window. Before opening the window: say &quot;<font color=#000080>In the normal course of things, windows on the fifty-first floor do not open.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Your particular window does, of course, since the pods have to get out somehow, but the whole thing is rigged with machinery you can't control. You've heard rumors that your predecessor sent a pod out straight through the plate glass, hospitalizing ten people from the sidewalk below. Best not to meddle.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+The desk is scenery in the Office. It is a supporter. The description is &quot;<font color=#000080>Grim, gun-metal grey, but quite sturdy, impervious to blows, and washable. All of these features have come in useful in your work.</font>&quot;
+<br>
+
+<br>
+The chair is scenery in the Office. It is an enterable supporter. The description of the chair is &quot;<font color=#000080>Made of slightly less sturdy matter than the desk, and therefore the fourth you have owned in the course of this job. You also used to have a potted cactus, but it got eaten, in an incident that did not end happily for anyone.</font>&quot;
+<br>
+
+<br>
+The file drawer is scenery in the Office. It is a container. Understand &quot;<font color=#000080>drawers</font>&quot; or &quot;<font color=#000080>cabinets</font>&quot; or &quot;<font color=#000080>cabinet</font>&quot; as the drawer. A lot of paperwork is a thing. The file drawer is closed and openable. The autographed picture of Joe DiMaggio is on the desk. The description of the picture is &quot;<font color=#000080>He's mid-swing, and the autograph is made out to you personally.</font>&quot; Before printing the name of the file drawer: if the file drawer is damaged, say &quot;<font color=#000080>severely dented</font>&quot;.
+<br>
+
+<br>
+After opening the file drawer when the file drawer contains more than five things:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You open the file drawer with a bit of struggle -- something in there is catching when you pull. But it finally comes open, and half-disgorges [a list of things in the file drawer].</font>&quot;
+<br>
+
+<br>
+The paperwork is fixed in place. Understand &quot;<font color=#000080>files</font>&quot; as paperwork. The paperwork is papery.
+<br>
+
+<br>
+The description of the paperwork is &quot;<font color=#000080>Copies of previously filed forms (mostly done by your predecessor), indexed by home-world.</font>&quot; Understand &quot;<font color=#000080>papers</font>&quot; or &quot;<font color=#000080>forms</font>&quot; or &quot;<font color=#000080>form</font>&quot; as the paperwork. Instead of consulting the drawer about something: try consulting the paperwork about it.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>look up [moon] in [something]</font>&quot; as researching in it about (with nouns reversed). Understand &quot;<font color=#000080>consult [something] on/about [moon]</font>&quot; as researching in it about. Understand &quot;<font color=#000080>read about [moon] in [something]</font>&quot; as researching in it about (with nouns reversed). Understand &quot;<font color=#000080>read [moon] in [something]</font>&quot; as researching in it about (with nouns reversed). Understand &quot;<font color=#000080>look up [moon]</font>&quot; as researching vaguely.
+<br>
+
+<br>
+Researching vaguely is an action applying to one moon. Before researching vaguely when the paperwork is in the drawer and the drawer is closed and the drawer is openable: try opening the drawer. Check researching vaguely: if the paperwork is not touchable, stop the action; Carry out researching vaguely: say &quot;<font color=#000080>You turn to your trusty paperwork...[line break]</font>&quot;; try researching in paperwork about the moon understood.
+<br>
+ 
+<br>
+Researching in it about is an action applying to one thing and one moon.
+<br>
+
+<br>
+Carry out researching in it about: say &quot;<font color=#000080>You find nothing of interest in [the noun].</font>&quot;
+<br>
+
+<br>
+Instead of researching in paperwork about a moon listed in the Table of Alien Characteristics:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let target be the moon understood;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[target]: Atmosphere -- [nostrils of target in words]; Gravity -- [mass of target]; Periodicity -- [dexterity of target in words]; Surface roughness -- [arms of target as roughness]. </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if target is a moon listed in the Table of Paperwork Information
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;choose row with moon column of target in the Table of Paperwork Information;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[form entry][paragraph break]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[paragraph break]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<b>Table of Paperwork Information</b>
+<br>
+<table><tr><td halign="left" valign="top"><u>moon</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> form</u></td></tr>
+<tr><td halign="left" valign="top">Io&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>Records indicate that creature from Io was found to have an abnormally short feed time for their system, and live in zones associated with volcanic hotspots.</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">Europa&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>Creature registered to Europa. Time between feedings recorded to be 20 minutes.</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">Pluto&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>Plutonian creature had long slow eating cycle, 45 minutes between feedings; ability to withstand hunger superior to other creatures tested from nearer systems. Dislike of strong smells. Eats cloth. Light sensitive.</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">Deimos&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>Creature registered to Deimos. Displayed signs of developed pattern recognition, religious or hierarchical affiliation with the home planet. Distinctly dissimilar attitude from more hostile Phobos creature captured earlier.</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">Titan&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>Extremely dense atmosphere, with pressures similar to being 20 feet under water.</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">Uranus&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>Uranian unusually shows some slight metallic traces in skin, eyes, and fur, not visible in low light.</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">Titania&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>Titania creature showed low intelligence; but unusual interest in wood pulp products: perhaps only distinguishing characteristic from Oberon creature. Unclear whether creatures of other home-worlds might also prefer wood pulp products.</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">Oberon&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>Oberon creature distinguishable from Titania creature in that it does not share the Titanian's preference for paper and cardboards.</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">Triton&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>Triton is also notable for its observed red/grey color changes over the course of seasons.</font>&quot;</td></tr>
+</table>
+<br>
+Instead of taking the paperwork: say &quot;<font color=#000080>Esther will never forgive you if you get the files out of order. You could look up individual worlds, though, if you wanted.</font>&quot;
+<br>
+
+<br>
+The picture and the label are papery.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>files</font>&quot; as the paperwork. Understand &quot;<font color=#000080>files</font>&quot; as the file drawer when the file drawer is closed.
+<br>
+
+<br>
+
+<br>
+The lamp is a fixed in place electric light. It is switched off.  Understand &quot;<font color=#000080>light</font>&quot; as the lamp. The description of the lamp is &quot;<font color=#000080>Exceptionally bright, to help you pick out any features you might need to observe[if we have not examined the lamp]. Besides, the interrogation-office look comes in handy when you have to convince people you're a private dick. Your mother, for instance, operates under the happy delusion that you spend your days roughing up gangsters and sweating the truth out of cheating husbands[end if].</font>&quot;
+<br>
+
+<br>
+Report switching on the lamp:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You turn on [the lamp], casting an unforgiving glare over the whole of your office.</font>&quot; instead.
+<br>
+
+<br>
+Report switching on the lamp when the creature is cold: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You turn on [the lamp], casting an unforgiving glare over the whole of your office. [The creature] creeps closer to it, basking.</font>&quot; instead.
+<br>
+
+<br>
+Report switching on the lamp when the creature is blinded: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You turn on [the lamp], casting an unforgiving glare over the whole of your office[if the creature is slothful]. The creature curls into a tight ball of misery[otherwise]. The creature backs away, blinking and whining[end if].</font>&quot; instead.
+<br>
+
+<br>
+The packet of Atomic Fireballs is a thing. The description of the Fireballs is &quot;<font color=#000080>The outside of the packet says ATOMIC FIREBALL with RED HOT FLAVOR. The Ferrara Pan logo is written across a cartoon atomic explosion[if we have not examined the fireballs].
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>The candy is a vice you do your best to conceal: Esther would rather you took up smoking[end if].</font>&quot; The Fireballs are edible. After eating the fireballs, say &quot;<font color=#000080>You cram the candies into your mouth. For a moment it feels as though the top of your head is going to come off, but the feeling does pass.</font>&quot;
+<br>
+
+<br>
+
+<br>
+The setup rules is a rulebook. 
+<br>
+
+<br>
+A setup rule when the moon of the creature is Jupiter:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;remove the lamp from play; remove the collar from play;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the shattered bits are explored;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the shattered bits are in the office. 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+A setup rule: do nothing. 
+<br>
+
+<br>
+To say creature clothing:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature wears something
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the number of things worn by the creature is 1 and the creature wears the collar, say &quot;<font color=#000080>An optimist has tied a collar around its neck</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>It is currently clad in [list of things worn by the creature]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>It has gotten rid of the collar</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Rule for writing a paragraph about the creature: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is in the location
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the creature is blinded, say &quot;<font color=#000080>Huddling in the far corner is your Visitor: </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>In front of [the random fixed in place thing in the location][if the creature is starving], in a miserable heap,[end if] is your Visitor: </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the spot be the holder of the creature;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the spot is a container, say &quot;<font color=#000080>In [the spot] is your Visitor: </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>On [the spot] is your Visitor: </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>a [if the creature is vast]stocky [end if]creature about [if the creature is tall]five[otherwise]four[end if] feet tall, with [color of the creature] </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is scaly, say &quot;<font color=#000080>scales. </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is furry, say &quot;<font color=#000080>fur. </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is not furry and the creature is not scaly, say &quot;<font color=#000080>skin. </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature wears something
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the number of things worn by the creature is 1 and the creature wears the collar, say &quot;<font color=#000080>An optimist has tied a collar around its neck. </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>It is currently clad in [list of things worn by the creature]. </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature carries something, say &quot;<font color=#000080>It is carrying [a list of things carried by the creature]. </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say paragraph break.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before listing nondescript items:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is marked for listing, change the creature to not marked for listing;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the number of marked for listing things is 0 and the location is the Office, say &quot;<font color=#000080>Your floor is atypically clear of obstructions.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Rule for listing nondescript items of the Office:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[if the number of marked for listing things is greater than 1]Scattered about[otherwise]Pushed over under the window[end if]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list the contents of the Office, as a sentence, tersely, listing marked items only, prefacing with is/are, including contents and giving brief inventory information;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>.</font>&quot;
+<br>
+
+<br>
+The X1 Probe kit is a heavy closed openable container in the Office on Floor Fifty-One. Understand &quot;<font color=#000080>large</font>&quot; and &quot;<font color=#000080>cardboard</font>&quot; and &quot;<font color=#000080>box</font>&quot; and &quot;<font color=#000080>picture</font>&quot; and &quot;<font color=#000080>mars</font>&quot; as the kit. The kit is papery. It is enterable. The description is &quot;<font color=#000080>[if we have examined the kit]A[otherwise]Left for you, along with the Visitor itself, by the representatives of the Office of Alien Protocol. It is a[end if] large cardboard box containing everything you need to launch your very own alien Visitor back into space. By way of example, it has a cheery full-color telescope picture of Mars on the side.</font>&quot; After opening the Probe kit when the kit has not been open: say &quot;<font color=#000080>You pull open the top of the Probe Kit, revealing the large [pod]. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Packed beneath it are the heavier pieces: [a propulsion unit] and [a life-support unit]. [The instruction booklet] has fallen down the side, along with [the blank label] you will need to address the probe.</font>&quot;
+<br>
+ 
+<br>
+In the kit is a propulsion unit, a life-support unit, a tinted egg pod, a blank label, and an instruction booklet. Understand &quot;<font color=#000080>life</font>&quot; or &quot;<font color=#000080>support</font>&quot; as the life-support unit. The egg is an openable closed container. The egg is transparent and enterable. The egg is medium-weight. The description of the egg is &quot;<font color=#000080>It is made of a strong, clear but tinted material[if something is in the egg], and currently contains [list of things in the egg][end if].</font>&quot; After taking the pod for the first time, say &quot;<font color=#000080>For something the size of a Frigidaire, the pod is surprisingly light and manageable. Amazing what they can do with plastics nowadays.</font>&quot;
+<br>
+
+<br>
+The propulsion unit is a device. The life-support unit is a device. Before printing the name of the life-support unit: if the life-support unit is switched on, say &quot;<font color=#000080>activated </font>&quot;; otherwise say &quot;<font color=#000080>inactive </font>&quot;.
+<br>
+
+<br>
+Instead of a creature trying switching on the life-support unit when the life-support unit is not stuck to the egg:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say &quot;<font color=#000080>[The person asked] plays with the life-support toggle, but to no effect, since the unit is not yet stuck to the pod[if the person asked is friendly].
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>It looks up at you inquisitively, as though seeking an explanation for this malfunction[end if].</font>&quot;
+<br>
+
+<br>
+Instead of switching on the life-support unit when the life-support unit is not stuck to the egg:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You toggle the switch a few times, but the life-support unit refuses to power up until it is stuck to the pod.</font>&quot;
+<br>
+
+<br>
+Report switching on the life-support unit:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You flip a switch on the life-support unit, and blue lights spring up all along the side.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report a creature trying switching on the life-support unit: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The person asked] touches the switch of the life-support unit. The blue lights spring up along the side, indicating proper function.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report a creature trying switching on the life-support unit when the life-support unit was switched on:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[if the person asked can see the booklet][The person asked] shakes its head at you and points out this step -- turn on life support -- in the booklet. [end if]With a cluck of impatience, it switches the life-support unit on once again[if person asked is in egg] from inside[end if].</font>&quot; instead. 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report switching off the life-support unit:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You flip a switch on the life-support unit; the blue lights die back out.</font>&quot; instead.
+<br>
+
+<br>
+Definition: a person is Martian:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the origin be moon of it;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the system of origin is Mars, yes; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;no.
+<br>
+
+<br>
+
+<br>
+Report a Martian person trying playing with the kit:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The creature presses its nose sadly against the Mars image on the side of the kit.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of giving the kit to the creature when the creature is Martian:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The creature seems excited by the giant picture of Mars on the side[if the moon of the creature is not Mars], and bows to it several times[end if].</font>&quot;
+<br>
+
+<br>
+The description of the life-support unit is &quot;<font color=#000080>A compact cube full of compressed gasses and various other useful things. It is fairly heavy.</font>&quot; The life-support unit is heavy.
+<br>
+
+<br>
+
+<br>
+
+<br>
+Report the creature trying playing with the available life-support unit:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the gravity of the creature is less than Marslike, say &quot;<font color=#000080>[The creature] tries without success to pick up [the propulsion unit].</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>[The creature] picks up [the propulsion unit] and turns it over in its claws for a minute, poking long fingers into the tubing before setting the whole thing back down.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before a creature trying wearing something when the person asked is not carrying the noun:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the person asked wears the noun, do nothing instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise try the person asked trying taking the noun instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before a friendly creature trying playing with the fedora:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try the creature trying wearing the fedora instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before a stupid creature trying playing with the socks when the creature carries the socks:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is strong, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise try the creature trying wearing the socks instead.
+<br>
+
+<br>
+Before a stupid creature trying playing with something when a random chance of 1 in 3 succeeds:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try the creature trying showing confusion at the noun instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Showing confusion at is an action applying to one thing.
+<br>
+
+<br>
+Carry out a creature trying showing confusion at: do nothing.
+<br>
+
+<br>
+Report a creature trying showing confusion at: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] blinks at [the noun] uncertainly.</font>&quot; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report a creature trying showing confusion at the chair:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] studies [the chair], puzzled. Perhaps they don't sit down on its planet.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+
+<br>
+Before a stupid creature trying playing with something when a random chance of 1 in 3 succeeds:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is hostile,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; say &quot;<font color=#000080>[The creature] watches you belligerently[if the carrying capacity of the creature &gt; 2] with two of its [carrying capacity of the creature in words] hands[end if] on its hips.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>[The creature] scratches its head[if the carrying capacity of the creature &gt; 2] with one of its [carrying capacity of the creature in words] hands[end if].</font>&quot; instead.
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report a stupid creature trying wearing the socks:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature][quickly] puts on your socks -- one over each ear.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report a creature trying wearing the fedora:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] dons the fedora[if the creature is smart] and flicks the brim at you[end if].</font>&quot; instead.
+<br>
+
+<br>
+Report a fast creature trying playing with something delicious:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the noun is undershorts, 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] darts its tongue out to [the noun], sampling the flavor. Then it looks appalled and begins spluttering and spitting.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] darts its tongue out to [the noun], sampling the flavor[if the creature is friendly]. It gives you a shy look afterward, as though caught at some embarrassing practice[end if].</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+The description of the propulsion unit is &quot;<font color=#000080>An extremely heavy block of chrome tubing.</font>&quot; The propulsion unit is heavy. 
+<br>
+
+<br>
+Report the creature trying playing with the available propulsion unit:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the gravity of the creature is less than Earthlike, say &quot;<font color=#000080>[The creature] tries without success to pick up [the propulsion unit].</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>[The creature] picks up [the propulsion unit] and turns it over in its claws for a minute, poking long fingers into the tubing before setting the whole thing back down.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To decide whether (item - a thing) outweighs strength:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the item is light, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the gravity of the creature is greater than fractional and the item is medium-weight, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the gravity of the creature is greater than Marslike, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;yes.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report the creature trying playing with the chair:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if something (called the impediment) is on the chair
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the impediment outweighs strength, say &quot;<font color=#000080>[The creature] swivels the chair.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>[The creature] shoves impotently at the chair, which does not budge.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the creature is stupid, say &quot;<font color=#000080>[The creature] turns the chair around. And around. And around and around and around. This is apparently the very greatest game ever invented.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>[The creature] swivels the chair to and fro.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 
+<br>
+The description of the booklet is &quot;<font color=#000080>The booklet explains, in friendly cartoons, how to attach the propulsion unit, the life-support unit, and the label to the egg, then turn the life-support and the propulsion units on. (It's a little vague on how you lure your Visitor into the egg.)
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>In tiny letters at the bottom it says: HOLDALL GLUE NOT INCLUDED.</font>&quot; The booklet is papery. Understand &quot;<font color=#000080>book</font>&quot; as the booklet.
+<br>
+
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

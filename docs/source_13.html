@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>When in Rome 2: Far from Home - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">When in Rome 2: Far from Home</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_12.html">Previous</a><br><a href="source_14.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 3 - Propelling</b>
+<br>
+
+<br>
+Before switching on the pod when the propulsion unit is part of the pod:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try switching on the propulsion unit instead.
+<br>
+
+<br>
+Instead of switching on the propulsion unit when the player carries the propulsion unit:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Throwing caution to the wind, you turn on the propulsion unit while it is still in your possession.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>The last thing you feel is a searing blast against your midriff...</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end the game in death.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of switching on the propulsion unit when the propulsion unit is in a container:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>It turns out that firing a propulsion unit which is inside [a holder of the propulsion unit] is not a good idea, and in fact produces a deadly explosion...</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end the game in death.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of switching on the propulsion unit when the propulsion unit is not stuck to the egg:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You turn on the propulsion unit, which -- lacking the steadying influence and guidance system of the egg pod -- flies around the room like a punctured balloon; crashes through the plate glass window; and is last seen buzzing along over the tops of cars down on Fifth Avenue.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>It takes the boys from A. P. six minutes and twenty-seven seconds to turn up in your office and fire you.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end the game saying &quot;<font color=#000080>This terminates your A. P. contract</font>&quot;
+<br>
+
+<br>
+Instead of switching on the propulsion unit when the propulsion unit is stuck to the egg and the creature lies outside the egg:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The propulsion unit lifts the egg off and guides it safely through the window, which automatically opens to allow for the departure. It's a thing of beauty, really. 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>You watch, entranced, as it floats off towards the Empire State Building[if the creature is visible]. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>So does the creature[end if].</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end the game saying &quot;<font color=#000080>You just threw away a very expensive piece of equipment</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of switching on the propulsion unit when the creature is in the egg and the propulsion unit is stuck to the egg and the egg is open:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You flip the switch, and the egg jets off. The creature, deciding that it does not want to go to space in an open egg pod, leaps lightly out and lands beside you, while the egg goes its own way...</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end the game saying &quot;<font color=#000080>You just threw away a very expensive piece of equipment</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of switching on the propulsion unit when the creature is in the egg and the propulsion unit is stuck to the egg and the blank label is stuck to the egg:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You flip the switch, and the egg jets off -- just slowly enough for you to get a long last look at the blank label on the side. The creature presses its nose pathetically against the inner surface of the egg as you send it off to an eternal oblivion in the nowhere of space... </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;deliver the mislabeling ending.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To deliver the mislabeling ending:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[paragraph break]'Sir,' says Esther from the doorway. 'Your ride to A. P. is here.' 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>You look back from the window. 'Could you stall them?' It's not as though you have a plan, but --
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>'No, she could not,' says a deeper voice, as the A. P. man comes to stand behind her. 'What went wrong?'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>You admit that the label never got filled out. The man frowns -- no, perhaps glares would be more accurate. Then he walks to Esther's telephone, dials a ten-digit number, and says something curt and not in English.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>'What did you just do?' Esther asks him. 'Can you fix it?'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>'In a manner of speaking,' he says. 'But it is no longer your business. I'm afraid we cannot continue to work with someone who has made an error of this level.'</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end the game saying &quot;<font color=#000080>This terminates your A. P. contract</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of switching on the propulsion unit when the creature is in the egg and the propulsion unit is stuck to the egg and the blank label is not stuck to the egg and the filled label is not stuck to the egg:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You flip the switch, and the egg jets off -- just slowly enough for you to remember that you never did label the thing. 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>The creature presses its nose pathetically against the inner surface of the egg as you send it off to an eternal oblivion in the nowhere of space... </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;deliver the mislabeling ending.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of switching on the propulsion unit when the creature is in the egg and the propulsion unit is stuck to the egg and the life-support unit is switched off:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You flip the switch, and the egg jets off -- just slowly enough for you to notice that the life support unit is turned off. </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;deliver suffocation ending.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of switching on the propulsion unit when the creature is in the egg and the propulsion unit is stuck to the egg and the life-support unit is not stuck to the egg:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You flip the switch, and the egg jets off -- just slowly enough for you to notice that the life support unit is not part of the package. </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;deliver suffocation ending.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To deliver suffocation ending:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The creature scrabbles helplessly at the interior of the egg, but it's too late: its suffocation is inevitable.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>You consider trying to conceal this from the boys at Alien Protocol, but when you walk in for your debriefing, it's obvious that they already know. Everyone is sitting back from the table, and the one with the dark bushy eyebrows has his fingers pressed together.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>'We did mention that this would be a job requiring attention to detail,' he begins, in an apologetic tone. 'Your record with Chase Manhattan was exemplary, so perhaps you are best suited to a career as teller?'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Not likely. 'What happens now?' you ask. 'Will there be-- that is, do you think there will be reprisals?'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Their expressions are vague. 'We intercepted the outgoing pod,' says the blond one after a moment. 'The body will never reach the creature's home; it will be presumed lost.'</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end the game saying &quot;<font color=#000080>Your contract with A. P. is dissolved</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of switching on the propulsion unit when the egg is ready and the moon of the filled label is not the moon of the creature:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You flip the switch, and the egg jets off to [moon of the filled label]. 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>This turns out to have been a mistake, though one of those mistakes that, like cashing a counterfeit check, doesn't come to your attention for some weeks. One fine day a man from A. P. comes in to see you, and informs you that you misdirected your Visitor, and that it wound up on [moon of the filled label] without belonging there at all. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>'And did it get back home?' you ask. 'In the long run, I mean.' 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>'As of this minute, your contract is terminated and your clearance revoked,' he replies. 'So it would be inappropriate for me to give you any further information about the long-term results of your actions.'
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>From his expression, you can see he realizes you will find this extremely exasperating. He lifts his hat to you, kisses Esther's hand, and leaves.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>'Well, that's that,' says Esther, wiping her hand on a handkerchief. 'Now I can finally pursue my life-long ambition and marry a doctor.'</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end the game saying &quot;<font color=#000080>This terminates your A. P. contract</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Definition: the egg is ready:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the egg is open, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the propulsion unit is not stuck to the egg, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the filled label is not stuck to the egg, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if life-support is not stuck to the egg, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if life-support is switched off, no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature lies within the egg, yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;no.
+<br>
+
+<br>
+After switching on the propulsion unit:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let destiny be the moon of the creature;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;choose row with moon column of destiny in the Table of Happy Endings;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You touch the propulsion and the pod blasts off, slipping through the window as though it were not made of glass at all; as though it were a curtain of water. And the creature is on its way back to [destiny]. </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[ending entry]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change the left hand status line to &quot;<font color=#000080>Tuesday, July 20, 1954</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change the time of day to 5:52 PM;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;move Esther to Reception;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;make scene break.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report closing a container which contains the creature:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You shut [the noun], with [the creature] inside.</font>&quot; instead.
+<br>
+ 
+<br>
+Instead of inserting the pod into the file drawer:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The pod] is far too large to fit into the file drawer.</font>&quot;
+<br>
+
+<br>
+Before inserting something which is worn by the player into something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try taking off the noun;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the noun is worn, stop the action.
+<br>
+
+<br>
+Before inserting something into a closed container:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try opening the second noun;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the second noun is closed, stop the action.
+<br>
+ 
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

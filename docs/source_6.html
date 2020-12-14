@@ -1,0 +1,2810 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>When in Rome 2: Far from Home - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">When in Rome 2: Far from Home</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_5.html">Previous</a><br><a href="source_7.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 2 - Creature Actions</b>
+<br>
+
+<br>
+Procedural rule:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is not the player, substitute the animal feeding rule for the can't eat unless edible rule.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Procedural rule:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is not the player, ignore the can't take people's possessions rule.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of asking a creature to try doing something when the person asked is in a closed container:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The creature watches your mouth move, fascinated, but it obviously cannot hear you.</font>&quot; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Before printing the name of the creature:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if a random chance of 1 in 4 succeeds
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the creature is scaly, say &quot;<font color=#000080>scaly </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the creature is furry, say &quot;<font color=#000080>furry </font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[color of the creature] </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+
+<br>
+Rule for printing the name of the creature:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if a random chance of 1 in 2 succeeds, say &quot;<font color=#000080>creature</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>Visitor</font>&quot;.
+<br>
+
+<br>
+This is the animal feeding rule:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the noun is not delicious, stop the action.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+A person can be active or passive.
+<br>
+
+<br>
+<font color=#404040>[After the creature trying doing something: now the creature is passive; continue the action.</font>]
+<br>
+
+<br>
+Before a creature trying taking something: change containment context to the holder of the noun.
+<br>
+
+<br>
+Containment context is a thing that varies. 
+<br>
+
+<br>
+Heart's desire is a thing that varies. Before a creature trying taking something, change heart's desire to the noun.
+<br>
+
+<br>
+Report the creature trying taking something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is in the containment context and the containment context is a container,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] picks up [the noun], now it is in [the containment context].</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>[The creature] [if a random chance of 1 in 3 succeeds][forcefully] [end if][if containment context is a container]extracts[otherwise]picks up[end if] [the noun] from [if containment context is the location]the floor[otherwise][the containment context][end if].</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 
+<br>
+Report an acquisitive creature trying taking something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is in the containment context and the containment context is a container,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] gleefully picks up [the noun] from [the containment context].</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>[The creature] [if a random chance of 1 in 3 succeeds][forcefully] [end if][if containment context is a container]extracts[otherwise]acquires[end if] [the noun] from [if containment context is the location]the floor[otherwise][the containment context][end if], then recounts its possessions: [number of things carried by the creature in words].</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report a fidgety creature trying inserting something into something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] shoves [the noun] hastily into [the second noun].</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report an athletic creature trying inserting something into something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] [puts] [the noun] away in [the second noun].</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report a creature trying inserting something into something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] [puts] [the noun] into [the second noun].</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+To say puts:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;choose a random row in the Table of Insertion Words;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[word entry]</font>&quot;.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<b>Table of Insertion Words</b>
+<br>
+<table><tr><td halign="left" valign="top"><u>word</u></td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>puts</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>sticks</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>tucks</font>&quot;</td></tr>
+</table>
+<br>
+Report the creature trying dropping something when the creature is athletic:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] tosses aside [the noun].</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report the creature trying dropping a wearable thing when the number of portable things in the location is greater than 4:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is in the location,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] drops [the noun] beside [the random fixed in place thing in the location].</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>[The creature] sets down [the noun] inside [the holder of the creature].</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report the creature trying closing the sack:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] rolls up the top of the sack to discourage it from coming open again.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report the creature trying closing something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] [if a random chance of 1 in 3 succeeds]shuts[otherwise]closes[end if] [the noun].</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report the creature trying closing something which contains the creature:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is timid, say &quot;<font color=#000080>With a shy look at you, [the creature] </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>[The creature] </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[if a random chance of 1 in 3 succeeds]shuts[otherwise]closes[end if] [the noun] on itself.</font>&quot; instead.
+<br>
+
+<br>
+Report the creature trying opening the probe kit:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is tall, say &quot;<font color=#000080>[The creature] opens [the noun], which is almost as tall as it is.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>Standing on tiptoes, [the creature] just manages to undo the top flaps of [the noun] and get it open.</font>&quot; instead.
+<br>
+
+<br>
+Report the creature trying opening something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] opens [the noun].</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report the creature trying dropping something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] puts down [the noun] [if the holder of the creature is not the location]inside [the holder of the creature][otherwise]on the floor[end if][if the gravity of the creature is less than negligible and the creature is not weak], breathing quickly[end if].</font>&quot;  instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report the creature trying dropping the pod:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] sets down [the noun][if propulsion is part of the pod], balancing it on its propulsion unit[otherwise], which rocks unsteadily on the floor until [the creature] steadies it with one paw[end if].</font>&quot; instead.
+<br>
+
+<br>
+Instead of the creature trying taking something when the number of things carried by the creature is the carrying capacity of the creature:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the new target be a random thing carried by the creature;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is hungry and the creature carries a delicious thing (called the target)
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while the new target is the target, let the new target be a random thing carried by the creature; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try the creature trying dropping the new target.
+<br>
+
+<br>
+Instead of the creature trying taking something when the creature is in a container (called the playhouse):
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the noun is in the playhouse, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise try the creature trying exiting.
+<br>
+
+<br>
+Instead of the creature trying taking something when the noun is in an enterable container (called the playhouse):
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is tall
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the creature is visible and the creature is not in the playhouse, say &quot;<font color=#000080>[The person asked] reaches for [the noun] with long arms.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue the action; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is not in the playhouse
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the creature is visible, say &quot;<font color=#000080>[The person asked] tries to reach into [the playhouse], but its arms are a bit short for its purposes. [run paragraph on]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the creature carries the playhouse
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try the creature trying dumping out the playhouse;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the playhouse contains the pod, try the creature trying pushing the playhouse;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise try the creature trying entering the playhouse;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+
+<br>
+Instead of a creature trying entering something which contains the egg pod when the creature is not tall:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the noun is available, try the person asked trying pushing the noun;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise if the creature is visible, say &quot;<font color=#000080>[The creature] looks at [the egg] in frustration.</font>&quot;.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of the creature trying entering something closed:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try the creature trying opening the noun.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of the creature trying entering something when the creature is not carrying the noun and the noun is not in the location:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try the creature trying taking the noun.
+<br>
+
+<br>
+Instead of the creature trying entering something when the noun is not available:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try the creature trying taking the noun.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of the creature trying entering something when the creature has the noun:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try the creature trying dropping the noun.
+<br>
+
+<br>
+Instead of a negligible creature trying eating a useful leathery thing:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the noun is pointless;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is visible, say &quot;<font color=#000080>[The creature] bites [the noun], but is too weak to tear off portions of its leathery substance.</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Instead of a negligible creature trying eating a pointless leathery thing:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try the creature trying dropping the noun.
+<br>
+
+<br>
+Instead of the creature trying eating something which contains something (called the target):
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is not carrying the noun, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise try the creature trying taking the target.
+<br>
+
+<br>
+Instead of the creature trying eating something portable which is not carried by the creature:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try the creature trying taking the noun.
+<br>
+
+<br>
+Carry out the creature trying eating something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change the last feed time of the creature to the turn count;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the noun is poisoned and the creature is not wood-pulpy and the creature is negligible, now the creature is poisoned.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report the creature trying eating a poisoned thing:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] consumes [the noun], </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the creature is negligible
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the creature is wood-pulpy, say &quot;<font color=#000080>but even though it is small and light-structured, its unusual metabolism seems capable of dealing with the glue.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>and immediately its eyes fill with tears and it begins to cough. After a moment or two of this it slumps into an inactive state.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>but because of the relatively small amount of toxin relative to its body mass and sturdiness it does not suffer any visible ill effect.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report the creature trying eating something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] eats [the noun] in small neat bites, turning it in its paws as it goes[if the creature is comfortable]. At last it gives a pleased sigh[end if].</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report the creature trying eating the fireballs:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] crams all the Fireballs into its mouth at once. Then its eyes go very large and it holds quite still, cheeks bulging, tears sliding down its face.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>For a moment you wonder whether you're going to have to get Esther to call the Office for xenotoxicology help. But then it gulps, blinking.</font>&quot; instead. 
+<br>
+
+<br>
+Report a fast creature trying eating something edible:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] gobbles up [the noun], scattering flecks everywhere.</font>&quot; instead.
+<br>
+
+<br>
+Report a fast creature trying eating something wearable:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] swiftly tears [the noun] into shreds, then consumes the confetti.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report a lightning creature trying eating something: 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] devours the whole of [the noun] in one lightning-fast bolt.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report a creature trying eating the socks:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the socks are poisoned, continue the action; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] chows down on your socks. Ew.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Report the creature trying taking something stinky when the odor sensitivity of the creature is strong:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] picks up [the noun]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let index be 0;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat through Table of Stink Disgust
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if a random chance of 1 in 3 succeeds
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if index is 0, say &quot;<font color=#000080>, </font>&quot;; otherwise say &quot;<font color=#000080> and </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[reaction entry]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;increase index by 1;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if index is 2
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>.</font>&quot; instead.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 
+<br>
+<b>Table of Stink Disgust</b>
+<br>
+<table><tr><td halign="left" valign="top"><u>reaction</u></td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>holding it at arm's length[if the gravity of the creature is negligible] (though this appears to tax all its feeble strength)[end if]</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>scowling with all the expression its little face can command</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>making gagging and choking noises</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>waving the other paw in front of its nose</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">&quot;<font color=#000080>giving you a look as though to say it can't believe you have such things on your uncivilized planet</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
+<tr><td halign="left" valign="top">Report the creature trying taking something stinky when the odor sensitivity of the creature is inverse:</td></tr>
+<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> now the creature is passive;</td></tr>
+<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> say &quot;<font color=#000080>[The creature] picks up [the noun] and sniffs it with obvious pleasure.</font>&quot; instead.</td></tr>
+<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
+<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
+<tr><td halign="left" valign="top">Report the creature trying closing a container which contains a stinky thing when the odor sensitivity of the creature is strong:</td></tr>
+<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> say &quot;<font color=#000080>[The creature] [if the gravity of the creature is Earthlike]slams[otherwise]closes[end if] [the noun] [forcefully].</font>&quot; instead.</td></tr>
+<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
+<tr><td halign="left" valign="top"><font color=#404040>[After creature trying closing a suspect container for the third time:</td></tr>
+</font><font color=#404040><tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> say &quot;<font color=#404040>[The creature</font>] shoves <font color=#404040>[the noun</font>] shut <font color=#404040>[forcefully</font>], and glares at you for emphasis.&quot;<font color=#000080> ]</td></tr>
+</font><font color=#000080><tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
+</font><font color=#000080><tr><td halign="left" valign="top">Report the creature trying closing the egg pod when the player is in the pod and the pod was closed:</td></tr>
+</font><font color=#000080><tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> say </font>&quot;<font color=#404040>[The creature</font>] tsks, and shuts <font color=#404040>[the pod</font>] again.&quot;<font color=#000080> instead.</td></tr>
+</font><font color=#000080></table>
+<br>
+</font><font color=#000080>Before a creature trying closing something which is not available:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the creature is in the noun, continue the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying taking the noun instead.
+<br>
+</font><font color=#000080> 
+<br>
+</font><font color=#000080>A procedural rule: ignore the can't take people's possessions rule.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of taking something which is worn by the creature when the speed of the creature is lightning:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the creature is visible, say </font>&quot;The creature dodges you with lightning speed and is at the far side of the room in a moment.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of taking something worn by the creature when the creature is fast:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the creature is visible, say </font>&quot;You don't get close enough to the creature -- it moves away too fast.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before taking something worn by the creature when the speed of the creature is moderate and the creature is friendly:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;The creature looks as though it might move away, but then decides to allow you to go ahead.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;continue the action.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of taking something which is carried by the creature when the speed of the creature is lightning:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;You are no match for the creature's lightning reflexes, and never even get close to <font color=#404040>[the noun</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of taking something carried by a slow creature:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;move the noun to the player;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] tries to evade you, but its movements are really too slow.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of taking something carried by the creature when the speed of the creature is moderate: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if a random chance of 1 in 2 succeeds
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move the noun to the player; 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;It's an even thing, with the creature's moderate reflexes, whether you're going to succeed or not, but you do manage to snatch <font color=#404040>[the noun</font>] from it.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;You make a move towards <font color=#404040>[the noun</font>]; <font color=#404040>[the creature</font>] dodges. But not terribly quickly; with another try you might succeed. Moderate reflexes at best.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of taking something carried by a fast creature:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the creature is playful, say </font>&quot;You reach for <font color=#404040>[the noun</font>], but the creature tosses it to another hand, winking at you. It's a quick thing, at least.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;You try to retrieve <font color=#404040>[the noun</font>], but the creature deftly moves it out of your reach. Fast reflex, there.&quot;<font color=#000080>.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>[Instead of the passive creature trying doing something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;stop the action.]
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Definition: a container is suspect if the odor sensitivity of the creature is strong and it contains a stinky thing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before the hostile smart creature trying taking something which is not available when the creature can see a papery available thing (called the target): 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the creature can see the player, try the creature trying threatening the target for the noun  instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>A thing can be threatened or unthreatened. A thing is usually unthreatened.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Threatening it for is an action applying to two things.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a creature trying threatening an unthreatened thing for something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the noun is threatened;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if a random chance of 1 in 2 succeeds,
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] gestures dire things it will do to <font color=#404040>[the noun</font>] if it does not receive <font color=#404040>[the second noun</font>].&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] mimes tearing <font color=#404040>[the noun</font>] to bits, then points at <font color=#404040>[the second noun</font>].&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying threatening something for something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying attacking the noun instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>[Must be a before or it will fail the basic accessibility rule]
+<br>
+</font><font color=#000080>Before the creature trying taking something which is in a closed container (called the protection):
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the creature can touch the noun, continue the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the creature trying opening the protection instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of the starving creature trying crying for the first time:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the creature is visible
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the creature can see a delicious thing (called target),
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] settles in one place, no longer strong enough to beg for <font color=#404040>[the target</font>].&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The creature</font>] settles in one place, no longer strong enough to beg for food.&quot;<font color=#000080>; 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of the starving creature trying crying:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the creature can see a delicious thing (called target) and the creature is visible
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the target is the player,
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] stares hungrily in your direction.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] eyes <font color=#404040>[the target</font>]<font color=#404040>[if the gravity of the creature is less than Earthlike</font>] weakly, but does not move towards it<font color=#404040>[otherwise</font>] wistfully<font color=#404040>[end if</font>].&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; say </font>&quot;<font color=#404040>[The creature</font>] whimpers in hunger.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a fidgety hostile smart creature trying taking something which is carried by the player :
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;silently try dropping the noun;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the player is not carrying the noun,
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] distracts you, causing you to drop <font color=#404040>[the noun</font>].&quot;<font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of the creature trying taking something which is not available: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the creature trying begging for the noun.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Reading is an action applying to one thing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying reading:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the noun is explored.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a creature trying reading:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] <font color=#404040>[if a random chance of 1 in 2 succeeds</font>]peruses<font color=#404040>[otherwise</font>]thoughtfully studies<font color=#404040>[end if</font>] <font color=#404040>[the noun</font>].&quot;<font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a creature trying reading the instruction booklet when the person asked is smart:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] studies the instruction booklet, taking in all the stages of assembly and pausing particularly at the diagram of the smiling alien sitting inside the pod.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+It taps this image several times with one claw.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying reading the paperwork:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the noun is unexplored;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;choose a random row in the Table of Alien Characteristics;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if moon entry is Neptune
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] reads the report on Neptune, frowning. Then it reads again, looking from the report to you and back again. <font color=#404040>[italic type</font>]Your reports are startlingly incomplete, Earthling<font color=#404040>[roman type</font>], it thinks.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] studies the report on <font color=#404040>[moon entry</font>]<font color=#404040>[if a random chance of 1 in 3 succeeds</font>], occasionally licking its lips thoughtfully<font color=#404040>[end if</font>]<font color=#404040>[if a random chance of 1 in 4 succeeds</font>]. Softly it laughs at what it sees there<font color=#404040>[end if</font>].&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Forcing drop of is an action applying to one thing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a creature trying forcing drop of something when the number of things carried by the person asked is 0:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;let the target be a random portable available thing which can be seen by the person asked;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the target is a thing, try the person asked trying taking the target instead.
+<br>
+</font><font color=#000080> 
+<br>
+</font><font color=#000080>Carry out a creature trying forcing drop of something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;let the target be a random thing carried by the person asked;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the target is not a thing, stop the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying forcing drop of the noun with the target.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Forcing drop of it with is an action applying to two things.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying forcing drop of something with something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;move the second noun to the player;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;move the noun to the person asked
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying forcing drop of something with something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] chucks <font color=#404040>[the second noun</font>] in your direction, causing you to drop <font color=#404040>[the noun</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Begging for is an action applying to one thing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying begging for something: do nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying begging for the player:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the player is in the pod, try the person asked trying entering the pod instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br>
+</font><font color=#000080>Report a meaty creature trying begging for the player:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the holder of the person asked is the holder of the player,
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] sneaks up close and <font color=#404040>[if a random chance of 1 in 2 succeeds</font>]tries to take a bite from your calf<font color=#404040>[otherwise</font>]licks your wrist<font color=#404040>[end if</font>].&quot;<font color=#000080>  instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The person asked</font>] <font color=#404040>[if a random chance of 1 in 2 succeeds</font>]makes bitey faces in your direction<font color=#404040>[otherwise</font>]watches your movements with an unpleasant sort of hungry anticipation<font color=#404040>[end if</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying begging for something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun is the person asked, say </font>&quot;<font color=#404040>[The person asked</font>] squirms.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is not in location, say </font>&quot;From <font color=#404040>[the holder of the person asked</font>], <font color=#404040>[the person asked</font>] reaches toward <font color=#404040>[the noun</font>].&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is timid, say </font>&quot;<font color=#404040>[The person asked</font>] looks at <font color=#404040>[the noun</font>] with large eyes but does not move, speak, or gesture.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;choose a random row in the Table of Object Requests;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the creature is friendly or the creature is secretive, say </font>&quot;<font color=#404040>[template entry</font>]<font color=#404040>[paragraph break</font>]&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the creature is curious, say </font>&quot;<font color=#404040>[curious request entry</font>]<font color=#404040>[paragraph break</font>]&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the creature is hostile, say </font>&quot;<font color=#404040>[unfriendly request entry</font>]<font color=#404040>[paragraph break</font>]&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a creature trying begging for something when the person asked lies within the noun:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] looks queasy and gestures for you to set it down.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a smart creature trying begging for something which is carried by the player:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying forcing drop of the noun.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a fidgety creature trying begging for something when the player carries more than 4 things and the player carries the noun:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is not visible, stop the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is timid, continue the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the number of things carried by the person asked is the carrying capacity of the person asked, try the person asked trying dropping a random thing carried by the person asked instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun is the first thing held by the player, continue the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;move the noun to the person asked;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] extracts <font color=#404040>[the noun</font>] from among your possessions, since you are holding so much and its reflexes are so good.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a vast creature trying begging for something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is not visible, stop the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the player wears the noun, say </font>&quot;<font color=#404040>[The person asked</font>] tears <font color=#404040>[the noun</font>] off of you. Gentle it isn't.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The person asked</font>] pulls <font color=#404040>[the noun</font>] away from you<font color=#404040>[if the noun is papery</font>], nearly ripping it in the process<font color=#404040>[end if</font>].&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;move the noun to the person asked.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a vast creature trying begging for something for the first time:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is not visible, stop the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the player wears the noun, say </font>&quot;<font color=#404040>[The person asked</font>] strips <font color=#404040>[the noun</font>] from your body in one rapid movement. Well. Pity Esther isn't in here.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The person asked</font>] unceremoniously wrests <font color=#404040>[the noun</font>] from your grasp, being quite a lot stronger than you are.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;move the noun to the person asked.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080><b>Table of Object Requests</b>
+<br>
+</font><font color=#000080><table><tr><td halign="left" valign="top"><u>template</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> unfriendly request</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> curious request</u></td></tr>
+</font><font color=#000080><tr><td halign="left" valign="top"></font>&quot;<font color=#404040>[The creature</font>] looks mournfully at <font color=#404040>[the noun</font>].&quot;<font color=#000080>&nbsp;&nbsp;</td><td halign="left" valign="top"> </font>&quot;<font color=#404040>[The creature</font>] fixes its glare on <font color=#404040>[the noun</font>].&quot;<font color=#000080>&nbsp;&nbsp;</td><td halign="left" valign="top"> </font>&quot;<font color=#404040>[The creature</font>] looks curiously at <font color=#404040>[the noun</font>].&quot;<font color=#000080></td></tr>
+</font><font color=#000080><tr><td halign="left" valign="top"></font>&quot;<font color=#404040>[The creature</font>] points to <font color=#404040>[the noun</font>] and then presses its... paws? together wistfully.&quot;<font color=#000080>&nbsp;&nbsp;</td><td halign="left" valign="top"> </font>&quot;<font color=#404040>[The creature</font>] fixes its glare on <font color=#404040>[the noun</font>].&quot;<font color=#000080>&nbsp;&nbsp;</td><td halign="left" valign="top"> </font>&quot;<font color=#404040>[The creature</font>] <font color=#404040>[if gravity of the creature is Earthlike or the gravity of the creature is vast</font>]makes a spring for, and nearly catches, <font color=#404040>[the noun</font>]<font color=#404040>[otherwise</font>]springs at <font color=#404040>[the noun</font>], but not with nearly enough force<font color=#404040>[end if</font>].&quot;<font color=#000080></td></tr>
+</font><font color=#000080><tr><td halign="left" valign="top"></font>&quot;<font color=#404040>[The creature</font>] begs for <font color=#404040>[the noun</font>].&quot;<font color=#000080>&nbsp;&nbsp;</td><td halign="left" valign="top"> </font>&quot;<font color=#404040>[The creature</font>] growls, biting at <font color=#404040>[the noun</font>].&quot;<font color=#000080>&nbsp;&nbsp;</td><td halign="left" valign="top"> </font>&quot;<font color=#404040>[The creature</font>] makes a motion as though to beg for <font color=#404040>[the noun</font>].&quot;<font color=#000080></td></tr>
+</font><font color=#000080><tr><td halign="left" valign="top"></font>&quot;<font color=#404040>[The creature</font>] circles you slowly, pointing at <font color=#404040>[the noun</font>].&quot;<font color=#000080>&nbsp;&nbsp;</td><td halign="left" valign="top"> </font>&quot;<font color=#404040>[The creature</font>] circles you angrily, pointing at <font color=#404040>[the noun</font>].&quot;<font color=#000080>&nbsp;&nbsp;</td><td halign="left" valign="top"> </font>&quot;<font color=#404040>[The creature</font>] circles you, trying to get a clearer view of <font color=#404040>[the noun</font>].&quot;<font color=#000080></td></tr>
+</font><font color=#000080><tr><td halign="left" valign="top"></font>&quot;<font color=#404040>[The creature</font>] extends its claws towards <font color=#404040>[the noun</font>] beseechingly.&quot;<font color=#000080>&nbsp;&nbsp;</td><td halign="left" valign="top"> </font>&quot;<font color=#404040>[The creature</font>] snatches at <font color=#404040>[the noun</font>].&quot;<font color=#000080>&nbsp;&nbsp;</td><td halign="left" valign="top"> </font>&quot;<font color=#404040>[The creature</font>] reaches eagerly towards <font color=#404040>[the noun</font>].&quot;<font color=#000080></td></tr>
+</font><font color=#000080></table>
+<br>
+</font><font color=#000080>Report a slothful creature trying begging for something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] whines for <font color=#404040>[the noun</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Growling is an action applying to nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying growling: do nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying growling: say </font>&quot;<font color=#404040>[The creature</font>] growls.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>After a creature trying growling for the first time: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the player is in the Office,
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] growls suddenly and savagely. You jump backward, banging into your desk. 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+'Good to know you kids are getting along,' shouts Esther from the other room.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The person asked</font>] growls at you. Hostile, then. You back off warily.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;stop the action.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a friendly creature trying growling:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The noun</font>] shows teeth, but in such a way that you know it doesn't mean anything serious by it.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br>
+</font><font color=#000080>Shivering is an action applying to nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying shivering: now the person asked is passive.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying shivering: say </font>&quot;<font color=#404040>[The creature</font>] <font color=#404040>[if a random chance of 1 in 2 succeeds</font>]rubs its paws over its arms<font color=#404040>[otherwise</font>]shivers<font color=#404040>[end if</font>].&quot;<font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying shivering when the person asked can see a lit thing (called the target):
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] shivers and draws closer to <font color=#404040>[the target</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Rejecting is an action applying to one thing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying rejecting something: now the noun is explored.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying rejecting: say </font>&quot;<font color=#404040>[The person asked</font>] turns its head away.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a strong creature trying rejecting a stinky thing: say </font>&quot;<font color=#404040>[The person asked</font>] covers its nostrils and draws back.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report an inverse creature trying rejecting a stinky thing: say </font>&quot;<font color=#404040>[The person asked</font>] sniffs wistfully, obviously drawn by the smell, but then shakes its head.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a playful creature trying rejecting an unexplored papery thing which is not the sack:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying accepting the noun;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying playing with the noun.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a playful creature trying rejecting an explored papery thing which is not the sack:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] rolls its eyes and, with an exaggerated show of patience, looks over <font color=#404040>[the noun</font>] again, muttering to itself. Apparently it has already committed to memory everything it finds interesting here.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a playful creature trying rejecting when the person asked carries something (called distraction): 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] giggles, and holds up <font color=#404040>[the distraction</font>] for you to see in exchange, as though this were some kind of show-and-tell game.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a timid creature trying rejecting: say </font>&quot;<font color=#404040>[The person asked</font>] scoots out of the way.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a hostile creature trying rejecting: say </font>&quot;<font color=#404040>[The person asked</font>] spits on <font color=#404040>[the noun</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Showing temper is an action applying to nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying showing temper: do nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying showing temper: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the creature is in the egg and the egg is closed, say </font>&quot;<font color=#404040>[The creature</font>] struggles against the walls of <font color=#404040>[the pod</font>].&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] grumbles to itself.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Crying is an action applying to nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying crying: do nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying crying: say </font>&quot;<font color=#404040>[The creature</font>] sobs.&quot;<font color=#000080> 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a stupid creature trying crying:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] <font color=#404040>[if a random chance of 1 in 2 succeeds</font>]lies curled on the floor, keening softly<font color=#404040>[otherwise</font>]rocks itself back and forth<font color=#404040>[end if</font>].&quot;<font color=#000080>  instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report hostile smart creature trying crying:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] is too weak to do much at this point, but it watches you angrily, and occasionally makes a gesture at you that it must have learned from taxi drivers.&quot;<font color=#000080>  instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a creature trying crying when the creature is in a container (called the trap):
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] curls up in <font color=#404040>[the trap</font>], weeping.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Hiding oneself is an action applying to nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Check a creature trying hiding oneself: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is not in a container, stop the action.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying hiding oneself:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is in a container (called the shelter)
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is in the shelter
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin; 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying exiting;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise; 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the shelter is closed and the player can see the person asked, say </font>&quot;<font color=#404040>[The person asked</font>] <font color=#404040>[if a random chance of 1 in 2 succeeds</font>]squinches its eyes shut, on an ostrich-like principle of mutual ignorance<font color=#404040>[otherwise</font>]avoids looking at you<font color=#404040>[end if</font>].&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise try the person asked trying closing the shelter instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if; 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>The last location is a room that varies. 
+<br>
+</font><font color=#000080> 
+<br>
+</font><font color=#000080>Before a creature trying hiding oneself when the person asked can see a door (called escape route):
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if location is not last location
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say </font>&quot;<font color=#404040>[The person asked</font>] presses itself against the wall and tries to creep past you towards <font color=#404040>[the escape route</font>].&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try the person asked trying entering the escape route instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a creature trying hiding oneself when the person asked is not in a container and the player is not in a container:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person can see an enterable sheltering container
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the shelter be a random enterable sheltering opaque container which can be seen by the person asked; 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the shelter is not a container, let the shelter be a random enterable sheltering container which can be seen by the person asked;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying entering the shelter instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Definition: a container is sheltering if it is open or it is openable.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying entering the kit when the kit contains the pod:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying taking the pod instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a creature trying entering the kit when the noun carries the pod:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying dropping the pod instead. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Dressing oneself is an action applying to nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying dressing oneself when the person asked is not carrying something wearable:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked can see an available wearable thing (called target) which is not worn by the person asked, try the person asked trying taking the target;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise if the person asked can see a wearable thing (called target) which is not worn by the person asked, try the person asked trying taking the target.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Check a creature trying dressing oneself:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is not carrying a wearable thing, stop the action.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying dressing oneself:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is carrying a wearable thing (called target), try the person asked trying wearing the target.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a cold creature trying wearing something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] puts on <font color=#404040>[the noun</font>] and pulls it as tight as possible to conserve warmth.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a cold creature trying wearing the jacket:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] pulls the jacket awkwardly over its arms and gathers the front shut.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Dining is an action applying to nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a meaty creature trying dining when the person cannot see the player:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is in an adjacent room and the person asked can see a door (called the appropriate exit)
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying entering the appropriate exit instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying dining when the person asked is wearing a delicious thing (called lunch) and the person asked is not carrying a delicious thing:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying taking off the lunch instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a creature trying dining when the person asked does not have a delicious thing:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked can see an available useful delicious thing (called target)
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying taking the target;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the person asked can see a delicious thing (called target), try the person asked trying taking the target;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise if the person asked is smart, try the person asked trying exploring;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Check a creature trying dining:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is not carrying a delicious thing, stop the action.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying dining:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is carrying a delicious thing (called target), try the person asked trying eating the target.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Playing with is an action applying to one thing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying playing with something: now the noun is explored.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying playing with something: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] <font color=#404040>[if the person asked is playful</font>]toys with<font color=#404040>[otherwise</font>]pokes at<font color=#404040>[end if</font>] <font color=#404040>[the noun</font>]&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked has the noun, say </font>&quot;.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun is in location
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin; 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the holder of the noun is not the holder of the person asked, say </font>&quot; <font color=#404040>[if the holder of the noun is a container</font>]in<font color=#404040>[otherwise</font>]on<font color=#404040>[end if</font>] <font color=#404040>[the holder of the noun</font>].&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot; in a bored manner.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Definition: a person is fidgety if it is fast or it is lightning.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a smart person who is wearing something trying playing with the pod:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] inspects its reflection in the surface of <font color=#404040>[the pod</font>], and adjusts <font color=#404040>[the list of things worn by the person asked</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a vast creature trying playing with something when the noun is fixed in place and a random chance of 1 in 2 succeeds:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] casually lifts <font color=#404040>[the noun</font>] a few inches, then sets it back down.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report an athletic creature trying playing with something when the noun is fixed in place and the noun is in the location:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is vast, continue the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] climbs up one side of <font color=#404040>[the noun</font>] and down the other.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a creature trying playing with the window:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] stares out the window.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a hostile creature trying playing with the window:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] presses its nose to the window and growls deep in its throat.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a meaty creature trying playing with the window:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] looks out the window at the pedestrians down on Fifth Avenue, and licks its teeth slowly.&quot;<font color=#000080>  instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a fidgety creature trying playing with something: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if a random chance of 1 in 2 succeeds,
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] taps <font color=#404040>[the noun</font>] all over.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The person asked</font>] beats a rapid rhythm with its claws on <font color=#404040>[the noun</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a smart creature trying playing with the glue:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] squeezes the tube of glue, rolling up from the bottom, until it looks tidy.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a fidgety creature trying playing with a container:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] taps <font color=#404040>[the noun</font>]&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun is papery, say </font>&quot;, which rustles.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;, which thunks hollowly.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a fidgety creature trying playing with a papery thing:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] rustles <font color=#404040>[the noun</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a smart curious creature trying playing with a papery thing:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun is the sack, continue the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is homebound and the noun is the booklet
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] reads <font color=#404040>[the noun</font>] through, then looks at you<font color=#404040>[if a visible thing fits the pod</font>]; then at <font color=#404040>[the list of visible things which fit the pod</font>]<font color=#404040>[end if</font>]. It bites its lower lip thoughtfully.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the noun is the blank label, say </font>&quot;<font color=#404040>[The person asked</font>] squints studiously at <font color=#404040>[the blank label</font>].&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The person asked</font>] reads <font color=#404040>[the noun</font>] through, following the words with one claw and subvocalizing as it goes.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a vast creature trying playing with something which is not the pod:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying attacking the noun.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Carry out a vast creature trying attacking an openable container:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the noun is open;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the noun is damaged;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the noun is unopenable.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a vast creature trying attacking a container:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun is papery, say </font>&quot;Apparently by accident, <font color=#404040>[the creature</font>] rips a big hole in the side of <font color=#404040>[the noun</font>].&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The creature</font>] so mauls <font color=#404040>[the noun</font>] that it is now in a permanent state of openness.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a vast creature trying attacking the whole file drawer:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the noun is open;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the noun is unopenable;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the noun is damaged; now the noun is explored;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] casually puts a deep dent in the side of the file drawers, leaving them permanently open.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+'Need any help?' Esther calls from the outer office.
+<br>
+
+<br>
+'Not at all,' you assure her.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>A thing can be damaged or whole. A thing is usually whole.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a vast creature trying attacking a whole wheel:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the noun is explored;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the noun is damaged;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say </font>&quot;<font color=#404040>[The person asked</font>] bites down hard on <font color=#404040>[the noun</font>], but seems disappointed by the experience.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a vast creature trying attacking the window:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the window is explored;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say </font>&quot;<font color=#404040>[The person asked</font>] bangs <font color=#404040>[forcefully</font>] on the window, but, to your considerable relief, the glass holds up. You'll have to thank the lab boys for whatever they did to reinforce it: you sometimes have your doubts that it's really glass at all.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a vast creature trying attacking an unopenable papery container:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;let space be the holder of the noun;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say </font>&quot;<font color=#404040>[The creature</font>] finishes dismantling <font color=#404040>[the noun</font>], leaving <font color=#404040>[the list of things in the noun</font>] behind.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now every thing in the noun is in the space;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;remove the noun from play.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a vast creature trying attacking the lamp:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;let space be the holder of the lamp;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;remove the lamp from play;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;move shattered bits to the space;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the shattered bits are explored;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say </font>&quot;<font color=#404040>[The creature</font>] takes exception to the lamp: after crushing the bulb, it dismantles the cord and the lampshade until what remains is nearly unrecognizable.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Some shattered bits are a fixed in place thing. The printed name of the bits is </font>&quot;shattered bits of lamp&quot;<font color=#000080>. Understand </font>&quot;lamp&quot;<font color=#000080> or </font>&quot;shattered bits of lamp&quot;<font color=#000080> or </font>&quot;bits of lamp&quot;<font color=#000080> as the bits. Instead of doing something other than examining to the shattered bits, say </font>&quot;The remains look sharp.&quot;<font color=#000080> The shattered bits are damaged. The description of the shattered bits is </font>&quot;This was no Tiffany -- it would've taken some considerable force to break this old thing. More for Esther's expense account, perhaps.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a vast creature trying attacking an edible thing:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;remove the noun from play;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say </font>&quot;<font color=#404040>[The person asked</font>] tears apart <font color=#404040>[the noun</font>], scattering bits everywhere.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive.
+<br>
+</font><font color=#000080> 
+<br>
+</font><font color=#000080>Instead of a vast creature trying attacking the desk:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now every thing on the desk is in the location;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;remove the desk from play;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;move abstract sculpture to the location;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the sculpture is explored;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change Esther's utterance to </font>&quot;'Keep it down,' Esther yells. 'Some of us are trying to hear ourselves think.'&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] hammers at your desk with its meaty fists and effectively reduces it to a work of modern art. Your possessions will have to live elsewhere from now on.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+</font><font color=#000080> 
+<br>
+</font><font color=#000080>Carry out a creature trying attacking something papery:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;remove the noun from play.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying attacking something papery: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] rips <font color=#404040>[the noun</font>] to tiny shreds.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br>
+</font><font color=#000080>Report a creature trying attacking the picture:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;Before you can take action, <font color=#404040>[the person asked</font>] has rendered <font color=#404040>[the picture</font>] into a black and white confetti<font color=#404040>[if the creature is smart</font>].
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Then it gives you a horrible mocking look. Right. Hostile it is, then. No question there<font color=#404040>[end if</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of attacking a papery thing:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;remove the noun from play;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun contains something
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;You tear up <font color=#404040>[the noun</font>], leaving behind <font color=#404040>[the list of things in the noun</font>]<font color=#404040>[if the creature is in the noun</font>]. <font color=#404040>[The creature</font>] blinks in surprise<font color=#404040>[end if</font>].&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now every thing in the noun is in the location;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;You rip <font color=#404040>[the noun</font>] to bits.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a vast creature trying attacking the chair:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;remove the chair from play;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the molded seat is in the location;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the molded back is in the location;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now every wheel is in the location.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a vast creature trying attacking the chair:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>], growling, dismantles your chair entirely: wheels, back, seat go flying in all directions, leaving only a stripped down frame.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a vast creature trying attacking a damaged thing:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the creature has the noun,
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] bends <font color=#404040>[the noun</font>] in imitation of a strong-man demonstration at a fair.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The creature</font>] jumps up and down on <font color=#404040>[the noun</font>], but does not cause any more harm.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>The molded plastic seat is an explored thing. The molded plastic back is an explored thing. A wheel is a kind of thing. A wheel is usually explored. Four wheels are on the molded plastic seat. The description of the wheel is </font>&quot;Nothing but a round plastic part, now.&quot;<font color=#000080> The description of the back is </font>&quot;It used to be moderately comfortable, and now certainly is not.&quot;<font color=#000080> The description of the seat is </font>&quot;Of almost no use now that it's detached.&quot;<font color=#000080> The frame is a thing. The description of the frame is </font>&quot;A structure of metal and plastic that used to support the other chair components.&quot;<font color=#000080>. The printed name of the frame is </font>&quot;chair frame&quot;<font color=#000080>. Understand </font>&quot;chair&quot;<font color=#000080> as the frame. The molded seat is damaged. The molded back is damaged.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>The abstract sculpture is a fixed in place thing. </font>&quot;A hunk of twisted grey metal adorns your floor.&quot;<font color=#000080> Understand </font>&quot;twisted&quot;<font color=#000080> and </font>&quot;hunk&quot;<font color=#000080> and </font>&quot;grey&quot;<font color=#000080> and </font>&quot;gray&quot;<font color=#000080> and </font>&quot;metal&quot;<font color=#000080> and </font>&quot;twisted hunk of grey metal&quot;<font color=#000080> as the sculpture. The sculpture is damaged. The printed name of the abstract sculpture is </font>&quot;abstract sculpture that was your desk&quot;<font color=#000080>. 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a curious wood-pulpy creature trying playing with something which is stuck to the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun is the egg, continue the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the noun is not stuck to the egg;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;move the noun to the person asked;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say </font>&quot;<font color=#404040>[The person asked</font>] licks and licks at <font color=#404040>[the noun</font>], and somehow with its alien spit dissolves the holdall glue. <font color=#404040>[The noun</font>] comes free in its hands. &quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun outweighs strength
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;silently try the person asked trying dropping the noun;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is not carrying the noun and the person asked is visible, say </font>&quot;Then, of course, <font color=#404040>[the person asked</font>] drops it, since <font color=#404040>[the noun</font>] is much too heavy.&quot;<font color=#000080> instead; 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say paragraph break.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a stupid creature trying playing with something which is stuck to the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun is the egg, say </font>&quot;<font color=#404040>[The person asked</font>] tries to take apart <font color=#404040>[the egg</font>], without any luck.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The person asked</font>] tries to peel <font color=#404040>[the noun</font>] from the egg, without success.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a smart curious creature trying playing with an unexplored switched off device:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is slothful, continue the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the noun is explored;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying switching on the noun.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a slothful creature trying switching on something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say </font>&quot;<font color=#404040>[The person asked</font>] fumbles painfully at <font color=#404040>[the noun</font>], but cannot manage to flip the switch.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a slothful creature trying switching off something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say </font>&quot;<font color=#404040>[The person asked</font>] fumbles painfully at <font color=#404040>[the noun</font>], but cannot manage to flip the switch.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a slothful creature trying switching off something for the first time:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say </font>&quot;<font color=#404040>[The person asked</font>] runs its claws over the surface of <font color=#404040>[the noun</font>], seeking to switch it off but without success.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a light-sensitive creature trying switching off the lamp:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;Squinting and fumbling at the base of the appliance, <font color=#404040>[the person asked</font>] manages to switch off <font color=#404040>[the lamp</font>] again.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a light-sensitive creature trying switching on the lamp:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] manages to turn on the lamp, and immediately cowers from the horrible force of its brilliance.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a curious creature trying playing with something when the noun is fixed in place:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is vast and a random chance of 1 in 2 succeeds, continue the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] cranes its head around, trying to see under and behind <font color=#404040>[the noun</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a smart hostile creature trying playing with something when the noun is fixed in place:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] runs its claws around the edges of <font color=#404040>[the noun</font>], as though seeking a way to take it apart.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a smart hostile creature trying playing with the lot of paperwork:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;Chuckling impishly, <font color=#404040>[the person asked</font>] takes out a few files and sorts them back in random locations.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a hostile creature trying playing with something when the noun is fixed in place:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] bangs its head against <font color=#404040>[the noun</font>] repeatedly.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>After a hostile creature trying playing with something when the noun is fixed in place for the first time:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the player can see the person asked and the player is in the Office, say </font>&quot;<font color=#404040>[The person asked</font>] bangs its head against <font color=#404040>[the noun</font>], raising a bit of a racket.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+'I hope everything is all right in there,' Esther shouts from the other room.
+<br>
+
+<br>
+'Swell!' you assure her.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise continue the action.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a playful creature trying playing with something which is worn by the person asked: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] adjusts the fit of <font color=#404040>[the noun</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a playful creature trying playing with the fedora when the person asked is wearing the fedora:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] tilts <font color=#404040>[the fedora</font>] at a more rakish angle.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a hostile stupid person trying playing with the fedora when the person asked is wearing the fedora:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;With a guttural gurgle, <font color=#404040>[the person asked</font>] pulls <font color=#404040>[the fedora</font>] down more tightly over its ears.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a creature trying playing with the jacket when the jacket is worn by the person asked:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is playful, say </font>&quot;<font color=#404040>[The person asked</font>] turns up the collar of the jacket, making itself like an unearthly gangster or hoodlum.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The person asked</font>] rolls up the sleeves of <font color=#404040>[the jacket</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a creature trying playing with the collar when the collar is worn by the person asked:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] twists the collar around its neck<font color=#404040>[if a random chance of 1 in 3 succeeds</font>] uncomfortably<font color=#404040>[end if</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying playing with something edible: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] prods <font color=#404040>[the noun</font>] into interesting shapes.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a playful creature trying playing with something edible:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] mimes wearing <font color=#404040>[the noun</font>] as a hat, watching you slyly.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a smart creature trying playing with the slide:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;let X be a random number between 1 and 3000; let Y be a random number between 1 and 3000;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;let Z be X + Y;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>]<font color=#404040>[quickly</font>] adds <font color=#404040>[X</font>] to <font color=#404040>[Y</font>], and cocks its head in interest at the answer.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a smart creature trying playing with the ballpoint pen when the person asked is carrying the pen and the person asked is carrying a papery thing (called the target):
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>]<font color=#404040>[quickly</font>] draws an inscrutable symbol on <font color=#404040>[the target</font>] with <font color=#404040>[the pen</font>]; then, glancing at you, rubs it out again.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying playing with the ballpoint pen:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>]<font color=#404040>[quickly</font>] clicks the ballpoint pen. &quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;let X be a random number between 1 and 5;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;repeat with Y running from 1 to X
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if Y is 1, say </font>&quot;Click&quot;<font color=#000080>; otherwise say </font>&quot; click&quot;<font color=#000080>; 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if a random chance of 1 in 3 succeeds, say </font>&quot;ety&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a creature trying playing with the slide:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] slides the center of the slide-rule all the way out, then all the way back. And again, and again...&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a smart creature trying playing with the picture when the person asked is not carrying the picture:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is playful, say </font>&quot;<font color=#404040>[The person asked</font>] studies <font color=#404040>[the picture</font>], then tries mimicking the stance and swing.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The person asked</font>] rotates <font color=#404040>[the picture</font>] ninety degrees, then sets it back down, satisfied.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a smart creature trying playing with the picture when the person asked is carrying the picture:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is playful, continue the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying dropping the picture.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a smart creature trying playing with the paperwork:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] flips through the paperwork, occasionally cocking its head in interest at what it finds.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a creature trying playing with the paperwork when the food of the person asked is wood-pulpy:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] paws through the paperwork, its tongue flicking in and out of its mouth.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Carry out the creature trying doing something: now the creature is passive.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a fidgety creature trying entering something: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] <font color=#404040>[if the creature is timid</font>]creeps<font color=#404040>[otherwise</font>]hops<font color=#404040>[end if</font>] into <font color=#404040>[the noun</font>]<font color=#404040>[if the player is in the noun</font>] with you<font color=#404040>[end if</font>]<font color=#404040>[if the heart's desire is not the creature</font>] in search of <font color=#404040>[the heart's desire</font>]<font color=#404040>[end if</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a slow negligible creature trying entering something: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] hauls itself into <font color=#404040>[the noun</font>]<font color=#404040>[if the player is in the noun</font>] with you<font color=#404040>[end if</font>]<font color=#404040>[if the heart's desire is not the creature</font>] in search of <font color=#404040>[the heart's desire</font>]<font color=#404040>[end if</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a creature trying entering the pod for the first time:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] clambers into <font color=#404040>[the noun</font>], a little awkwardly through the curved door&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the pod is not in the location, say </font>&quot;<font color=#404040>[if the heart's desire is not the creature</font>], in search of <font color=#404040>[the heart's desire</font>]<font color=#404040>[end if</font>]&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;. The pod rocks ominously but does not tip over.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying entering the pod when the person asked is suffocating:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>], rasping desperately, climbs into <font color=#404040>[the noun</font>] in search of a more breathable environment.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying entering something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] climbs into <font color=#404040>[the noun</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a creature trying exiting:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] gets out again.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a creature trying going through a door (called the escape route):
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] slips out through <font color=#404040>[the escape route</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a timid creature trying going through a door (called the escape route):
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;Glancing at you apprehensively, <font color=#404040>[the creature</font>] tiptoes out <font color=#404040>[the escape route</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying closing the egg pod when life-support is switched on:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the creature is in the pod, say </font>&quot;<font color=#404040>[The creature</font>] pulls <font color=#404040>[the pod</font>] shut from the inside. It seals with a hiss, leaving the creature isolated within.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The creature</font>] closes <font color=#404040>[the pod</font>], which seals with a hiss.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a creature trying opening the egg pod when life-support is switched on: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] opens <font color=#404040>[the pod</font>], breaking the life-support seal: <font color=#404040>[italic type</font>]PFFT!<font color=#404040>[roman type</font>]&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of the creature trying attacking a portable thing which is not carried by the person asked:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying taking the noun.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a creature trying attacking something which is worn by the person asked:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying taking off the noun. 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a creature trying eating the picture:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] bites off the corner of DiMaggio, chews, and swallows. You give a howl of rage and try to get back the remains, but they too are soon gone.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+'What?' says Esther, running into the room. 'Did it bite you? Should I call a doctor?'
+<br>
+
+<br>
+'No,' you say. 'It bit Mr. DiMaggio, instead.'
+<br>
+
+<br>
+'Ooh-ooh,' she says. For a moment, just a moment, something like human-kindness appears on her face. 'That's too bad, really it is.'
+<br>
+
+<br>
+The phone in the outer office rings. 'Sorry, duty calls.' 
+<br>
+
+<br>
+So much for sympathy.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying eating the picture during Glue Return:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] bites off the corner of DiMaggio, chews, and swallows. You give a howl of rage and try to get back the remains, but they too are soon gone. Not even your yelping is enough to get Esther in here with the holdall glue, though.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Disposing of is an action applying to one thing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying disposing of something which is worn by the person asked:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying taking off the noun instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying disposing of something which is not held by the person asked:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun is not in an openable container,
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying taking the noun instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is stupid, try the person asked trying taking the noun instead. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a smart creature trying disposing of something when the noun is not in an openable container:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked can see an openable container (called the tank), try the person asked trying inserting the noun into the tank instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a creature trying disposing of something which is not held by the person asked when the person asked is holding something stinky (called the other problem):
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying disposing of the other problem.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a creature trying inserting something into a closed openable container:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying opening the second noun.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a creature trying inserting something which is not held by the person asked into something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying taking the noun.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a stupid creature trying disposing of something when the person asked is in a room:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now Esther carries the noun;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say </font>&quot;<font color=#404040>[The person asked</font>] hurls <font color=#404040>[the noun</font>] out the door<font color=#404040>[if the noun is the meatball</font>]. 'Ouch!' Esther shouts<font color=#404040>[end if</font>].&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a stupid creature trying disposing of something for the first time: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now Esther carries the noun; 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is athletic, say </font>&quot;<font color=#404040>[The person asked</font>] winds up and, with a fastball worthy of Allie Reynolds, pitches <font color=#404040>[the noun</font>] out the door of your office.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+'Hey!' shouts Esther. 'Watch it in there!'&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The person asked</font>] walks over to the door of your office and drops <font color=#404040>[the noun</font>] outside.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying disposing of something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun is in an openable container (called the tank), try person asked trying closing the tank; 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun can be touched by the person asked, stop the action.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying opening something: now the noun is explored.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a creature trying opening something for the second turn:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say </font>&quot;<font color=#404040>[The person asked</font>] looks exasperated.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive. 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report the creature trying opening the drawer when the drawer was open:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] opens <font color=#404040>[the noun</font>]. Again.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br>
+</font><font color=#000080>Report the creature trying closing the drawer when the drawer was closed:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] slams <font color=#404040>[the noun</font>] and glares at you for good measure.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report the creature trying opening something which contains the creature: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] triumphantly opens <font color=#404040>[the noun</font>] from the inside.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report the creature trying opening something which contains something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] opens <font color=#404040>[the noun</font>]&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the creature is in the noun, say </font>&quot; from within.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the odor sensitivity of the person asked is strong, say </font>&quot;<font color=#404040>[if the noun contains a stinky thing</font>], wrinkling its nose at the smell of <font color=#404040>[the list of stinky things which are in the noun</font>]<font color=#404040>[end if</font>].&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot; and pokes curiously at <font color=#404040>[the list of things which are in the noun</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a hostile creature trying dropping something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] flings aside <font color=#404040>[the noun</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a vast creature trying dropping something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] flings <font color=#404040>[the noun</font>] at <font color=#404040>[the random fixed in place thing in the location</font>]. No serious harm results.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a fidgety hostile creature trying dropping something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun outweighs strength, do nothing;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The person asked</font>] throws <font color=#404040>[the noun</font>] at you, but (fortunately) misjudges the velocity and angle.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a creature trying taking the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] wrestles with <font color=#404040>[the egg</font>] -- which is after all more awkward than heavy -- but finally manages to get hold of it.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a secretive creature trying dropping the egg: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] awkwardly deposits <font color=#404040>[the noun</font>] on the ground.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a fidgety hostile Earthlike creature trying dropping something when the creature can touch the player:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] flings <font color=#404040>[the noun</font>] at you; it hits and bounces off.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a fidgety hostile Earthlike creature trying dropping something heavy:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] flings <font color=#404040>[the noun</font>] at you with unpleasant precision. That's going to leave a bruise in the morning.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a starving creature trying exiting: try the creature trying crying instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a smart creature trying exiting when the creature is in a closed container (called the trap):
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the creature trying opening the trap instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying opening an unopenable container which contains the creature for the first time:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;The creature tries to open <font color=#404040>[the noun</font>] from the inside, and soon realizes it cannot be done. Its mouth opens in a screech of fury, or terror: you hear nothing.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying opening an unopenable container which contains the creature for the first time:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;The creature pummels its fists against the interior of <font color=#404040>[the noun</font>] in desperation.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Tidying is an action applying to nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Check a creature trying tidying:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked can see an open openable container, continue the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise stop the action.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying tidying:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked can see an open openable container (called the mess), try the person asked trying closing the mess.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Exploring is an action applying to nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying exploring:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked can see a closed openable container (called target), try the person asked trying opening the target instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked can see a fixed in place thing (called target), try the person asked trying looking under the target instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Sneaking it under is an action applying to two things.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Check a creature trying sneaking something under something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is not carrying the noun, stop the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the second noun is not fixed in place, stop the action.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Carry out a creature trying sneaking something under something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;remove the noun from play;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the second noun disguises the noun.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report a creature trying sneaking something under something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] sneakily hides <font color=#404040>[the noun</font>] under <font color=#404040>[the second noun</font>].&quot;<font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Understand </font>&quot;hide <font color=#404040>[something</font>] under <font color=#404040>[something</font>]&quot;<font color=#000080> as sneaking it under. Understand </font>&quot;put <font color=#404040>[something</font>] under <font color=#404040>[something</font>]&quot;<font color=#000080> as sneaking it under. Understand </font>&quot;conceal <font color=#404040>[something</font>] under <font color=#404040>[something</font>]&quot;<font color=#000080> as sneaking it under.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Check sneaking something under something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the player is not carrying the noun
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try the player trying taking the noun;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is not carrying the noun, stop the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the second noun is a door, say </font>&quot;You can't hide things under <font color=#404040>[the second noun</font>].&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the location is the Office, say </font>&quot;There's no good way to do that.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the second noun is not fixed in place, say </font>&quot;<font color=#404040>[The second noun</font>] would not make much of a concealment.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Carry out sneaking something under something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;remove the noun from play;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the second noun disguises the noun.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report sneaking something under something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;You tuck <font color=#404040>[the noun</font>] under <font color=#404040>[the second noun</font>].&quot;<font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Launching us is an action applying to nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a hostile person trying launching us: act creepy instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>To act creepy:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say </font>&quot;<font color=#404040>[The person asked</font>] looks at you for a long time through bright eyes and then smiles very pleasantly.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is secretive.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying launching us when the egg is not in the location and the egg is not carried by the person asked:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying taking the egg instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a creature trying launching us when the person asked is carrying the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying dropping the egg instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a creature trying launching us when the propulsion is not stuck to the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying affixing propulsion.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying launching us when the egg is closed and the player is not in the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying opening the egg instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a creature trying launching us when the egg is open and the player is not in the egg and the person asked is not in the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the propulsion unit is not stuck to the egg and the person asked can touch the propulsion unit
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying affixing the propulsion unit;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the life-support is not stuck to the egg and the person asked can touch the life-support unit
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try the person ask trying affixing the life-support unit;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the blank label is not stuck to the egg and the person asked can touch the blank label, try the person ask trying affixing the blank label instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the filled label is not stuck to the egg and the person asked can touch the blank label, try the person ask trying affixing the filled label instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying faking egg entry;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Faking egg entry is an action applying to nothing. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying faking egg entry when the player carries the glue and the propulsion unit is not stuck to the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying taking the glue instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a creature trying faking egg entry when the propulsion unit is not stuck to the egg and the person asked can touch the glue and the person asked does not carry the glue: try the person asked trying taking the glue instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>After a creature trying faking egg entry for the first time:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] goes as though to get into the egg, but can't seem to fold up its limbs properly to fit into the door. It gives you a look of bewilderment, obviously needing a demonstration.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a creature trying faking egg entry for the third time:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;stop the action.  
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying faking egg entry:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if a random chance of 1 in 2 succeeds,
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] struggles with the door of the egg, now and then glancing up at you and frowning.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The person asked</font>] puts its head inside the egg, then sighs gustily when it can't figure out how to fit in the rest of its substantial frame.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>To make scene break:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say line break;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;center </font>&quot;*****&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say line break;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;pause the game;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say paragraph break;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say paragraph break;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say paragraph break. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a creature trying launching us when the player is in the egg and the egg is open:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying closing the egg.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a creature trying launching us when the player is in the egg and the egg is closed and the egg is openable and the person asked is carrying the glue:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying gluing the egg shut.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Check a creature trying launching us:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the propulsion is not stuck to the egg, stop the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the egg is not closed, stop the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the player is not in the egg, stop the action;
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying launching us: do nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying launching us: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying switching on the propulsion instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>After a secretive creature trying switching on the propulsion when the player is in the egg and propulsion is stuck to the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] switches on the propulsion, and the last thing you see is its frenzied, evil grin as you float off out the window...&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end the game in death.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a creature trying playing with something which is carried by the player:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] looks with fascination at <font color=#404040>[the noun</font>], but cannot reach it.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a creature trying playing with something which is part of something which is carried by the player:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The creature</font>] looks at <font color=#404040>[the noun</font>] but can't quite get at it.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a curious creature trying switching on the propulsion for the first time:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] pokes at the propulsion unit and very nearly turns it on with disastrous effect.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>After a creature trying switching on the propulsion when the player is in the egg and propulsion is stuck to the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] pokes curiously at the propulsion unit, and after a moment switches it on. Then it stares at you in fascination as you float off out the window...&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end the game in death.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>After a creature trying switching on the propulsion:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] pokes curiously at the propulsion unit, and has the misfortune to turn it on. Thanks to the unfortunate configuration of where everyone is standing, the creature is toasted, you get a little singed yourself, and the boys from Alien Protocol spend until nearly midnight taking notes for their report.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end the game saying </font>&quot;That could have gone better&quot;<font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Affixing is an action applying to one thing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying affixing something when the person asked can see the instruction booklet and the booklet is unexplored:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying reading the instruction booklet instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying affixing something when the person asked does not have the glue:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying taking the glue instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a creature trying affixing something when the person asked cannot touch the noun:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying taking the noun instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a creature trying affixing something when the person asked cannot touch the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying taking the egg instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a creature trying affixing something when the person asked is carrying the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying dropping the egg instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a creature trying affixing something when the person asked is carrying the noun:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying dropping the noun instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Check a creature trying affixing propulsion:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked cannot touch the egg, stop the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked cannot touch the noun, stop the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is not carrying the glue, stop the action.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Carry out a creature trying affixing something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying gluing the noun to the egg instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Preparing for launch is an action applying to nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying preparing for launch when the player is in the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] gestures for you to get out of the egg, which does seem a valid point.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a creature trying preparing for launch when the propulsion unit is not stuck to the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is not in the egg, try the person asked trying affixing propulsion;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is passive, stop the action.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying preparing for launch when the life-support unit is not stuck to the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is not in the egg, try the person asked trying affixing life-support;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is passive, stop the action. 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a creature trying preparing for launch when the life-support unit is stuck to the egg and the life-support unit is switched off: try the person asked trying switching on the life-support unit;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is passive, stop the action. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying preparing for launch when the person asked can see the blank label and the blank label is unexplored: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive; 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the blank label is explored;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] squints at <font color=#404040>[the blank label</font>] thoughtfully, then shrugs.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a creature trying preparing for launch when the person asked can see the filled label and the filled label is not stuck to the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is not in the egg, try the person asked trying affixing filled label;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is passive, stop the action. 
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying preparing for launch when the person asked is not in the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is carrying the glue, try the person asked trying dropping the glue instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is carrying the pen, try the person asked trying dropping the pen instead; 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying entering the egg instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying preparing for launch when the egg is open: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying closing the egg instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a creature trying preparing for launch when the propulsion unit is not stuck to the egg: 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked can see the propulsion unit, say </font>&quot;<font color=#404040>[The person asked</font>] points at <font color=#404040>[the propulsion unit</font>], which is not currently attached to the egg.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The person asked</font>] makes pointed blast-off noises.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Before a creature trying preparing for launch when the life-support unit is not stuck to the egg:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked can see the life-support unit, say </font>&quot;<font color=#404040>[The person asked</font>] points at <font color=#404040>[the life-support unit</font>], which is not currently attached to the egg.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The person asked</font>] mimes choking, to remind you about the life-support unit.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Before a creature trying preparing for launch when the life-support unit is stuck to the egg and the life-support unit is switched off:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] gestures to the switched-off <font color=#404040>[life-support</font>], and mimes suffocating.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Carry out a creature trying preparing for launch: do nothing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying preparing for launch:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the creature is curious, say </font>&quot;<font color=#404040>[The creature</font>] whistles a jaunty tune while it waits for you to send it home. Or at least so you assume from its headbobbing -- you yourself can't hear a thing.&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise say </font>&quot;<font color=#404040>[The creature</font>] waits with zen-like calm for you to turn on propulsion.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a hostile person trying taking off something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] grumpily divests itself of <font color=#404040>[the noun</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a playful person trying taking off something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] flirtatiously strips off <font color=#404040>[the noun</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a fast person trying taking off something:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] strips off <font color=#404040>[the noun</font>] in a single fluid movement.&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying waiting:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;choose a random row in the Table of Creature Sloth;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say reply entry instead.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080><b>Table of Creature Sloth</b>
+<br>
+</font><font color=#000080><table><tr><td halign="left" valign="top"><u>reply</u></td></tr>
+</font><font color=#000080><tr><td halign="left" valign="top"></font>&quot;<font color=#404040>[The person asked</font>] lies very still and follows you with its eyes.&quot;<font color=#000080></td></tr>
+</font><font color=#000080><tr><td halign="left" valign="top"></font>&quot;<font color=#404040>[The person asked</font>] rolls over.&quot;<font color=#000080></td></tr>
+</font><font color=#000080><tr><td halign="left" valign="top"></font>&quot;<font color=#404040>[The person asked</font>] rubs its eyes.&quot;<font color=#000080></td></tr>
+</font><font color=#000080><tr><td halign="left" valign="top"></font>&quot;<font color=#404040>[The person asked</font>] slowly swivels its ears to follow your actions.&quot;<font color=#000080></td></tr>
+</font><font color=#000080><tr><td halign="left" valign="top"></font>&quot;<font color=#404040>[The person asked</font>] <font color=#404040>[if person asked is in egg</font>]tries to get up, then decides that it is too much effort<font color=#404040>[otherwise</font>]waits, almost motionless<font color=#404040>[end if</font>].&quot;<font color=#000080></td></tr>
+</font><font color=#000080><tr><td halign="left" valign="top"></font>&quot;<font color=#404040>[if the person asked is weak</font>]<font color=#404040>[The person asked</font>] is completely still<font color=#404040>[end if</font>]<font color=#404040>[if the person asked is not weak</font>]The sides of <font color=#404040>[the person asked</font>] slowly rise and fall as it breathes<font color=#404040>[end if</font>].&quot;<font color=#000080></td></tr>
+</font><font color=#000080><tr><td halign="left" valign="top"></font>&quot;<font color=#404040>[if the person asked is weak</font>]<font color=#404040>[The person asked</font>] stares at you unnervingly<font color=#404040>[end if</font>]<font color=#404040>[if the person asked is not weak</font>]<font color=#404040>[The person asked</font>] yawns<font color=#404040>[end if</font>].&quot;<font color=#000080></td></tr>
+</font><font color=#000080></table>
+<br>
+</font><font color=#000080>Report a creature trying jumping:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] jumps<font color=#404040>[if the person asked is vast</font>] implausibly high<font color=#404040>[end if</font>]<font color=#404040>[if the person asked is Earthlike</font>] quite high<font color=#404040>[end if</font>]<font color=#404040>[if the person asked is Marslike</font>], but looks surprised at how quickly it lands<font color=#404040>[end if</font>]<font color=#404040>[if the person asked is fractional</font>], but not very far<font color=#404040>[end if</font>]<font color=#404040>[if the person asked is negligible</font>], but only clears the floor by a few meager centimeters<font color=#404040>[end if</font>].&quot;<font color=#000080> instead.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a creature trying taking something when the noun outweighs strength and the noun is in a container (called receptacle):
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the receptacle is available, try the person asked trying pushing the receptacle;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;otherwise continue the action.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a creature trying taking something when the noun outweighs strength and the noun is on a supporter (called surface):
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying pushing the noun.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a creature trying pushing something which is on a supporter (called surface):
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;let the place be the holder of the surface;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the noun is in place;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say </font>&quot;<font color=#404040>[The person asked</font>] <font color=#404040>[forcefully</font>] pushes off <font color=#404040>[the noun</font>] onto <font color=#404040>[if the place is location</font>]the floor<font color=#404040>[otherwise</font>]<font color=#404040>[the place</font>]<font color=#404040>[end if</font>].&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Dumping out is an action applying to one thing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Understand </font>&quot;empty <font color=#404040>[container</font>]&quot;<font color=#000080> or </font>&quot;dump out <font color=#404040>[container</font>]&quot;<font color=#000080> as dumping out. Understand </font>&quot;empty <font color=#404040>[something</font>]&quot;<font color=#000080> or </font>&quot;dump out <font color=#404040>[something</font>]&quot;<font color=#000080> as dumping out.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Check dumping out:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun is not a container, say </font>&quot;<font color=#404040>[The noun</font>] cannot contain anything to start with.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the number of things contained by the noun is 0, say </font>&quot;<font color=#404040>[The noun</font>] does not contain anything.&quot;<font color=#000080> instead;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the player is not carrying the noun
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try the player trying taking the noun;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is not carrying the noun, stop the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Carry out dumping out:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;let place be the holder of the player;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now every thing which is in the noun is in the place.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Report dumping out:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;You empty <font color=#404040>[the noun</font>] out <font color=#404040>[if the player is in a room</font>]onto the floor<font color=#404040>[otherwise</font>]into <font color=#404040>[the holder of the player</font>]<font color=#404040>[end if</font>].&quot;<font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Check a creature trying dumping out:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun is not a container, stop the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the number of things contained by the noun is 0, stop the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked does not carry the noun, stop the action.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Carry out a creature trying dumping out:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;let place be the holder of the person asked;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now every thing which is in the noun is in the place.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Report a creature trying dumping out:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;<font color=#404040>[The person asked</font>] empties <font color=#404040>[the noun</font>] <font color=#404040>[if the person asked is in a room</font>]onto the floor<font color=#404040>[otherwise</font>]into <font color=#404040>[the holder of the person asked</font>]<font color=#404040>[end if</font>].&quot;<font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Understand </font>&quot;push <font color=#404040>[something</font>] over&quot;<font color=#000080> or </font>&quot;knock <font color=#404040>[something</font>] over&quot;<font color=#000080> as pushing.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of pushing a container:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;let the place be the holder of the noun;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;You knock over <font color=#404040>[the noun</font>]<font color=#404040>[if something is in the noun</font>], dumping out <font color=#404040>[the list of things which are in the noun</font>]<font color=#404040>[end if</font>].&quot;<font color=#000080>; 
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now every thing which is in the noun is in the place.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of a creature trying pushing a container:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;let the place be the holder of the noun;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say </font>&quot;<font color=#404040>[The person asked</font>] knocks over <font color=#404040>[the noun</font>]<font color=#404040>[if something is in the noun</font>], awkwardly spilling out <font color=#404040>[the list of things which are in the noun</font>]<font color=#404040>[end if</font>].&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now the person asked is passive;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;now every thing which is in the noun is in the place.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a creature trying taking something when the noun outweighs strength:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the noun is pointless, stop the action;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;change the noun to pointless;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked is visible, say </font>&quot;<font color=#404040>[The person asked</font>] tries to pick up <font color=#404040>[the noun</font>], but without success.&quot;<font color=#000080>
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a secretive starving Earthlike creature trying taking something which is not available:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying attacking the player.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>Instead of an Earthlike creature trying attacking the player when the person asked is not carrying a heavy thing:
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;if the person asked can see an available heavy thing (called target), try the person asked trying taking the target.
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</font><font color=#000080>Instead of a creature Earthlike trying attacking the player when the person asked carries a heavy thing (called the weapon):
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;say </font>&quot;Starving, desperate, and tired of waiting for your cooperation, <font color=#404040>[the person asked</font>] slugs you hard with <font color=#404040>[the weapon</font>]. And what happens from there is all blackness...&quot;<font color=#000080>;
+<br>
+</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end the game in death.
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080>
+<br>
+</font><font color=#000080></font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>
