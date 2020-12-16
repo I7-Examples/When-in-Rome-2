@@ -1,6 +1,6 @@
 "When in Rome 2: Far from Home" by Emily Short.
 
-Include (- Serial "060503"; -).
+Include (- Serial "090410"; -).
 
 The story genre is "Science Fiction". The story headline is "A Puzzle Game in Five Brief Episodes". The story is episode 2 of "When in Rome". The story creation year is 2006. The story description is "Manhattan, 1954. 
 
@@ -10,11 +10,11 @@ The rest of the secret had better stay between you, your secretary Esther, and y
 
 When in Rome is designed as a lunchtime game: there are five episodes, each of which may be played to a conclusion within about fifteen minutes, requiring no saves. A player may also try this episode several times if he wishes, as the puzzles are partially randomized."
 
-Use no scoring, the serial comma and American dialect. Use MAX_ARRAYS of 1000. Use MAX_STATIC_DATA of 30000. Use MAX_VERBS of 200. Use MAX_INDIV_PROP_TABLE_SIZE  of 20000. Use MAX_SYMBOLS of 8000. Use memory economy. Use full-length room descriptions.
+Use no scoring, the serial comma and American dialect. Use MAX_ARRAYS of 1000. Use MAX_STATIC_DATA of 30000. Use MAX_VERBS of 200. Use MAX_INDIV_PROP_TABLE_SIZE  of 20000. Use MAX_SYMBOLS of 8000. Use full-length room descriptions.
 
 Include Basic Screen Effects by Emily Short. Include Menus by Emily Short. Include Basic Help Menu by Emily Short. Include Locksmith by Emily Short. 
 
-Release along with cover art, a website, and source text.
+Release along with cover art, a website, a file of "Summary of Alien Characteristics by Habitat" called "Summary.pdf", and source text.
 
 
 Part 1 - World Model
@@ -128,12 +128,10 @@ To decide whether (item - a thing) interests (character - a person):
 	if the item is a person, no; 
 	if the item is the pod and the creature is homebound, yes;
 	if the item fits the pod and the creature is homebound, yes;
-	if the character has the item
-	begin;
+	if the character has the item:
 		if the item is stinky and the odor sensitivity of the creature is inverse, yes;
 		if the item is delicious, yes;
 		no;
-	end if;
 	if the character is acquisitive, yes;
 	if the character is hungry and the item is delicious, yes; 
 	if the character is cold and the item is wearable, yes;
@@ -296,12 +294,10 @@ Instead of asking a creature to try doing something when the person asked is in 
 	say "The creature watches your mouth move, fascinated, but it obviously cannot hear you." 
 	
 Before printing the name of the creature:
-	if a random chance of 1 in 4 succeeds
-	begin;
+	if a random chance of 1 in 4 succeeds:
 		if the creature is scaly, say "scaly ";
 		if the creature is furry, say "furry "; 
-		say "[color of the creature] ";
-	end if.
+		say "[color of the creature] ".
 	
 
 Rule for printing the name of the creature:
@@ -384,10 +380,9 @@ Report the creature trying dropping the pod:
 
 Instead of the creature trying taking something when the number of things carried by the creature is the carrying capacity of the creature:
 	let the new target be a random thing carried by the creature;
-	if the creature is hungry and the creature carries a delicious thing (called the target)
-	begin;
-		while the new target is the target, let the new target be a random thing carried by the creature; 
-	end if;
+	if the creature is hungry and the creature carries a delicious thing (called the target):
+		while the new target is the target:
+			let the new target be a random thing carried by the creature;
 	try the creature trying dropping the new target.
 
 Instead of the creature trying taking something when the creature is in a container (called the playhouse):
@@ -395,30 +390,28 @@ Instead of the creature trying taking something when the creature is in a contai
 	otherwise try the creature trying exiting.
 
 Instead of the creature trying taking something when the noun is in an enterable container (called the playhouse):
-	if the creature is tall
-	begin;
-		if the creature is visible and the creature is not in the playhouse, say "[The person asked] reaches for [the noun] with long arms.";
-		continue the action; 
-	end if;
-	if the creature is not in the playhouse
-	begin;
+	if the creature is tall:
+		if the creature is visible and the creature is not in the playhouse:
+			say "[The person asked] reaches for [the noun] with long arms.";
+		continue the action;
+	if the creature is not in the playhouse:
 		now the creature is passive;
-		if the creature is visible, say "[The person asked] tries to reach into [the playhouse], but its arms are a bit short for its purposes. [run paragraph on]";
-		if the creature carries the playhouse
-		begin;
+		if the creature is visible:
+			say "[The person asked] tries to reach into [the playhouse], but its arms are a bit short for its purposes. [run paragraph on]";
+		if the creature carries the playhouse:
 			try the creature trying dumping out the playhouse;
-		otherwise;
+		otherwise:
 			if the playhouse contains the pod, try the creature trying pushing the playhouse;
 			otherwise try the creature trying entering the playhouse;
-		end if;
-	otherwise;
-		continue the action;
-	end if.
+	otherwise:
+		continue the action.
 	
 
 Instead of a creature trying entering something which contains the egg pod when the creature is not tall:
-	if the noun is available, try the person asked trying pushing the noun;
-	otherwise if the creature is visible, say "[The creature] looks at [the egg] in frustration.".
+	if the noun is available:
+		try the person asked trying pushing the noun;
+	otherwise if the creature is visible:
+		say "[The creature] looks at [the egg] in frustration.".
 	
 Instead of the creature trying entering something closed:
 	try the creature trying opening the noun.
@@ -453,13 +446,13 @@ Carry out the creature trying eating something:
 	
 Report the creature trying eating a poisoned thing:
 	say "[The creature] consumes [the noun], ";
-	if the creature is negligible
-	begin;
-		if the creature is wood-pulpy, say "but even though it is small and light-structured, its unusual metabolism seems capable of dealing with the glue." instead;
-		otherwise say "and immediately its eyes fill with tears and it begins to cough. After a moment or two of this it slumps into an inactive state." instead;
-	otherwise;
-		say "but because of the relatively small amount of toxin relative to its body mass and sturdiness it does not suffer any visible ill effect." instead;
-	end if.
+	if the creature is negligible:
+		if the creature is wood-pulpy:
+			say "but even though it is small and light-structured, its unusual metabolism seems capable of dealing with the glue." instead;
+		otherwise:
+			say "and immediately its eyes fill with tears and it begins to cough. After a moment or two of this it slumps into an inactive state." instead;
+	otherwise:
+		say "but because of the relatively small amount of toxin relative to its body mass and sturdiness it does not suffer any visible ill effect." instead.
 	
 Report the creature trying eating something:
 	say "[The creature] eats [the noun] in small neat bites, turning it in its paws as it goes[if the creature is comfortable]. At last it gives a pleased sigh[end if]." instead.
@@ -486,19 +479,14 @@ Report the creature trying taking something stinky when the odor sensitivity of 
 	now the creature is passive;
 	say "[The creature] picks up [the noun]";
 	let index be 0;
-	repeat through Table of Stink Disgust
-	begin;
-		if a random chance of 1 in 3 succeeds
-		begin;
-			if index is 0, say ", "; otherwise say " and ";
+	repeat through Table of Stink Disgust:
+		if a random chance of 1 in 3 succeeds:
+			if index is 0, say ", "; 
+			otherwise say " and ";
 			say "[reaction entry]";
 			increase index by 1;
-			if index is 2
-			begin;
+			if index is 2:
 				say "." instead;
-			end if;
-		end if;
-	end repeat;
 	say "." instead.
 	 
 Table of Stink Disgust
@@ -554,13 +542,11 @@ Instead of taking something carried by a slow creature:
 	
 Instead of taking something carried by the creature when the speed of the creature is moderate: 
 	now the creature is passive;
-	if a random chance of 1 in 2 succeeds
-	begin;
+	if a random chance of 1 in 2 succeeds:
 		move the noun to the player;		
 		say "It's an even thing, with the creature's moderate reflexes, whether you're going to succeed or not, but you do manage to snatch [the noun] from it." instead;
-	otherwise;
-		say "You make a move towards [the noun]; [the creature] dodges. But not terribly quickly; with another try you might succeed. Moderate reflexes at best." instead;
-	end if.
+	otherwise:
+		say "You make a move towards [the noun]; [the creature] dodges. But not terribly quickly; with another try you might succeed. Moderate reflexes at best." instead.
 	
 Instead of taking something carried by a fast creature:
 	now the creature is passive;
@@ -597,26 +583,20 @@ Before the creature trying taking something which is in a closed container (call
 	
 Instead of the starving creature trying crying for the first time:
 	now the creature is passive;
-	if the creature is visible
-	begin;
+	if the creature is visible:
 		if the creature can see a delicious thing (called target),
 			say "[The creature] settles in one place, no longer strong enough to beg for [the target].";
-		otherwise say "[The creature] settles in one place, no longer strong enough to beg for food.";		
-	end if.
+		otherwise say "[The creature] settles in one place, no longer strong enough to beg for food.".
 
 Instead of the starving creature trying crying:
-	if the person asked is visible
-	begin;
-		if the creature can see a delicious thing (called target) and the creature is visible
-		begin;
-			if the target is the player,
+	if the person asked is visible:
+		if the creature can see a delicious thing (called target) and the creature is visible:
+			if the target is the player:
 				say "[The creature] stares hungrily in your direction.";
-			otherwise
+			otherwise:
 				say "[The creature] eyes [the target][if the gravity of the creature is less than Earthlike] weakly, but does not move towards it[otherwise] wistfully[end if].";
-		otherwise;
+		otherwise:
 			 say "[The creature] whimpers in hunger.";
-		end if;
-	end if;
 	now the creature is passive.
 	
 Before a fidgety hostile smart creature trying taking something which is carried by the player :
@@ -644,12 +624,10 @@ It taps this image several times with one claw." instead.
 Report a creature trying reading the paperwork:
 	now the noun is unexplored;
 	choose a random row in the Table of Alien Characteristics;
-	if moon entry is Neptune
-	begin;
+	if moon entry is Neptune:
 		say "[The person asked] reads the report on Neptune, frowning. Then it reads again, looking from the report to you and back again. [italic type]Your reports are startlingly incomplete, Earthling[roman type], it thinks.";
-	otherwise;
-		say "[The person asked] studies the report on [moon entry][if a random chance of 1 in 3 succeeds], occasionally licking its lips thoughtfully[end if][if a random chance of 1 in 4 succeeds]. Softly it laughs at what it sees there[end if]." instead;
-	end if.
+	otherwise:
+		say "[The person asked] studies the report on [moon entry][if a random chance of 1 in 3 succeeds], occasionally licking its lips thoughtfully[end if][if a random chance of 1 in 4 succeeds]. Softly it laughs at what it sees there[end if]." instead.
 
 Forcing drop of is an action applying to one thing.
 
@@ -755,12 +733,13 @@ Report a friendly creature trying growling:
 	 
 Shivering is an action applying to nothing.
 
-Carry out a creature trying shivering: now the person asked is passive.
+Carry out a creature shivering: now the person asked is passive.
 
-Report a creature trying shivering: say "[The creature] [if a random chance of 1 in 2 succeeds]rubs its paws over its arms[otherwise]shivers[end if]."
-
-Report a creature trying shivering when the person asked can see a lit thing (called the target):
-	say "[The creature] shivers and draws closer to [the target]." instead.
+Report a creature shivering: 
+	if the creature can see a lit thing (called the target), 
+		say "[The creature] shivers and draws closer to [the target].";
+	otherwise 
+		say "[The creature] [if a random chance of 1 in 2 succeeds]rubs its paws over its arms[otherwise]shivers[end if]."
 
 
 Rejecting is an action applying to one thing.
@@ -799,17 +778,17 @@ Report a creature trying showing temper:
 
 Crying is an action applying to nothing.
 
-Carry out a creature trying crying: do nothing.
+Carry out a creature crying: do nothing.
 
-Report a creature trying crying: say "[The creature] sobs." 
+Report a creature crying: say "[The creature] sobs." 
 
-Report a stupid creature trying crying:
+Report a stupid creature crying:
 	say "[The creature] [if a random chance of 1 in 2 succeeds]lies curled on the floor, keening softly[otherwise]rocks itself back and forth[end if]."  instead.
 	
-Report hostile smart creature trying crying:
+Report hostile smart creature crying:
 	say "[The creature] is too weak to do much at this point, but it watches you angrily, and occasionally makes a gesture at you that it must have learned from taxi drivers."  instead.
 	
-Report a creature trying crying when the creature is in a container (called the trap):
+Report the creature crying when the creature is in a container (called the trap):
 	say "[The creature] curls up in [the trap], weeping." instead.
 
 
@@ -820,35 +799,29 @@ Check a creature trying hiding oneself:
 	if the person asked is not in a container, stop the action.
 
 Carry out a creature trying hiding oneself:
-	if the person asked is in a container (called the shelter)
-	begin;
-		if the player is in the shelter
-		begin; 
+	if the person asked is in a container (called the shelter):
+		if the player is in the shelter:
 			try the person asked trying exiting;
-		otherwise; 
-			if the shelter is closed and the player can see the person asked, say "[The person asked] [if a random chance of 1 in 2 succeeds]squinches its eyes shut, on an ostrich-like principle of mutual ignorance[otherwise]avoids looking at you[end if].";
-			otherwise try the person asked trying closing the shelter instead;
-		end if; 
-	end if.
+		otherwise:
+			if the shelter is closed and the player can see the person asked:
+				say "[The person asked] [if a random chance of 1 in 2 succeeds]squinches its eyes shut, on an ostrich-like principle of mutual ignorance[otherwise]avoids looking at you[end if].";
+			otherwise:
+				try the person asked trying closing the shelter instead.
 	
 The last location is a room that varies. 
  
 Before a creature trying hiding oneself when the person asked can see a door (called escape route):
-	if location is not last location
-	begin;
+	if location is not last location:
 		now the person asked is passive;
 		if the person asked is visible, say "[The person asked] presses itself against the wall and tries to creep past you towards [the escape route]." instead;
-	otherwise;
-		 try the person asked trying entering the escape route instead;
-	end if.
+	otherwise:
+		 try the person asked trying entering the escape route instead.
 	
 Before a creature trying hiding oneself when the person asked is not in a container and the player is not in a container:
-	if the person can see an enterable sheltering container
-	begin;
+	if the person can see an enterable sheltering container:
 		let the shelter be a random enterable sheltering opaque container which can be seen by the person asked; 
 		if the shelter is not a container, let the shelter be a random enterable sheltering container which can be seen by the person asked;
-		try the person asked trying entering the shelter instead;
-	end if.
+		try the person asked trying entering the shelter instead.
 	
 Definition: a container is sheltering if it is open or it is openable.
 
@@ -864,8 +837,10 @@ Before a creature trying entering the kit when the noun carries the pod:
 Dressing oneself is an action applying to nothing.
 
 Before a creature trying dressing oneself when the person asked is not carrying something wearable:
-	if the person asked can see an available wearable thing (called target) which is not worn by the person asked, try the person asked trying taking the target;
-	otherwise if the person asked can see a wearable thing (called target) which is not worn by the person asked, try the person asked trying taking the target.
+	if the person asked can see an available wearable thing (called target) which is not worn by the person asked:
+		try the person asked trying taking the target;
+	otherwise if the person asked can see a wearable thing (called target) which is not worn by the person asked:
+		try the person asked trying taking the target.
 	
 Check a creature trying dressing oneself:
 	if the person asked is not carrying a wearable thing, stop the action.
@@ -883,22 +858,20 @@ Report a cold creature trying wearing the jacket:
 Dining is an action applying to nothing.
 
 Before a meaty creature trying dining when the person cannot see the player:
-	if the person asked is in an adjacent room and the person asked can see a door (called the appropriate exit)
-	begin;
-		try the person asked trying entering the appropriate exit instead;
-	end if.
+	if the person asked is in an adjacent room and the person asked can see a door (called the appropriate exit):
+		try the person asked trying entering the appropriate exit instead.
 
 Before a creature trying dining when the person asked is wearing a delicious thing (called lunch) and the person asked is not carrying a delicious thing:
 	try the person asked trying taking off the lunch instead.
 
 Instead of a creature trying dining when the person asked does not have a delicious thing:
-	if the person asked can see an available useful delicious thing (called target)
-	begin;
+	if the person asked can see an available useful delicious thing (called target):
 		try the person asked trying taking the target;
-	otherwise;
-		if the person asked can see a delicious thing (called target), try the person asked trying taking the target;
-		otherwise if the person asked is smart, try the person asked trying exploring;
-	end if.
+	otherwise:
+		if the person asked can see a delicious thing (called target):
+			try the person asked trying taking the target;
+		otherwise if the person asked is smart:
+			try the person asked trying exploring.
 	
 Check a creature trying dining:
 	if the person asked is not carrying a delicious thing, stop the action.
@@ -913,13 +886,13 @@ Carry out a creature trying playing with something: now the noun is explored.
 Report a creature trying playing with something: 
 	say "[The person asked] [if the person asked is playful]toys with[otherwise]pokes at[end if] [the noun]";
 	if the person asked has the noun, say "." instead;
-	if the noun is in location
-	begin;	
+	if the noun is in location:
 		say "." instead;
-	otherwise;
-		if the holder of the noun is not the holder of the person asked, say " [if the holder of the noun is a container]in[otherwise]on[end if] [the holder of the noun]." instead;
-		otherwise say " in a bored manner." instead;
-	end if.
+	otherwise:
+		if the holder of the noun is not the holder of the person asked:
+			say " [if the holder of the noun is a container]in[otherwise]on[end if] [the holder of the noun]." instead;
+		otherwise:
+			say " in a bored manner." instead.
 
 Definition: a person is fidgety if it is fast or it is lightning.
 
@@ -960,14 +933,14 @@ Report a fidgety creature trying playing with a papery thing:
 	
 Report a smart curious creature trying playing with a papery thing:
 	if the noun is the sack, continue the action;
-	if the person asked is homebound and the noun is the booklet
-	begin;
+	if the person asked is homebound and the noun is the booklet:
 		say "[The person asked] reads [the noun] through, then looks at you[if a visible thing fits the pod]; then at [the list of visible things which fit the pod][end if]. It bites its lower lip thoughtfully." instead;
-	otherwise;
-		if the noun is the blank label, say "[The person asked] squints studiously at [the blank label].";
-		otherwise say "[The person asked] reads [the noun] through, following the words with one claw and subvocalizing as it goes." instead;
-	end if.
-	
+	otherwise:
+		if the noun is the blank label:
+			say "[The person asked] squints studiously at [the blank label].";
+		otherwise: 
+			say "[The person asked] reads [the noun] through, following the words with one claw and subvocalizing as it goes." instead.
+			
 Instead of a vast creature trying playing with something which is not the pod:
 	try the person asked trying attacking the noun.
 	
@@ -1031,11 +1004,9 @@ Instead of a vast creature trying attacking the desk:
 	move abstract sculpture to the location;
 	now the sculpture is explored;
 	now the person asked is passive;
-	if the person asked is visible
-	begin;
+	if the person asked is visible:
 		change Esther's utterance to "'Keep it down,' Esther yells. 'Some of us are trying to hear ourselves think.'";
-		say "[The creature] hammers at your desk with its meaty fists and effectively reduces it to a work of modern art. Your possessions will have to live elsewhere from now on." instead;
-	end if;
+		say "[The creature] hammers at your desk with its meaty fists and effectively reduces it to a work of modern art. Your possessions will have to live elsewhere from now on." instead.
  
 Carry out a creature trying attacking something papery:
 	remove the noun from play.
@@ -1050,13 +1021,11 @@ Then it gives you a horrible mocking look. Right. Hostile it is, then. No questi
 
 Instead of attacking a papery thing:
 	remove the noun from play;
-	if the noun contains something
-	begin;
+	if the noun contains something:
 		say "You tear up [the noun], leaving behind [the list of things in the noun][if the creature is in the noun]. [The creature] blinks in surprise[end if].";
 		now every thing in the noun is in the location;
-	otherwise;
-		say "You rip [the noun] to bits.";
-	end if.
+	otherwise:
+		say "You rip [the noun] to bits.".
 
 Carry out a vast creature trying attacking the chair:
 	remove the chair from play;
@@ -1082,11 +1051,9 @@ Instead of a curious wood-pulpy creature trying playing with something which is 
 	move the noun to the person asked;
 	now the person asked is passive;
 	if the person asked is visible, say "[The person asked] licks and licks at [the noun], and somehow with its alien spit dissolves the holdall glue. [The noun] comes free in its hands. ";
-	if the noun outweighs strength
-	begin;
+	if the noun outweighs strength:
 		silently try the person asked trying dropping the noun;
 		if the person asked is not carrying the noun and the person asked is visible, say "Then, of course, [the person asked] drops it, since [the noun] is much too heavy." instead; 
-	end if;
 	say paragraph break.
 			
 
@@ -1172,11 +1139,10 @@ Report a smart creature trying playing with the ballpoint pen when the person as
 Report a creature trying playing with the ballpoint pen:
 	say "[The person asked][quickly] clicks the ballpoint pen. ";
 	let X be a random number between 1 and 5;
-	repeat with Y running from 1 to X
-	begin;
-		if Y is 1, say "Click"; otherwise say " click"; 
+	repeat with Y running from 1 to X: 
+		if Y is 1, say "Click"; 
+		otherwise say " click"; 
 		if a random chance of 1 in 3 succeeds, say "ety";
-	end repeat;
 	say "." instead.
 	
 Report a creature trying playing with the slide:
@@ -1196,50 +1162,53 @@ Report a smart creature trying playing with the paperwork:
 Report a creature trying playing with the paperwork when the food of the person asked is wood-pulpy:
 	say "[The person asked] paws through the paperwork, its tongue flicking in and out of its mouth." instead.
 	
-Carry out the creature trying doing something: now the creature is passive.
+The inaction rule is listed after the check stage rule in the specific action-processing rules.
 
-Report a fidgety creature trying entering something: 
+This is the inaction rule: 
+	now the person asked is passive.
+
+Report a fidgety creature entering something: 
 	say "[The creature] [if the creature is timid]creeps[otherwise]hops[end if] into [the noun][if the player is in the noun] with you[end if][if the heart's desire is not the creature] in search of [the heart's desire][end if]." instead.
 	
-Report a slow negligible creature trying entering something: 
+Report a slow negligible creature entering something: 
 	say "[The creature] hauls itself into [the noun][if the player is in the noun] with you[end if][if the heart's desire is not the creature] in search of [the heart's desire][end if]." instead.
 	
-Report a creature trying entering the pod for the first time:
+Report a creature entering the pod for the first time:
 	say "[The creature] clambers into [the noun], a little awkwardly through the curved door";
 	if the pod is not in the location, say "[if the heart's desire is not the creature], in search of [the heart's desire][end if]";
 	say ". The pod rocks ominously but does not tip over." instead.
 
-Report a creature trying entering the pod when the person asked is suffocating:
+Report a creature entering the pod when the person asked is suffocating:
 	say "[The creature], rasping desperately, climbs into [the noun] in search of a more breathable environment."
 
-Report a creature trying entering something:
+Report a creature entering something:
 	say "[The creature] climbs into [the noun]." instead.
 	
-Report a creature trying exiting:
+Report a creature exiting:
 	say "[The creature] gets out again." instead.
 	
-Report a creature trying going through a door (called the escape route):
+Report a creature going through a door (called the escape route):
 	say "[The creature] slips out through [the escape route]." instead.
 	
-Report a timid creature trying going through a door (called the escape route):
+Report a timid creature going through a door (called the escape route):
 	say "Glancing at you apprehensively, [the creature] tiptoes out [the escape route]." instead.
 
-Report a creature trying closing the egg pod when life-support is switched on:
+Report a creature closing the egg pod when life-support is switched on:
 	now the person asked is passive;
 	if the creature is in the pod, say "[The creature] pulls [the pod] shut from the inside. It seals with a hiss, leaving the creature isolated within." instead;
 	otherwise say "[The creature] closes [the pod], which seals with a hiss." instead.
 	
-Report a creature trying opening the egg pod when life-support is switched on: 
+Report a creature opening the egg pod when life-support is switched on: 
 	say "[The creature] opens [the pod], breaking the life-support seal: [italic type]PFFT![roman type]" instead.
 
 
-Instead of the creature trying attacking a portable thing which is not carried by the person asked:
+Instead of the creature attacking a portable thing which is not carried by the person asked:
 	try the person asked trying taking the noun.
 
-Instead of a creature trying attacking something which is worn by the person asked:
+Instead of a creature attacking something which is worn by the person asked:
 	try the person asked trying taking off the noun. 
 	
-Report a creature trying eating the picture:
+Report a creature eating the picture:
 	say "[The creature] bites off the corner of DiMaggio, chews, and swallows. You give a howl of rage and try to get back the remains, but they too are soon gone.
 	
 'What?' says Esther, running into the room. 'Did it bite you? Should I call a doctor?'
@@ -1252,19 +1221,19 @@ The phone in the outer office rings. 'Sorry, duty calls.'
 
 So much for sympathy." instead.
 
-Report a creature trying eating the picture during Glue Return:
+Report a creature eating the picture during Glue Return:
 	say "[The creature] bites off the corner of DiMaggio, chews, and swallows. You give a howl of rage and try to get back the remains, but they too are soon gone. Not even your yelping is enough to get Esther in here with the holdall glue, though."
 
 
 Disposing of is an action applying to one thing.
 
-Before a creature trying disposing of something which is worn by the person asked:
+Before a creature disposing of something which is worn by the person asked:
 	try the person asked trying taking off the noun instead.
 
-Before a creature trying disposing of something which is not held by the person asked:
+Before a creature disposing of something which is not held by the person asked:
 	if the noun is not in an openable container,
-		try the person asked trying taking the noun instead;
-	if the person asked is stupid, try the person asked trying taking the noun instead. 
+		try the person asked taking the noun instead;
+	if the person asked is stupid, try the person asked taking the noun instead. 
 
 Before a smart creature trying disposing of something when the noun is not in an openable container:
 	if the person asked can see an openable container (called the tank), try the person asked trying inserting the noun into the tank instead.
@@ -1287,13 +1256,11 @@ Instead of a stupid creature trying disposing of something when the person asked
 	
 Instead of a stupid creature trying disposing of something for the first time: 
 	now Esther carries the noun; 
-	if the person asked is visible
-	begin;
-		if the person asked is athletic, say "[The person asked] winds up and, with a fastball worthy of Allie Reynolds, pitches [the noun] out the door of your office.
-	
-'Hey!' shouts Esther. 'Watch it in there!'";
-		otherwise say "[The person asked] walks over to the door of your office and drops [the noun] outside.";
-	end if.
+	if the person asked is visible:
+		if the person asked is athletic:
+			say "[The person asked] winds up and, with a fastball worthy of Allie Reynolds, pitches [the noun] out the door of your office. [paragraph break]'Hey!' shouts Esther. 'Watch it in there!'";
+		otherwise:
+			say "[The person asked] walks over to the door of your office and drops [the noun] outside."
 
 
 Carry out a creature trying disposing of something:
@@ -1391,11 +1358,9 @@ Report a creature trying sneaking something under something:
 Understand "hide [something] under [something]" as sneaking it under. Understand "put [something] under [something]" as sneaking it under. Understand "conceal [something] under [something]" as sneaking it under.
 
 Check sneaking something under something:
-	if the player is not carrying the noun
-	begin;
+	if the player is not carrying the noun:
 		try the player trying taking the noun;
 		if the player is not carrying the noun, stop the action;
-	end if;
 	if the second noun is a door, say "You can't hide things under [the second noun]." instead;
 	if the location is the Office, say "There's no good way to do that." instead;
 	if the second noun is not fixed in place, say "[The second noun] would not make much of a concealment." instead.
@@ -1430,19 +1395,15 @@ Before a creature trying launching us when the egg is closed and the player is n
 	try the person asked trying opening the egg instead.
 	
 Instead of a creature trying launching us when the egg is open and the player is not in the egg and the person asked is not in the egg:
-	if the propulsion unit is not stuck to the egg and the person asked can touch the propulsion unit
-	begin;
+	if the propulsion unit is not stuck to the egg and the person asked can touch the propulsion unit:
 		try the person asked trying affixing the propulsion unit;
-	otherwise;
-		if the life-support is not stuck to the egg and the person asked can touch the life-support unit
-		begin;
-			try the person ask trying affixing the life-support unit;
-		otherwise;
-			if the blank label is not stuck to the egg and the person asked can touch the blank label, try the person ask trying affixing the blank label instead;
-			if the filled label is not stuck to the egg and the person asked can touch the blank label, try the person ask trying affixing the filled label instead;
-			try the person asked trying faking egg entry;
-		end if;
-	end if.
+	otherwise:
+		if the life-support is not stuck to the egg and the person asked can touch the life-support unit:
+			try the person asked trying affixing the life-support unit;
+		otherwise:
+			if the blank label is not stuck to the egg and the person asked can touch the blank label, try the person asked trying affixing the blank label instead;
+			if the filled label is not stuck to the egg and the person asked can touch the blank label, try the person asked trying affixing the filled label instead;
+			try the person asked trying faking egg entry.
 	
 Faking egg entry is an action applying to nothing. 
 
@@ -1641,11 +1602,9 @@ Understand "empty [container]" or "dump out [container]" as dumping out. Underst
 Check dumping out:
 	if the noun is not a container, say "[The noun] cannot contain anything to start with." instead;
 	if the number of things contained by the noun is 0, say "[The noun] does not contain anything." instead;
-	if the player is not carrying the noun
-	begin;
+	if the player is not carrying the noun:
 		try the player trying taking the noun;
-		if the player is not carrying the noun, stop the action;
-	end if.
+		if the player is not carrying the noun, stop the action.
 	
 Carry out dumping out:
 	let place be the holder of the player;
@@ -1691,7 +1650,7 @@ Instead of a secretive starving Earthlike creature trying taking something which
 Instead of an Earthlike creature trying attacking the player when the person asked is not carrying a heavy thing:
 	if the person asked can see an available heavy thing (called target), try the person asked trying taking the target.
 	
-Instead of a creature Earthlike trying attacking the player when the person asked carries a heavy thing (called the weapon):
+Instead of an Earthlike creature trying attacking the player when the person asked carries a heavy thing (called the weapon):
 	say "Starving, desperate, and tired of waiting for your cooperation, [the person asked] slugs you hard with [the weapon]. And what happens from there is all blackness...";
 	end the game in death.
 
@@ -1729,119 +1688,90 @@ The first creature behavior rule:
 	abide by the creature death rule.
 	
 This is the creature death rule:
-	if the creature is suffocating
-	begin;
+	if the creature is suffocating:
 		increase the breath count of the creature by 1;
-		if the breath count of the creature > 3
-		begin;
+		if the breath count of the creature > 3:
 			say "At this point [the creature] is overwhelmed by lack of whatever it breathes, and collapses.";
 			end the game saying "Unfortunately, you are unable to revive the thing";
-		end if;
-	end if;
-	if the creature is dying
-	begin; 
-			say "Too long without sustenance, [the creature] succumbs to a coma and death.";
-			end the game saying "You have killed your Visitor.";
-			rule succeeds; 
-	end if.
+	if the creature is dying:
+		say "Too long without sustenance, [the creature] succumbs to a coma and death.";
+		end the game saying "You have killed your Visitor.";
+		rule succeeds.
 	
 A creature behavior rule (this is the poisoned creature rule):
-	if the creature is poisoned
-	begin;
+	if the creature is poisoned:
 		now the creature is passive;
 		now the creature is slow;
-		if the creature is visible, say "[The creature] does not move but simply looks glassy[if the creature is hungry] and hungry[end if][if the creature is starving]. Starving, even -- but too dulled to do anything about it[end if].";
-		rule succeeds;
-	end if.
+		if the creature is visible:
+			say "[The creature] does not move but simply looks glassy[if the creature is hungry] and hungry[end if][if the creature is starving]. Starving, even -- but too dulled to do anything about it[end if].";
+		rule succeeds.
 	
 A creature behavior rule (this is the color change rule):
-	if the moon of the creature is Triton and the creature can see the lamp
-	begin;
-		if the lamp is lit and the color of the creature is grey
-		begin;
+	if the moon of the creature is Triton and the creature can see the lamp:
+		if the lamp is lit and the color of the creature is grey:
 			now the creature is red;
 			now the creature is passive;
-			if the creature is visible, say "The creature gradually turns red in the lamplight.";
-		otherwise;
-			if the lamp is unlit and the color of the creature is red
-			begin;
+			if the creature is visible:
+				say "The creature gradually turns red in the lamplight.";
+		otherwise:
+			if the lamp is unlit and the color of the creature is red:
 				now the creature is grey;
 				now the creature is passive;
-				if the creature is visible, say "The creature fades to grey with the lamp turned off.";
-			end if;
-		end if;
-	end if.
-	
+				if the creature is visible, say "The creature fades to grey with the lamp turned off."
+					
 A creature behavior rule (this is the drop heavy things rule):
-	if the creature is active and the creature carries a tiring thing (called anvil)
-	begin;
+	if the creature is active and the creature carries a tiring thing (called anvil):
 		say "[The creature] grimaces at the weight of [the anvil].[line break]";
-		try the creature trying dropping the anvil;
-	end if.
+		try the creature trying dropping the anvil.
 
 Definition: a thing is tiring if it outweighs strength.
 
 A creature behavior rule (this is the placid held creature rule):
-	if the player is carrying the creature
-	begin;
-		if the creature carries a delicious thing and the creature is hungry
-		begin;
+	if the player is carrying the creature: 
+		if the creature carries a delicious thing and the creature is hungry:
 			try the creature trying dining;
-		otherwise;
-			if the creature is cold, say "[The creature] huddles against you for warmth.";
-			otherwise say "[The creature] [if a random chance of 1 in 2 succeeds]squirms a little in your grip[otherwise]leans over to look at the floor[end if][if a random chance of 1 in 2 succeeds], but does nothing[end if].";
-		end if;
-		rule fails;
-	end if.
+		otherwise:
+			if the creature is cold:
+				say "[The creature] huddles against you for warmth.";
+			otherwise:
+				say "[The creature] [if a random chance of 1 in 2 succeeds]squirms a little in your grip[otherwise]leans over to look at the floor[end if][if a random chance of 1 in 2 succeeds], but does nothing[end if].";
+		rule fails.
 	
 A creature behavior rule (this is the inactivity while blinded rule):
-	if the creature is blinded and the creature is active
-	begin;
-		if the creature is smart
-		begin;
-			if the creature can see a lit device (called the target)
-			begin;
-				if the target is fixed in place or the target is available,
+	if the creature is blinded and the creature is active:
+		if the creature is smart:
+			if the creature can see a lit device (called the target):
+				if the target is fixed in place or the target is available:
 					try the creature trying switching off the target;
-				otherwise try the creature trying hiding oneself;
-				if the creature is blinded and the creature is active
-				begin;
+				otherwise:
+					try the creature trying hiding oneself;
+				if the creature is blinded and the creature is active:
 					say "[The creature] [if a random chance of 1 in 2 succeeds]obviously does not appreciate the glare of the light[otherwise]huddles by itself, blinking[end if][if the creature is hungry]. It also looks to be getting hungry[end if].";
 					now the creature is passive;
-				end if;
-			end if;
-		otherwise;
+		otherwise:
 			try the creature trying hiding oneself;
 			if the player cannot see the creature, rule fails; 
 			if the creature is passive, rule fails;
-			if the creature is in the egg and the creature is visible
-			begin;
+			if the creature is in the egg and the creature is visible:
 				say "[The creature] turns as far from the light as it can get in its pod.";
-			otherwise;
-				 if the creature is visible, say "[The creature] cowers [if the creature is not in the location]in [the holder of the creature][otherwise]in what shadow it can find[end if], sniveling.";
-			end if;
-			rule fails;
-		end if;
-	end if.
+			otherwise:
+				 if the creature is visible, say "[The creature] cowers [if the creature is not in the location]in [the holder of the creature][otherwise]in what shadow it can find[end if], sniveling."; 
+			rule fails.
 
 A creature behavior rule (this is the food consumption rule):
-	if the creature is active and the creature is hungry,
+	if the creature is active and the creature is hungry:
 		try the creature trying dining. 	
 
 A creature behavior rule (this is the inactivity while starving rule):
-	if the creature is starving and creature is active
-	begin;
+	if the creature is starving and creature is active:
 		try the creature trying dining;
-		if the creature is starving, try the creature trying crying;
-	end if.	
+		if the creature is starving, try the creature trying crying.
 	
 A creature behavior rule (this is the slothful kids don't move rule):
-	if the creature is slothful and the creature is active
-	begin;
+	if the creature is slothful and the creature is active:
 		try the creature trying waiting;
 		now the creature is passive;
-		rule succeeds;
-	end if.
+		rule succeeds.
 
 A creature behavior rule (this is the dress when cold rule):
 	if the creature is active and the creature is cold,
@@ -1852,51 +1782,37 @@ A creature behavior rule (this is the inactivity while cold rule):
 		try the creature trying shivering.
 
 A creature behavior rule (this is the timid creature hides rule):
-	if the creature is active and the creature is timid and the creature can see the player
-	begin;
-		try the creature trying hiding oneself;  
-	end if.
+	if the creature is active and the creature is timid and the creature can see the player,
+		try the creature trying hiding oneself; 
  
 A creature behavior rule (this is the timid creature lurks rule):
-	if the creature is active and the creature is timid and the creature is visible
-	begin;
+	if the creature is active and the creature is timid and the creature is visible:
 		say "[The creature] tries to put [the random fixed in place thing in the location] between itself and you.";
-		now the creature is passive;
-	end if.
+		now the creature is passive.
 	
 A creature behavior rule (this is the contrary creature rule): 
-	if the creature is active and the creature is contrary and the noun is a thing
-	begin;
-		if the noun is the creature
-		begin;
+	if the creature is active and the creature is contrary and the noun is a thing:
+		if the noun is the creature:
 			now the creature is passive; [because we will count glaring back at the player as its action for this turn]
-		otherwise;
+		otherwise:
 			if the creature is visible, say "[The creature] [if a random chance of 1 in 2 succeeds]watches your attention to[otherwise]observes your interest in[end if] [the noun][if a random chance of 1 in 2 succeeds], its eyes narrowing[otherwise], growling in the back of its throat[end if].[line break]";
 			if opening, try the creature trying closing the noun;
 			if closing, try the creature trying opening the noun;
-			if the creature is active, try the creature trying taking the noun;
-		end if;
-	end if.
+			if the creature is active, try the creature trying taking the noun.
 	
 A creature behavior rule (this is the evil creature rule): 
 	if the creature is secretive and the creature is active and the creature is smart, try the creature trying launching us.
 
 A creature behavior rule (this is the acquisitive creature environment rule):
 	if the creature is not visible, make no decision;
-	if the creature is active and the creature is acquisitive
-	begin; 
-		if the creature is in a container and the location is rich
-		begin; 
+	if the creature is active and the creature is acquisitive:
+		if the creature is in a container and the location is rich:
 			say "[The creature] thoughtfully counts [the number of things in the location in words] things outside its home, as compared to [the number of things in the holder of the creature in words] where it is now, and scratches its head.";
 			try the creature trying exiting;
-		otherwise;
-			if the creature is in the location and the creature can see a rich container (called the target)
-			begin;
+		otherwise:
+			if the creature is in the location and the creature can see a rich container (called the target):
 				say "[The creature] thoughtfully counts [the number of things in the target in words] things in [the target], as compared to [the number of things in the location in words] out here, and scratches its head. ";
-				try the creature trying entering the target;
-			end if;
-		end if;
-	end if.
+				try the creature trying entering the target.
 	
 Definition: a container is rich:
 	if it is closed and it is opaque, no;
@@ -1906,28 +1822,22 @@ Definition:  a room is rich if the number of things in it is greater than the nu
 
 A creature behavior rule (this is the creature escape rule): 
 	if the player lies outside the creature, make no decision;
-	if the creature is active and the creature is in a container (called home)
-	begin;
-		if the home contains something (called target) which is wanted by the creature
-		begin;
+	if the creature is active and the creature is in a container (called home):
+		if the home contains something (called target) which is wanted by the creature:
 			try the creature trying taking the target;
-		otherwise;
+		otherwise:
 			if the player carries the home, make no decision;
-			if the creature is homebound and the creature is in the egg and location is the Office
-			begin;
+			if the creature is homebound and the creature is in the egg and location is the Office:
 				try the creature trying preparing for launch;
-			otherwise; 
+			otherwise:
 				if the creature was last fed too long ago, do nothing;
 				otherwise try the creature trying exiting;
-				if the active creature is in a closed container (called the trap)
-				begin;	
-					if the creature is friendly and the creature is visible, say "[The creature] presses its mouth to the inner surface of [the trap] and makes fish faces at you.";
-					otherwise if the creature is visible, say "[The creature] knocks on the inner wall of [the trap]."; 
-					now the creature is passive;
-				end if;
-			end if;
-		end if;
-	end if.
+				if the active creature is in a closed container (called the trap):
+					if the creature is friendly and the creature is visible:
+						say "[The creature] presses its mouth to the inner surface of [the trap] and makes fish faces at you.";
+					otherwise if the creature is visible:
+						say "[The creature] knocks on the inner wall of [the trap]."; 
+					now the creature is passive.
 	
 A creature behavior rule:
 	if the creature is homebound and the creature is active and location is the Office, try the creature trying preparing for launch;
@@ -2035,8 +1945,7 @@ A creature behavior rule (this is the bored action rule):
 			otherwise;
 				if the creature can touch an entertaining thing
 				begin;
-					let the new target be a random entertaining thing;
-					try the creature trying playing with the new target;
+					try the creature trying playing with a random entertaining thing;
 				end if;
 			end if;
 		end if;
@@ -2232,7 +2141,7 @@ Report taking off undershorts for the first time:
 	say "You strip off your shorts, feeling distinctly self-conscious." instead.
 
 Instead of taking inventory:
-	say "You're carrying [list of things carried by the player][if the player wears something]. You are wearing [list of uppermost things worn by the player][end if]."
+	say "You're carrying [a list of things carried by the player][if the player wears something]. You are wearing [a list of uppermost things worn by the player][end if]."
 
 Instead of examining the player:
 	if the player wears the jacket and the player wears the slacks and the player wears the fedora, say "You look sharp in your suit and fedora." instead;
@@ -2261,7 +2170,7 @@ Carry out taking off:
 	now the noun is not underlaid by anything.
 	
 Report taking off something:
-	say "You take off [the noun], and are now wearing [list of uppermost things worn by the player]." instead.
+	say "You take off [the noun], and are now wearing [a list of uppermost things worn by the player]." instead.
 
 Overlying relates one thing to various things. The verb to overlie (it overlies, they overlie, it is overlying) implies the overlying relation. 
 
@@ -2287,7 +2196,10 @@ The ballpoint pen is a thing. The description of the pen is "It's a Parker 'Jott
 
 The brown paper sack is a container. In the brown paper sack is some bread, and a wedge of cheese.
 
-Understand "bag" as the sack. The description of the sack is "An ordinary lunch bag, such as anyone might take to work." The sack is papery. The sack is openable and closed. After opening the sack when a stinky thing is in the sack: say "As you open the sack, you catch the pungent smell of [the list of stinky things in the sack] inside[if something which is not stinky is in the sack]. Less offensive to the nostrils [is/are the list of inoffensive things in the sack][end if]."
+Understand "bag" as the sack. The description of the sack is "An ordinary lunch bag, such as anyone might take to work." The sack is papery. The sack is openable and closed. 
+
+After opening the sack when a stinky thing is in the sack: 
+	say "As you open the sack, you catch the pungent smell of [the list of stinky things in the sack] inside[if something which is not stinky is in the sack]. Less offensive to the nostrils [is-are the list of inoffensive things in the sack][end if]."
 
 The cheese is edible and stinky. The description of the cheese is "Pungent: you conclude it must be European cheese. You certainly haven't seen anything like that since Italy." The bread is edible. The description of the bread is "A round and crusty roll." Understand "round" and "crusty" and "roll" as the bread.
 	
@@ -2468,13 +2380,13 @@ To say gravities:
 	
 Color is a kind of value. The colors are red, orange, yellow,  green, cyan, blue, indigo, purple,  tan, black, white, and grey. The creature has a color.
 
-The creature is an animal. The description is "It's an attractive shade of [color of creature], really, when you think about it, and it looks a little bit like a [if the creature is slothful]sloth[otherwise]chimpanzee[end if][if the carrying capacity of the creature is not 2] -- with [carrying capacity of the creature in words] arm[s], and [otherwise]. Only with [end if]a [if the odor sensitivity of the creature is strong or the odor sensitivity of the creature is inverse]larger, more sensitive[otherwise]smaller[end if] nose, and ears that come to points, and [tongue of creature]... [paragraph break][if the creature has something]It carries [list of things carried by the creature]. It wears [list of things worn by the creature].[otherwise]Odd, really.[end if]" 
+The creature is an animal. The description is "It's an attractive shade of [color of creature], really, when you think about it, and it looks a little bit like a [if the creature is slothful]sloth[otherwise]chimpanzee[end if][if the carrying capacity of the creature is not 2] -- with [carrying capacity of the creature in words] arm[s], and [otherwise]. Only with [end if]a [if the odor sensitivity of the creature is strong or the odor sensitivity of the creature is inverse]larger, more sensitive[otherwise]smaller[end if] nose, and ears that come to points, and [tongue of creature]... [paragraph break][if the creature has something]It carries [a list of things carried by the creature]. It wears [a list of things worn by the creature].[otherwise]Odd, really.[end if]" 
 
 Understand the color property as describing the creature. 
 
 The creature has a moon. The creature has a speed. The creature has an intelligence.  The creature has a food. The metabolism of the creature is 50.
 
-The creature wears a collar. Understand "Visitor" or "animal" or "alien" or "arms" or "arm" or "paw" or "paws" or "nose" or "tongue" or "teeth" as the creature.  The creature has a property called tongue. The tongue of the creature is "raspy tongue".
+The creature wears a collar. Understand "Visitor" or "animal" or "alien" or "arms" or "arm" or "paw" or "paws" or "nose" or "tongue" or "teeth" as the creature.  The creature has some text called tongue. The tongue of the creature is "raspy tongue".
 
 
 
@@ -2518,7 +2430,7 @@ Instead of searching the potted plant: say "A preliminary look turns up nothing,
 
 Understand "conceal [something] in [something]" or "hide [something] in [something]" or "bury [something] in [something]" as hiding it in. Hiding it in is an action applying to two things. Check hiding it in: if the second noun is not a container, say "[The second noun] will not conceal much." instead; if the second noun is not openable, say "[The second noun] cannot be closed." instead; if the player does not carry the noun, try taking the noun; if the player does not carry the noun, stop the action. Carry out hiding it in: try inserting the noun into the second noun; if the noun is in the second noun and the second noun is openable, try closing the second noun.
 
-Understand "dig in [something]" as digging. Understand "dig [something]" as digging. [Digging is an action applying to one thing.] Carry out digging: say "Pointless."
+Understand "dig in [something]" as digging. Understand "dig [something]" as digging. Digging is an action applying to one thing. Carry out digging: say "Pointless."
 
 Before hiding something in the potted plant when the player does not carry the noun:
 	if the player wears the noun, try taking off the noun;
@@ -2619,7 +2531,7 @@ To say creature clothing:
 	if the creature wears something
 	begin;
 		if the number of things worn by the creature is 1 and the creature wears the collar, say "An optimist has tied a collar around its neck";
-		otherwise say "It is currently clad in [list of things worn by the creature]";
+		otherwise say "It is currently clad in [a list of things worn by the creature]";
 	otherwise;
 		say "It has gotten rid of the collar";
 	end if;
@@ -2641,7 +2553,7 @@ Rule for writing a paragraph about the creature:
 	if the creature wears something
 	begin;
 		if the number of things worn by the creature is 1 and the creature wears the collar, say "An optimist has tied a collar around its neck. ";
-		otherwise say "It is currently clad in [list of things worn by the creature]. ";
+		otherwise say "It is currently clad in [a list of things worn by the creature]. ";
 	end if;
 	if the creature carries something, say "It is carrying [a list of things carried by the creature]. ";
 	say paragraph break.
@@ -2651,7 +2563,7 @@ Before listing nondescript items:
 	if the number of marked for listing things is 0 and the location is the Office, say "Your floor is atypically clear of obstructions.";
 	
 Rule for listing nondescript items of the Office:
-	say "[if the number of marked for listing things is greater than 1]Scattered about[otherwise]Pushed over under the window[end if]";
+	say "[if the number of marked for listing things is greater than 1]Scattered about[otherwise]Pushed over under the window[end if] ";
 	list the contents of the Office, as a sentence, tersely, listing marked items only, prefacing with is/are, including contents and giving brief inventory information;
 	say "."
 
@@ -2659,7 +2571,7 @@ The X1 Probe kit is a heavy closed openable container in the Office on Floor Fif
 
 Packed beneath it are the heavier pieces: [a propulsion unit] and [a life-support unit]. [The instruction booklet] has fallen down the side, along with [the blank label] you will need to address the probe."
  
-In the kit is a propulsion unit, a life-support unit, a tinted egg pod, a blank label, and an instruction booklet. Understand "life" or "support" as the life-support unit. The egg is an openable closed container. The egg is transparent and enterable. The egg is medium-weight. The description of the egg is "It is made of a strong, clear but tinted material[if something is in the egg], and currently contains [list of things in the egg][end if]." After taking the pod for the first time, say "For something the size of a Frigidaire, the pod is surprisingly light and manageable. Amazing what they can do with plastics nowadays."
+In the kit is a propulsion unit, a life-support unit, a tinted egg pod, a blank label, and an instruction booklet. Understand "life" or "support" as the life-support unit. The egg is an openable closed container. The egg is transparent and enterable. The egg is medium-weight. The description of the egg is "It is made of a strong, clear but tinted material[if something is in the egg], and currently contains [a list of things in the egg][end if]." After taking the pod for the first time, say "For something the size of a Frigidaire, the pod is surprisingly light and manageable. Amazing what they can do with plastics nowadays."
 
 The propulsion unit is a device. The life-support unit is a device. Before printing the name of the life-support unit: if the life-support unit is switched on, say "activated "; otherwise say "inactive ".
 
@@ -2779,7 +2691,7 @@ Chapter 8 - The Capsule
 	
 Section 1 - Glue and Gluing
 
-Instead of tieing something to something, say "What are you, an Eagle Scout?"
+Instead of tying something to something, say "What are you, an Eagle Scout?"
 
 Before putting something on something when the noun fits the second noun:
 	try gluing the noun to the second noun instead.
@@ -2913,7 +2825,7 @@ Instead of gluing the egg to something:
 	try gluing the second noun to the egg.
 	
 Report examining something when something is part of the noun:
-	say "Attached to [the noun] [is/are list of things which are part of the noun]." instead.
+	say "Attached to [the noun] [is-are list of things which are part of the noun]." instead.
 	
 Instead of taking something which is part of something (called the source):
 	say "The holdall glue defeats your strength. [The noun] is now permanently attached to [the source]."
@@ -2987,54 +2899,44 @@ Understand "write [moon] on [something]" as filling it out on.
 
 Filling it out on is an action applying to one moon and one thing.
 
-Instead of filling moon understood out on egg when blank label is stuck to egg:
-	try filling moon understood out on blank label.
-
-Instead of filling moon understood out on egg when filled label is stuck to egg:
-	try filling moon understood out on filled label.
-
-Before filling moon understood out on filled label:
-	say "First you cross out ";
-	if filled label is alien-marked, say "[fixed letter spacing][tattoo-mark of the moon of the creature][variable letter spacing]";
-	otherwise say "[moon of filled label]";
-	say " vigorously with many strokes of the pen..."
-
-Before filling moon understood out on filled label when the player does not have the pen:
-	if the pen is visible
-	begin;
-		try taking the pen;
-	end if.
-
+Setting action variables for filling:
+	if the second noun is the egg and the blank label is stuck to egg: 
+		change the second noun to blank label;
+	if the second noun is the egg and the filled label is stuck to egg: 
+		change the second noun to filled label.
 
 Check filling it out on:
-	if the player is not carrying the ballpoint
-	begin;
+	if the second noun is not the blank label and the second noun is not the filled label, say "You can't fill out [the second noun], only the label." instead. 
+
+Check filling it out on:
+	if the player is not carrying the ballpoint:
 		if the ballpoint is visible, try taking the ballpoint;
 		otherwise say "Now where did you set down your pen, anyway?" instead;
 		if the player is not carrying the ballpoint, stop the action;
-	end if;
-	if the second noun is not the blank label and the second noun is not the filled label, say "You can't fill out [the second noun], only the label." instead.
 	
-Carry out filling moon understood out on the blank label:
-	fix blank label.
+Check filling it out on: 
+	if the second noun is the blank label, fix blank label.
 
 To fix blank label:
-	if the blank label is part of something (called the parent)
-	begin;
+	if the blank label is part of something (called the parent):
 		now the filled label is part of the parent; 
-	otherwise;
+	otherwise:
 		move the filled label to the holder of the blank label;
-	end if;
-	if the blank label is stuck to the egg
-	begin; 
+	if the blank label is stuck to the egg: 
 		now the filled label is stuck to the egg;
-		now the blank label is not stuck to the egg; 
-	end if;
+		now the blank label is not stuck to the egg;  
 	remove the blank label from play;
 	change the second noun to the filled label.
+
+Check filling it out on:
+	if the second noun is the filled label:
+		say "First you cross out ";
+		if filled label is alien-marked, say "[fixed letter spacing][tattoo-mark of the moon of the creature][variable letter spacing]";
+		otherwise say "[moon of filled label]";
+		say " vigorously with many strokes of the pen..."  
 	
 Carry out filling it out on:
-	now the second noun is human-marked;
+	now the second noun is human-marked; 
 	change moon of the second noun to the moon understood.
 	
 Report filling it out on:
@@ -3047,7 +2949,7 @@ Before a creature trying filling moon understood out on the blank label when the
 Before a creature trying filling  moon understood out on the blank label when the person asked cannot touch the blank label:
 	try the person asked trying taking the blank label instead.
 	
-Carry out a creature trying filling the moon of the creature out on the blank label:
+Carry out someone trying filling the moon of the creature out on the blank label:
 	fix blank label;
 	now the filled label is alien-marked;
 	change moon of the second noun to the moon of the creature.
@@ -3306,11 +3208,9 @@ Procedural rule: ignore the can't take other people rule.
 Instead of taking a hostile creature:
 	if the creature is poisoned, continue the action;
 	if the creature is starving, continue the action;
-	if the creature is slothful
-	begin;
+	if the creature is slothful:
 		say "The creature registers displeasure at having you get near it[if a random chance of 1 in 2 succeeds], and you jump back to avoid being bitten. But another approach might work[otherwise], but is not strong enough to prevent you[end if].";
 		stop the action;
-	end if;
 	try the creature trying growling instead.
 	
 Instead of taking the creature when the speed of the creature is greater than moderate:
@@ -3480,11 +3380,9 @@ Understand "wait [number] minutes/turns" or "wait for [number] minutes/turns" or
 
 Carry out waiting more:
 	let duration be the number understood - 1;
-	repeat with X running from 1 to duration
-	begin;
+	repeat with X running from 1 to duration:
 		if the creature is dying or we are dead, do nothing;
-		otherwise follow the turn sequence rules;
-	end repeat. 
+		otherwise follow the turn sequence rules.
 	
 Report waiting more:
 	if we are dead, do nothing;
@@ -3500,11 +3398,9 @@ Check hanging around until:
 	if the time of day is after the time understood, say "It is too late for that now." instead.
 
 Carry out hanging around until:
-	while the time of day is before time understood 
-	begin;
+	while the time of day is before time understood:
 		if the creature is dying or we are dead, do nothing;
-		otherwise follow the turn sequence rules;
-	end while.
+		otherwise follow the turn sequence rules.
 
 Report hanging around until:
 	if we are dead, do nothing;
@@ -3670,18 +3566,14 @@ A person has a table-name called conversation.
 
 Instead of asking someone about something:
 	let the source be the conversation of the noun;
-	if topic understood is a topic listed in source
-	begin;
-		if there is a turn stamp entry
-		begin;
+	if topic understood is a topic listed in source:
+		if there is a turn stamp entry:
 			say "[The noun] has already told you [summary entry].";
-		otherwise;
+		otherwise:
 			change turn stamp entry to the turn count;
 			say "[reply entry][paragraph break]";
-		end if;
-	otherwise;
-		say "[The noun] stares at you blankly.";
-	end if. 
+	otherwise:
+		say "[The noun] stares at you blankly."
 
 Definition: a person is other if it is not the player.
 
@@ -3694,23 +3586,17 @@ Understand "recap" or "recall" or "review" as recalling conversations.
 Recalling conversations is an action applying to nothing. 
  
 Carry out recalling conversations:
-	repeat with speaker running through other people
-	begin;
+	repeat with speaker running through other people:
 		let source be the conversation of the speaker;
 		sort source in turn stamp order;
 		say "[The speaker] has so far told you: [line break]";
 		let index be 0;
-		repeat through source
-		begin;
-			if there is a turn stamp entry
-			begin;
+		repeat through source:
+			if there is a turn stamp entry:
 				let index be 1;
 				say "  [summary entry][line break]";
-			end if;
-		end repeat;
 		if index is 0, say "  absolutely nothing[line break]";
-		say line break;
-	end repeat.
+		say line break.
 	
 The conversation of Esther is Table of Esther Conversation.
 
@@ -3744,7 +3630,7 @@ You turn back. 'I'm not sure the Office of Alien Protocol accepts resignations, 
 
 Presumably she does have a point here, but it's taking her quite a while to get to."
 
-Final Chat ends when the time since Final Chat began is 3 minutes. When Final Chat ends: say "Esther hesitates an even longer time; then she says, 'I was married. Before.'
+Final Chat ends when the time since Final Chat began is 2 minutes. When Final Chat ends: say "Esther hesitates an even longer time; then she says, 'I was married. Before.'
 
 You blink. 'What brings on this confidence?'
 
@@ -3784,9 +3670,9 @@ When disguise begins:
 	increase plot depth by 1;
 	change Esther's utterance to "'Hey,' says Esther, just outside the door. 'The chief called down and--'
 	
-At this moment her head pokes through and she gets a good look at the creature in [list of things worn by the creature]. She leans against the doorframe, grinning. 'If you think you can disguise the creature as you, you've got another think coming.'
+At this moment her head pokes through and she gets a good look at the creature in [a list of things worn by the creature]. She leans against the doorframe, grinning. 'If you think you can disguise the creature as you, you've got another think coming.'
 	
-'Do you mind? I'm trying to work here,' you reply, with all the dignity you can muster while reduced to [list of uppermost things worn by the player].
+'Do you mind? I'm trying to work here,' you reply, with all the dignity you can muster while reduced to [a list of uppermost things worn by the player].
 
 She raises her eyebrows, but goes out again. 'Don't spend all day playing with your little friend,' she says over her shoulder. 'We've got work to do in this office, you know.' ".
 
@@ -3823,16 +3709,14 @@ Nutty is a scene. Nutty ends when the time since Nutty began is 3 minutes. Nutty
 
 When Nutty ends:
 	increase plot depth by 1;
-	if the player is in the egg
-	begin;
-		if the egg is openable
-		begin;
-			if the egg is open, change Esther's utterance to "'I tell you what,' says Esther from the doorway, catching your attention. 'I've soured on this job. It's made you barmy and it's going to do the same to me if I don't take immediate action. I need a vacation. Rest and relaxation.'";
-			otherwise  change Esther's utterance to "Esther stands in the doorway reading a short speech which, mercifully, the egg prevents you from hearing. The gist of it from the circling motion she makes at her head would seem to be that she thinks you've gone crazy."; 
-		otherwise;
-			change Esther's utterance to "Esther stands in the doorway looking over you and the alien, and the pod you're in. Then a very very strange expression crosses her face, and she goes out.";
-		end if;
-	end if.
+	if the player is in the egg:
+		if the egg is openable:
+			if the egg is open:
+				change Esther's utterance to "'I tell you what,' says Esther from the doorway, catching your attention. 'I've soured on this job. It's made you barmy and it's going to do the same to me if I don't take immediate action. I need a vacation. Rest and relaxation.'";
+			otherwise:
+				change Esther's utterance to "Esther stands in the doorway reading a short speech which, mercifully, the egg prevents you from hearing. The gist of it from the circling motion she makes at her head would seem to be that she thinks you've gone crazy."; 
+		otherwise:
+			change Esther's utterance to "Esther stands in the doorway looking over you and the alien, and the pod you're in. Then a very very strange expression crosses her face, and she goes out."
   
 
 Housekeeping is a scene. Housekeeping begins when the number of grabbable things in the location is greater than 6 and Housekeeping has not happened and Glue Return is not happening and plot depth is less than 2. Housekeeping ends when the time since Housekeeping began is 1 minute.
@@ -3848,7 +3732,7 @@ As though it's ever your fault when she -- well, there was last Thursday --
 
 No point arguing anyway."
 
-Glue Return is a scene. Glue Return begins when the player is in the Office and Esther has the glue. Glue Return ends when the time since Glue Return began is greater than the patience of Esther.
+Glue Return is a recurring scene. Glue Return begins when the player is in the Office and Esther has the glue. Glue Return ends when the time since Glue Return began is greater than the patience of Esther.
 
 Esther has a time called patience. The patience of Esther is 1 minute.
 
@@ -3860,12 +3744,10 @@ When Glue Return begins:
 
 Every turn during Glue Return:
 	if the time since Glue Return began is the patience of Esther, make no decision;
-	repeat through Table of Esther Business
-	begin;
+	repeat through Table of Esther Business:
 		change Esther's utterance to reaction entry;
 		blank out the whole row;
 		make no decision;
-	end repeat;
 	change Esther's utterance to "Esther's typing goes on."
 	
 Table of Esther Business
@@ -3926,15 +3808,13 @@ She throws up her hands and goes back out. 'I'm just citing the regs -- I didn't
 Ark is a scene. Ark begins when Glue Return is not happening and plot depth is less than 2 and the pod is visible and the number of things in the pod is greater than 3 and Ark has not happened. Ark ends when the time since Ark began is 2 minutes.
 
 When Ark ends:
-	if the pod is visible and the number of things in the pod is greater than 3
-	begin;
+	if the pod is visible and the number of things in the pod is greater than 3:
 		increase plot depth by 1;
 		change Esther's utterance to "'I thought those were supposed to be escape pods, not Noah's ark,' remarks Esther from the door. 'Look at all that stuff you got in there.' She casts a fascinated glance over [the list of things in the pod], all stuffed into the pod.
 		
 'You want to get in too?' you offer. 'We're supposed to have a male and female of each kind.'
 
-'All that rain would spoil the baseball anyway,' she says, going. ";
-	end if.
+'All that rain would spoil the baseball anyway,' she says, going. "
 	
 
 Chapter 11 - Help System

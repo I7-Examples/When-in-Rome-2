@@ -1,354 +1,48 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
 <html>
+<head>
+  <title>Emily Short - When in Rome 2: Far from Home — 9 of 21</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Emily Short" />
+  <meta name="description" content="A page for the game When in Rome 2: Far from Home by Emily Short." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>When in Rome 2: Far from Home - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">When in Rome 2: Far from Home</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Emily Short (2006) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_7.html">Previous</a><br><a href="source_9.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 4 - Creature Reactions to Giving and Other Actions</b>
-<br>
+<div class = "container">
 
-<br>
-Before exiting when the player is in a closed container (called the trap):
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;try opening the trap;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the player is in the trap, stop the action.
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-Instead of opening the unopenable pod when the player is in the pod:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the creature is visible, say &quot;<font color=#000080>You bang on the door with all your might, but the holdall glue really does hold all.
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-</font><font color=#000080>Noticing your struggles, the creature waves at you cheerily.</font>&quot;
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>When in Rome 2: Far from Home</span> <span class="pagination">— 9 of 21</span>
+	</h1>
+	<h2>
+		<span>Emily Short</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-Instead of showing something to a creature:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;try giving the noun to the second noun.
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Understand the command &quot;<font color=#000080>feed</font>&quot; as something new. Understand &quot;<font color=#000080>feed [something] to [something]</font>&quot; as feeding it to.
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_7.html">Previous</a></li><li><a href="source_9.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-Feeding it to is an action applying to two things.
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">ature Reactions to Giving and Other Actions</span></p><p class="indent0"></p><p class="indent0">Before exiting when the player is in a closed container (called the trap):</p><p class="indent1">try opening the trap;</p><p class="indent1">if the player is in the trap, stop the action.</p><p class="indent0"></p><p class="indent0">Instead of opening the unopenable pod when the player is in the pod:</p><p class="indent1">if the creature is visible, say &quot;<span class="quote">You bang on the door with all your might, but the holdall glue really does hold all.</span></p><p class="indent1"><span class="quote"></span></p><p class="indent0"><span class="quote">Noticing your struggles, the creature waves at you cheerily.</span>&quot;</p><p class="indent0"></p><p class="indent0">Instead of showing something to a creature:</p><p class="indent1">try giving the noun to the second noun.</p><p class="indent1"></p><p class="indent0">Understand the command &quot;<span class="quote">feed</span>&quot; as something new. Understand &quot;<span class="quote">feed [</span><span class="substitution">something</span><span class="quote">] to [</span><span class="substitution">something</span><span class="quote">]</span>&quot; as feeding it to.</p><p class="indent0"></p><p class="indent0">Feeding it to is an action applying to two things.</p><p class="indent0"></p><p class="indent0">Instead of feeding something to a lightning creature: say &quot;<span class="quote">[</span><span class="substitution">The second noun</span><span class="quote">] very swiftly dodges your attempt to feed it.</span>&quot; Instead of feeding something to a fast creature: say &quot;<span class="quote">[</span><span class="substitution">The second noun</span><span class="quote">] quickly moves away before you can do this.</span>&quot; Instead of feeding something to a moderate creature when the creature is hostile: say &quot;<span class="quote">[</span><span class="substitution">The second noun</span><span class="quote">] watches you suspiciously and then turns its head aside.</span>&quot;</p><p class="indent0"></p><p class="indent0">Check feeding it to:</p><p class="indent1">if the player is not carrying the noun</p><p class="indent1">begin;</p><p class="indent2">if the player is wearing the noun, try taking off the noun;</p><p class="indent2">otherwise try taking the noun;</p><p class="indent2">if the player is not carrying the noun, stop the action;</p><p class="indent1">end if;</p><p class="indent1">if the player cannot touch the second noun, say &quot;<span class="quote">You cannot reach [</span><span class="substitution">the second noun</span><span class="quote">].</span>&quot;</p><p class="indent0"></p><p class="indent0">Carry out feeding it to:</p><p class="indent1">if the noun is delicious</p><p class="indent1">begin;</p><p class="indent2">move the noun to the second noun;</p><p class="indent2">try the second noun trying eating the noun;</p><p class="indent1">otherwise;</p><p class="indent2">say &quot;<span class="quote">[</span><span class="substitution">The second noun</span><span class="quote">] spits out [</span><span class="substitution">the noun</span><span class="quote">].</span>&quot; instead;</p><p class="indent1">end if.</p><p class="indent1"></p><p class="indent0">Accepting is an action applying to one thing.</p><p class="indent0"></p><p class="indent0">Before a creature trying accepting something when the person asked is occupied: </p><p class="indent1">if the number of things carried by the person asked is at least the carrying capacity of the person asked, </p><p class="indent2">try the person asked trying dropping a random thing carried by the person asked.</p><p class="indent0"></p><p class="indent0">Carry out a creature trying accepting something:</p><p class="indent1">move the noun to the person asked.</p><p class="indent1"></p><p class="indent0">Procedural rule: ignore the block giving rule.</p><p class="indent0"></p><p class="indent0">Check giving (this is the polite refusal of unwanted objects rule): </p><p class="indent1">if the second noun does not want the noun</p><p class="indent1">begin;</p><p class="indent2">try the second noun trying rejecting the noun instead;</p><p class="indent2">now the second noun is passive;</p><p class="indent1">end if.</p><p class="indent1"></p><p class="indent0">Check giving (this is the no touching rule):</p><p class="indent1">if the player cannot touch the second noun, say &quot;<span class="quote">[</span><span class="substitution">The second noun</span><span class="quote">] cannot reach anything you might choose to give it at the moment.</span>&quot; instead.</p><p class="indent0"></p><p class="indent0">Carry out giving: </p><p class="indent1">try the second noun trying accepting the noun.</p><p class="indent0"></p><p class="indent0">Report giving: </p><p class="indent1">say &quot;<span class="quote">[</span><span class="substitution">The second noun</span><span class="quote">] accepts [</span><span class="substitution">the noun</span><span class="quote">][</span><span class="substitution">if creature is friendly</span><span class="quote">] gratefully[</span><span class="substitution">end if</span><span class="quote">][</span><span class="substitution">if creature is curious</span><span class="quote">], poking it and turning it around and around for a moment[</span><span class="substitution">end if</span><span class="quote">][</span><span class="substitution">if the creature is hostile</span><span class="quote">], all but snatching it from you[</span><span class="substitution">end if</span><span class="quote">].</span>&quot; instead.</p><p class="indent1"></p><p class="indent0">Report giving something stinky to a creature when the odor sensitivity of the second noun is strong:</p><p class="indent1">now the second noun is passive;</p><p class="indent1">say &quot;<span class="quote">[</span><span class="substitution">The second noun</span><span class="quote">] takes [</span><span class="substitution">the noun</span><span class="quote">], at arm's length and wrinkling its nose.</span>&quot; instead.</p><p class="indent1"></p><p class="indent0">Report giving something stinky to a creature when the odor sensitivity of the second noun is weak:</p><p class="indent1">now the second noun is passive;</p><p class="indent1">say &quot;<span class="quote">[</span><span class="substitution">The second noun</span><span class="quote">] takes [</span><span class="substitution">the noun</span><span class="quote">], apparently unresponsive to its pungency.</span>&quot;</p><p class="indent1"></p><p class="indent0">Report giving something stinky to a creature when the odor sensitivity of the second noun is inverse:</p><p class="indent1">now the second noun is passive;</p><p class="indent1">say &quot;<span class="quote">[</span><span class="substitution">The second noun</span><span class="quote">] takes [</span><span class="substitution">the noun</span><span class="quote">], smelling deeply and with obvious pleasure at the stinkiness.</span>&quot;</p><p class="indent1"></p><p class="indent0">Report giving the fedora to a smart creature:</p><p class="indent1">say &quot;<span class="quote">You hand over [</span><span class="substitution">the fedora</span><span class="quote">] to [</span><span class="substitution">the creature</span><span class="quote">], who takes by the brim and twirls it twice on the end of its claw.</span>&quot; instead.</p><p class="indent1"> </p><p class="indent0"></p><p class="indent0">Before giving something worn by the player to the creature:</p><p class="indent1">try taking off the noun;</p><p class="indent1">if the player wears the noun, say &quot;<span class="quote">You are still wearing [</span><span class="substitution">the noun</span><span class="quote">].</span>&quot; instead.</p><p class="indent0"></p><p class="indent0">Before the creature trying taking off something when the speed of the creature is slow:</p><p class="indent1">if a random chance of 1 in 3 succeeds</p><p class="indent1">begin;</p><p class="indent2">now the creature is passive;</p><p class="indent2">if the creature is visible, say &quot;<span class="quote">[</span><span class="substitution">The creature</span><span class="quote">] fumbles helplessly at [</span><span class="substitution">the noun</span><span class="quote">], trying to remove it.</span>&quot; instead;</p><p class="indent1">end if.</p><p class="indent0"></p><p class="indent0">Report a creature trying taking off the collar when the creature is slothful:</p><p class="indent1">say &quot;<span class="quote">The creature at last manages to detach [</span><span class="substitution">the noun</span><span class="quote">], though with considerable effort.</span>&quot; instead.</p><p class="indent0"></p><p class="indent0">Report a creature trying taking off something:</p><p class="indent1">say &quot;<span class="quote">[</span><span class="substitution">The person asked</span><span class="quote">] removes [</span><span class="substitution">the noun</span><span class="quote">] it was wearing.</span>&quot; instead.</p><p class="indent0"></p><p class="indent0">Before doing something other than examining or looking or taking inventory or waiting when the creature is starving:</p><p class="indent1">if the creature is carrying something delicious, continue the action;</p><p class="indent1">if the noun is a thing and the player carries the noun, continue the action;</p><p class="indent1">if the noun is a thing and the player wears the noun, continue the action;</p><p class="indent1">if the creature is stupid, continue the action;</p><p class="indent1">if the creature can see the player and the player is carrying something delicious (called the treat),</p><p class="indent2">say &quot;<span class="quote">In its eagerness for [</span><span class="substitution">the treat</span><span class="quote">], [</span><span class="substitution">the creature</span><span class="quote">] [</span><span class="substitution">if the creature is hostile</span><span class="quote">]circles you, growling, so that you can't get much done[</span><span class="substitution">otherwise</span><span class="quote">]clings so desperately to your trouser leg that you can't do much of anything[</span><span class="substitution">end if</span><span class="quote">].</span>&quot; instead.</p><p class="indent2">  </p><p class="indent0">Every turn: if the player is poisoned, end the game saying &quot;<span class="quote">You black out.</span>&quot;</p><p class="indent0"></p><p class="indent0"></p><p class="indent0">Instead of putting a wearable thing on the creature: try dressing the creature in the noun.</p><p class="indent0"></p><p class="indent0">Collaring is an action applying to one thing. </p><p class="indent0"></p><p class="indent0">Understand &quot;<span class="quote">collar [</span><span class="substitution">something</span><span class="quote">]</span>&quot; as collaring.</p><p class="indent0"></p><p class="indent0">Check collaring: </p><p class="indent1">if the player cannot see the collar, say &quot;<span class="quote">You haven't even got a collar.</span>&quot; instead;</p><p class="indent1">if the noun is not the creature, say &quot;<span class="quote">A pointless exercise.</span>&quot; instead.</p><p class="indent1"></p><p class="indent0">Carry out collaring:</p><p class="indent1">try dressing the creature in the collar.</p><p class="indent0"></p><p class="indent0">Dressing it in is an action applying to two things.</p><p class="indent0"></p><p class="indent0">Check dressing it in: </p><p class="indent1">if the second noun is not wearable, say &quot;<span class="quote">[</span><span class="substitution">The noun</span><span class="quote">] cannot possibly wear [</span><span class="substitution">the second noun</span><span class="quote">].</span>&quot; instead;</p><p class="indent1">if the player is not carrying the second noun</p><p class="indent1">begin;</p><p class="indent2">try taking the second noun;</p><p class="indent2">if the player is not carrying the second noun, stop the action;</p><p class="indent1">end if;</p><p class="indent0"></p><p class="indent0">Carry out dressing it in:</p><p class="indent1">now the noun wears the second noun.</p><p class="indent1"></p><p class="indent0">Report dressing it in:</p><p class="indent1">if the noun is hostile, say &quot;<span class="quote">Your victim watches you warily and with not a little distrust, but its limbs are slow and it is unable to put up much fight. </span>&quot;;</p><p class="indent1">say &quot;<span class="quote">You put [</span><span class="substitution">the second noun</span><span class="quote">] on [</span><span class="substitution">the noun</span><span class="quote">]. Very fetching.</span>&quot;</p><p class="indent1"></p><p class="indent0">After dressing a hungry meaty creature in something: </p><p class="indent1">say &quot;<span class="quote">[</span><span class="substitution">The noun</span><span class="quote">] suffers you to get close enough with [</span><span class="substitution">the second noun</span><span class="quote">]; then, for your pains, bites you deeply in the forearm.</span>&quot;;</p><p class="indent1">end the game saying &quot;<span class="quote">You spend most of the rest of the evening with a doctor</span>&quot;.</p><p class="indent1"></p><p class="indent0">Instead of dressing a hungry meaty creature in something for the first time:</p><p class="indent1">say &quot;<span class="quote">You get near [</span><span class="substitution">the noun</span><span class="quote">] with [</span><span class="substitution">the second noun</span><span class="quote">], but it grins very largely and shows you all its teeth, a sight of such menace that you draw back.</span>&quot;</p><p class="indent1"></p><p class="indent0">Understand &quot;<span class="quote">dress [</span><span class="substitution">something</span><span class="quote">] in [</span><span class="substitution">something</span><span class="quote">]</span>&quot; as dressing it in. Understand the commands &quot;<span class="quote">clothe</span>&quot; and &quot;<span class="quote">attire</span>&quot; as &quot;<span class="quote">dress</span>&quot;.</p><p class="indent0"></p><p class="indent0">Instead of dressing a lightning creature in something: </p><p class="indent1">if the creature is blinded</p><p class="indent1">begin;</p><p class="indent2">say &quot;<span class="quote">At your approach, [</span><span class="substitution">the creature</span><span class="quote">] squinches up its eyes.</span>&quot;;</p><p class="indent2">continue the action;</p><p class="indent1">end if;</p><p class="indent1">say &quot;<span class="quote">[</span><span class="substitution">The creature</span><span class="quote">] dodges with lightning speed.</span>&quot;</p><p class="indent0"></p><p class="indent0">Instead of dressing a fast creature in something: </p><p class="indent1">if the creature is meaty, continue the action;</p><p class="indent1">if the creature is blinded</p><p class="indent1">begin;</p><p class="indent2">say &quot;<span class="quote">At your approach, [</span><span class="substitution">the creature</span><span class="quote">] squinches up its eyes.</span>&quot;;</p><p class="indent2">continue the action;</p><p class="indent1">end if;</p><p class="indent1">say &quot;<span class="quote">[</span><span class="substitution">The creature</span><span class="quote">] moves away too fast for you to succeed.</span>&quot;</p><p class="indent0"></p><p class="indent1"></p>
+</div>
 
-<br>
-Instead of feeding something to a lightning creature: say &quot;<font color=#000080>[The second noun] very swiftly dodges your attempt to feed it.</font>&quot; Instead of feeding something to a fast creature: say &quot;<font color=#000080>[The second noun] quickly moves away before you can do this.</font>&quot; Instead of feeding something to a moderate creature when the creature is hostile: say &quot;<font color=#000080>[The second noun] watches you suspiciously and then turns its head aside.</font>&quot;
-<br>
+<div class ="notes">
 
-<br>
-Check feeding it to:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the player is not carrying the noun
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is wearing the noun, try taking off the noun;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise try taking the noun;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is not carrying the noun, stop the action;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the player cannot touch the second noun, say &quot;<font color=#000080>You cannot reach [the second noun].</font>&quot;
-<br>
+</div>
 
-<br>
-Carry out feeding it to:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the noun is delicious
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move the noun to the second noun;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try the second noun trying eating the noun;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The second noun] spits out [the noun].</font>&quot; instead;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if.
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Accepting is an action applying to one thing.
-<br>
+</div>
 
-<br>
-Before a creature trying accepting something when the person asked is occupied: 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the number of things carried by the person asked is at least the carrying capacity of the person asked, 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try the person asked trying dropping a random thing carried by the person asked.
-<br>
-
-<br>
-Carry out a creature trying accepting something:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;move the noun to the person asked.
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Procedural rule: ignore the block giving rule.
-<br>
-
-<br>
-Check giving (this is the polite refusal of unwanted objects rule): 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the second noun does not want the noun
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try the second noun trying rejecting the noun instead;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the second noun is passive;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if.
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Check giving (this is the no touching rule):
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the player cannot touch the second noun, say &quot;<font color=#000080>[The second noun] cannot reach anything you might choose to give it at the moment.</font>&quot; instead.
-<br>
-
-<br>
-Carry out giving: 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;try the second noun trying accepting the noun.
-<br>
-
-<br>
-Report giving: 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The second noun] accepts [the noun][if creature is friendly] gratefully[end if][if creature is curious], poking it and turning it around and around for a moment[end if][if the creature is hostile], all but snatching it from you[end if].</font>&quot; instead.
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Report giving something stinky to a creature when the odor sensitivity of the second noun is strong:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the second noun is passive;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The second noun] takes [the noun], at arm's length and wrinkling its nose.</font>&quot; instead.
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Report giving something stinky to a creature when the odor sensitivity of the second noun is weak:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the second noun is passive;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The second noun] takes [the noun], apparently unresponsive to its pungency.</font>&quot;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Report giving something stinky to a creature when the odor sensitivity of the second noun is inverse:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the second noun is passive;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The second noun] takes [the noun], smelling deeply and with obvious pleasure at the stinkiness.</font>&quot;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Report giving the fedora to a smart creature:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You hand over [the fedora] to [the creature], who takes by the brim and twirls it twice on the end of its claw.</font>&quot; instead.
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp; 
-<br>
-
-<br>
-Before giving something worn by the player to the creature:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;try taking off the noun;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the player wears the noun, say &quot;<font color=#000080>You are still wearing [the noun].</font>&quot; instead.
-<br>
-
-<br>
-Before the creature trying taking off something when the speed of the creature is slow:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if a random chance of 1 in 3 succeeds
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the creature is passive;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the creature is visible, say &quot;<font color=#000080>[The creature] fumbles helplessly at [the noun], trying to remove it.</font>&quot; instead;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if.
-<br>
-
-<br>
-Report a creature trying taking off the collar when the creature is slothful:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The creature at last manages to detach [the noun], though with considerable effort.</font>&quot; instead.
-<br>
-
-<br>
-Report a creature trying taking off something:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The person asked] removes [the noun] it was wearing.</font>&quot; instead.
-<br>
-
-<br>
-Before doing something other than examining or looking or taking inventory or waiting when the creature is starving:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the creature is carrying something delicious, continue the action;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the noun is a thing and the player carries the noun, continue the action;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the noun is a thing and the player wears the noun, continue the action;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the creature is stupid, continue the action;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the creature can see the player and the player is carrying something delicious (called the treat),
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>In its eagerness for [the treat], [the creature] [if the creature is hostile]circles you, growling, so that you can't get much done[otherwise]clings so desperately to your trouser leg that you can't do much of anything[end if].</font>&quot; instead.
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-<br>
-Every turn: if the player is poisoned, end the game saying &quot;<font color=#000080>You black out.</font>&quot;
-<br>
-
-<br>
-
-<br>
-Instead of putting a wearable thing on the creature: try dressing the creature in the noun.
-<br>
-
-<br>
-Collaring is an action applying to one thing. 
-<br>
-
-<br>
-Understand &quot;<font color=#000080>collar [something]</font>&quot; as collaring.
-<br>
-
-<br>
-Check collaring: 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the player cannot see the collar, say &quot;<font color=#000080>You haven't even got a collar.</font>&quot; instead;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the noun is not the creature, say &quot;<font color=#000080>A pointless exercise.</font>&quot; instead.
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Carry out collaring:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;try dressing the creature in the collar.
-<br>
-
-<br>
-Dressing it in is an action applying to two things.
-<br>
-
-<br>
-Check dressing it in: 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the second noun is not wearable, say &quot;<font color=#000080>[The noun] cannot possibly wear [the second noun].</font>&quot; instead;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the player is not carrying the second noun
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try taking the second noun;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is not carrying the second noun, stop the action;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-
-<br>
-Carry out dressing it in:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the noun wears the second noun.
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Report dressing it in:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the noun is hostile, say &quot;<font color=#000080>Your victim watches you warily and with not a little distrust, but its limbs are slow and it is unable to put up much fight. </font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You put [the second noun] on [the noun]. Very fetching.</font>&quot;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-After dressing a hungry meaty creature in something: 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The noun] suffers you to get close enough with [the second noun]; then, for your pains, bites you deeply in the forearm.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end the game saying &quot;<font color=#000080>You spend most of the rest of the evening with a doctor</font>&quot;.
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Instead of dressing a hungry meaty creature in something for the first time:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You get near [the noun] with [the second noun], but it grins very largely and shows you all its teeth, a sight of such menace that you draw back.</font>&quot;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Understand &quot;<font color=#000080>dress [something] in [something]</font>&quot; as dressing it in. Understand the commands &quot;<font color=#000080>clothe</font>&quot; and &quot;<font color=#000080>attire</font>&quot; as &quot;<font color=#000080>dress</font>&quot;.
-<br>
-
-<br>
-Instead of dressing a lightning creature in something: 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the creature is blinded
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>At your approach, [the creature] squinches up its eyes.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue the action;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] dodges with lightning speed.</font>&quot;
-<br>
-
-<br>
-Instead of dressing a fast creature in something: 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the creature is meaty, continue the action;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the creature is blinded
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>At your approach, [the creature] squinches up its eyes.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue the action;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The creature] moves away too fast for you to succeed.</font>&quot;
-<br>
-
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+</body>
 
 </html>
