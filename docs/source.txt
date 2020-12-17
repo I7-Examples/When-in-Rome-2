@@ -1,6 +1,7 @@
-"When in Rome 2: Far from Home" by Emily Short.
+"When in Rome 2: Far from Home" by Emily Short
 
-Include (- Serial "090410"; -).
+Include (- Serial "201217"; -).
+The release number is 3.
 
 The story genre is "Science Fiction". The story headline is "A Puzzle Game in Five Brief Episodes". The story is episode 2 of "When in Rome". The story creation year is 2006. The story description is "Manhattan, 1954. 
 
@@ -10,7 +11,9 @@ The rest of the secret had better stay between you, your secretary Esther, and y
 
 When in Rome is designed as a lunchtime game: there are five episodes, each of which may be played to a conclusion within about fifteen minutes, requiring no saves. A player may also try this episode several times if he wishes, as the puzzles are partially randomized."
 
-Use no scoring, the serial comma and American dialect. Use MAX_ARRAYS of 1000. Use MAX_STATIC_DATA of 30000. Use MAX_VERBS of 200. Use MAX_INDIV_PROP_TABLE_SIZE  of 20000. Use MAX_SYMBOLS of 8000. Use full-length room descriptions.
+Use no scoring, the serial comma and American dialect. Use full-length room descriptions.
+
+Include Singing Reloaded by Shin.
 
 Include Basic Screen Effects by Emily Short. Include Menus by Emily Short. Include Basic Help Menu by Emily Short. Include Locksmith by Emily Short. 
 
@@ -284,12 +287,10 @@ quickly	slowly
 
 Section 2 - Creature Actions
 
-Procedural rule:
-	if the person asked is not the player, substitute the animal feeding rule for the can't eat unless edible rule.
-	
-Procedural rule:
-	if the person asked is not the player, ignore the can't take people's possessions rule.
-	
+The animal feeding rule substitutes for the can't eat unless edible rule when the person asked is not the player.
+
+The can't take people's possessions rule does nothing when the person asked is not the player.
+
 Instead of asking a creature to try doing something when the person asked is in a closed container:
 	say "The creature watches your mouth move, fascinated, but it obviously cannot hear you." 
 	
@@ -311,11 +312,11 @@ A person can be active or passive.
 
 [After the creature trying doing something: now the creature is passive; continue the action.]
 
-Before a creature trying taking something: change containment context to the holder of the noun.
+Before a creature trying taking something: now containment context is the holder of the noun.
 
 Containment context is a thing that varies. 
 
-Heart's desire is a thing that varies. Before a creature trying taking something, change heart's desire to the noun.
+Heart's desire is a thing that varies. Before a creature trying taking something, now heart's desire is the noun.
 
 Report the creature trying taking something:
 	if the creature is in the containment context and the containment context is a container,
@@ -441,7 +442,7 @@ Instead of the creature trying eating something portable which is not carried by
 	try the creature trying taking the noun.
 
 Carry out the creature trying eating something:
-	change the last feed time of the creature to the turn count;
+	now the last feed time of the creature is the turn count;
 	if the noun is poisoned and the creature is not wood-pulpy and the creature is negligible, now the creature is poisoned.
 	
 Report the creature trying eating a poisoned thing:
@@ -515,7 +516,7 @@ Before a creature trying closing something which is not available:
 	if the creature is in the noun, continue the action;
 	try the person asked trying taking the noun instead.
  
-A procedural rule: ignore the can't take people's possessions rule.
+The can't take people's possessions rule does nothing.
 
 Instead of taking something which is worn by the creature when the speed of the creature is lightning:
 	now the creature is passive;
@@ -857,7 +858,7 @@ Report a cold creature trying wearing the jacket:
 
 Dining is an action applying to nothing.
 
-Before a meaty creature trying dining when the person cannot see the player:
+Before a meaty creature trying dining when the person asked cannot see the player:
 	if the person asked is in an adjacent room and the person asked can see a door (called the appropriate exit):
 		try the person asked trying entering the appropriate exit instead.
 
@@ -1005,7 +1006,7 @@ Instead of a vast creature trying attacking the desk:
 	now the sculpture is explored;
 	now the person asked is passive;
 	if the person asked is visible:
-		change Esther's utterance to "'Keep it down,' Esther yells. 'Some of us are trying to hear ourselves think.'";
+		now Esther's utterance is "'Keep it down,' Esther yells. 'Some of us are trying to hear ourselves think.'";
 		say "[The creature] hammers at your desk with its meaty fists and effectively reduces it to a work of modern art. Your possessions will have to live elsewhere from now on." instead.
  
 Carry out a creature trying attacking something papery:
@@ -1450,7 +1451,7 @@ Report a creature trying launching us:
 	
 After a secretive creature trying switching on the propulsion when the player is in the egg and propulsion is stuck to the egg:
 	say "[The person asked] switches on the propulsion, and the last thing you see is its frenzied, evil grin as you float off out the window...";
-	end the game in death.
+	end the story saying "You have died".
 	
 Before a creature trying playing with something which is carried by the player:
 	say "[The creature] looks with fascination at [the noun], but cannot reach it." instead.
@@ -1464,11 +1465,11 @@ Before a curious creature trying switching on the propulsion for the first time:
 
 After a creature trying switching on the propulsion when the player is in the egg and propulsion is stuck to the egg:
 	say "[The person asked] pokes curiously at the propulsion unit, and after a moment switches it on. Then it stares at you in fascination as you float off out the window...";
-	end the game in death.
+	end the story saying "You have died".
 
 After a creature trying switching on the propulsion:
 	say "[The person asked] pokes curiously at the propulsion unit, and has the misfortune to turn it on. Thanks to the unfortunate configuration of where everyone is standing, the creature is toasted, you get a little singed yourself, and the boys from Alien Protocol spend until nearly midnight taking notes for their report.";
-	end the game saying "That could have gone better"
+	end the story saying "That could have gone better"
 	
 
 Affixing is an action applying to one thing.
@@ -1641,7 +1642,7 @@ Instead of a creature trying pushing a container:
 	
 Instead of a creature trying taking something when the noun outweighs strength:
 	if the noun is pointless, stop the action;
-	change the noun to pointless;
+	now the noun is pointless;
 	if the person asked is visible, say "[The person asked] tries to pick up [the noun], but without success."
 	
 Instead of a secretive starving Earthlike creature trying taking something which is not available:
@@ -1652,7 +1653,7 @@ Instead of an Earthlike creature trying attacking the player when the person ask
 	
 Instead of an Earthlike creature trying attacking the player when the person asked carries a heavy thing (called the weapon):
 	say "Starving, desperate, and tired of waiting for your cooperation, [the person asked] slugs you hard with [the weapon]. And what happens from there is all blackness...";
-	end the game in death.
+	end the story saying "You have died".
 
 
 
@@ -1680,7 +1681,7 @@ To decide whether game has begun:
 Every turn:
 	if game has begun and Sending is happening,
 		follow the creature behavior rules;
-	change last location to location.
+	now last location is location.
 	
 The creature behavior rules is a rulebook.
 
@@ -1692,10 +1693,10 @@ This is the creature death rule:
 		increase the breath count of the creature by 1;
 		if the breath count of the creature > 3:
 			say "At this point [the creature] is overwhelmed by lack of whatever it breathes, and collapses.";
-			end the game saying "Unfortunately, you are unable to revive the thing";
+			end the story saying "Unfortunately, you are unable to revive the thing";
 	if the creature is dying:
 		say "Too long without sustenance, [the creature] succumbs to a coma and death.";
-		end the game saying "You have killed your Visitor.";
+		end the story saying "You have killed your Visitor.";
 		rule succeeds.
 	
 A creature behavior rule (this is the poisoned creature rule):
@@ -1954,8 +1955,8 @@ A creature behavior rule (this is the bored action rule):
 Definition: a thing is entertaining if creature can touch it and it is not wanted by the creature and it is available and it is not part of something.
 	
 The last every turn rule:
-	change the heart's desire to the creature;
-	if Esther's utterance is not "blank", say "[Esther's utterance][paragraph break]"; change Esther's utterance to "blank";
+	now the heart's desire is the creature;
+	if Esther's utterance is not "blank", say "[Esther's utterance][paragraph break]"; now Esther's utterance is "blank";
 	now every animal is active.
 	
 Section 4 - Creature Reactions to Giving and Other Actions
@@ -2005,7 +2006,7 @@ Before a creature trying accepting something when the person asked is occupied:
 Carry out a creature trying accepting something:
 	move the noun to the person asked.
 	
-Procedural rule: ignore the block giving rule.
+The block giving rule does nothing.
 
 Check giving (this is the polite refusal of unwanted objects rule): 
 	if the second noun does not want the noun
@@ -2064,7 +2065,7 @@ Before doing something other than examining or looking or taking inventory or wa
 	if the creature can see the player and the player is carrying something delicious (called the treat),
 		say "In its eagerness for [the treat], [the creature] [if the creature is hostile]circles you, growling, so that you can't get much done[otherwise]clings so desperately to your trouser leg that you can't do much of anything[end if]." instead.
 		 	
-Every turn: if the player is poisoned, end the game saying "You black out."
+Every turn: if the player is poisoned, end the story saying "You black out."
 
 
 Instead of putting a wearable thing on the creature: try dressing the creature in the noun.
@@ -2099,7 +2100,7 @@ Report dressing it in:
 	
 After dressing a hungry meaty creature in something: 
 	say "[The noun] suffers you to get close enough with [the second noun]; then, for your pains, bites you deeply in the forearm.";
-	end the game saying "You spend most of the rest of the evening with a doctor".
+	end the story saying "You spend most of the rest of the evening with a doctor".
 	
 Instead of dressing a hungry meaty creature in something for the first time:
 	say "You get near [the noun] with [the second noun], but it grins very largely and shows you all its teeth, a sight of such menace that you draw back."
@@ -2207,7 +2208,7 @@ The tube of holdall glue is a stinky thing. The description is "A truly miraculo
 
 Instead of eating the holdall glue:
 	say "You decide to disregard the numerous warnings on the outside of the tube and experiment with the taste of the glue. It turns out that it produces a strong burning sensation in the lining of the mouth and throat, accompanied by lung-filling noxious fumes and coughing. Your eyes water and then you fall into a semi-comatose state for a long, long time. The good news is that there is not permanent brain damage, just a lot of misery.";
-	end the game saying "Esther has to take you to the hospital, which is never a good end to the day"
+	end the story saying "Esther has to take you to the hospital, which is never a good end to the day"
 	
 Report eating a poisoned edible thing:
 	say "You eat [the noun], careful to avoid the blob of glue, of course."
@@ -2271,7 +2272,7 @@ To say foods:
 	begin; 
 		if taste entry is not current food
 		begin;
-			change current food to taste entry;
+			now current food is taste entry;
 			say "[line break]  [bold type][current food][roman type]: ";
 		otherwise;
 			say ", ";
@@ -2287,7 +2288,7 @@ To say roughnesses:
 	begin; 
 		if arms entry is not count
 		begin;
-			change count to arms entry;
+			now count is arms entry;
 			say "[line break]  [bold type][count as roughness][roman type]: ";
 		otherwise;
 			say ", ";
@@ -2310,7 +2311,7 @@ To say systems:
 	begin; 
 		if system entry is not planetoid
 		begin;
-			change planetoid to system entry;
+			now planetoid is system entry;
 			say "[line break]  [bold type][planetoid][roman type]: ";
 		otherwise;
 			say ", ";
@@ -2326,7 +2327,7 @@ To say atmospheres:
 	begin; 
 		if nostrils entry is not scent
 		begin;
-			change scent to nostrils entry;
+			now scent is nostrils entry;
 			say "[line break]  [bold type][scent in words][roman type]: ";
 		otherwise;
 			say ", ";
@@ -2347,7 +2348,7 @@ To say periodicities:
 	begin; 
 		if dexterity entry is not rapidity
 		begin;
-			change rapidity to dexterity entry;
+			now rapidity is dexterity entry;
 			say "[line break]  [bold type][rapidity in words][roman type]: ";
 		otherwise;
 			say ", ";
@@ -2369,7 +2370,7 @@ To say gravities:
 	begin;
 		if mass entry is not size
 		begin;
-			change size to mass entry;
+			now size is mass entry;
 			say "[line break]  [bold type][size][roman type]: ";
 		otherwise;
 			say ", ";
@@ -2559,7 +2560,7 @@ Rule for writing a paragraph about the creature:
 	say paragraph break.
 	
 Before listing nondescript items:
-	if the creature is marked for listing, change the creature to not marked for listing;
+	if the creature is marked for listing, now the creature is not marked for listing;
 	if the number of marked for listing things is 0 and the location is the Office, say "Your floor is atypically clear of obstructions.";
 	
 Rule for listing nondescript items of the Office:
@@ -2567,7 +2568,7 @@ Rule for listing nondescript items of the Office:
 	list the contents of the Office, as a sentence, tersely, listing marked items only, prefacing with is/are, including contents and giving brief inventory information;
 	say "."
 
-The X1 Probe kit is a heavy closed openable container in the Office on Floor Fifty-One. Understand "large" and "cardboard" and "box" and "picture" and "mars" as the kit. The kit is papery. It is enterable. The description is "[if we have examined the kit]A[otherwise]Left for you, along with the Visitor itself, by the representatives of the Office of Alien Protocol. It is a[end if] large cardboard box containing everything you need to launch your very own alien Visitor back into space. By way of example, it has a cheery full-color telescope picture of Mars on the side." After opening the Probe kit when the kit has not been open: say "You pull open the top of the Probe Kit, revealing the large [pod]. 
+The X1 Probe kit is a closed openable container in the Office on Floor Fifty-One. The weight is heavy. Understand "large" and "cardboard" and "box" and "picture" and "mars" as the kit. The kit is papery. It is enterable. The description is "[if we have examined the kit]A[otherwise]Left for you, along with the Visitor itself, by the representatives of the Office of Alien Protocol. It is a[end if] large cardboard box containing everything you need to launch your very own alien Visitor back into space. By way of example, it has a cheery full-color telescope picture of Mars on the side." After opening the Probe kit when the kit has not been open: say "You pull open the top of the Probe Kit, revealing the large [pod]. 
 
 Packed beneath it are the heavier pieces: [a propulsion unit] and [a life-support unit]. [The instruction booklet] has fallen down the side, along with [the blank label] you will need to address the probe."
  
@@ -2750,7 +2751,7 @@ Check gluing something shut:
 	abide by the need glue rule.
 
 Carry out gluing something shut:
-	change the noun to unopenable.
+	now the noun is unopenable.
 
 Report gluing something shut:
 	say "With a long line of holdall, you glue [the noun] permanently closed."
@@ -2771,7 +2772,7 @@ Check a creature trying gluing something shut:
 	if the person asked is not carrying the glue, stop the action.
 
 Carry out a creature trying gluing something shut:
-	change the noun to unopenable.
+	now the noun is unopenable.
 
 Report a creature trying gluing something shut:
 	say "Smiling to itself, [the creature] glues [the noun] permanently closed."
@@ -2850,7 +2851,7 @@ Report a creature trying gluing something to something:
 	
 Report a creature trying gluing something to something when the number of things stuck to the pod is 2 and the player is not in the pod:
 	say "[The person asked] efficiently applies glue to [the noun] and [the second noun] and puts them together.";
-	change Esther's utterance to "'If the boys knew you got the aliens to do all the work for you, they wouldn't pay you half as much,' comments Esther from the door.
+	now Esther's utterance is "'If the boys knew you got the aliens to do all the work for you, they wouldn't pay you half as much,' comments Esther from the door.
 
 'And I pay you to answer phones,' you remark. 'Have you got another alien on desk duty?'
 
@@ -2901,9 +2902,9 @@ Filling it out on is an action applying to one moon and one thing.
 
 Setting action variables for filling:
 	if the second noun is the egg and the blank label is stuck to egg: 
-		change the second noun to blank label;
+		now the second noun is blank label;
 	if the second noun is the egg and the filled label is stuck to egg: 
-		change the second noun to filled label.
+		now the second noun is filled label.
 
 Check filling it out on:
 	if the second noun is not the blank label and the second noun is not the filled label, say "You can't fill out [the second noun], only the label." instead. 
@@ -2926,7 +2927,7 @@ To fix blank label:
 		now the filled label is stuck to the egg;
 		now the blank label is not stuck to the egg;  
 	remove the blank label from play;
-	change the second noun to the filled label.
+	now the second noun is the filled label.
 
 Check filling it out on:
 	if the second noun is the filled label:
@@ -2937,7 +2938,7 @@ Check filling it out on:
 	
 Carry out filling it out on:
 	now the second noun is human-marked; 
-	change moon of the second noun to the moon understood.
+	now moon of the second noun is the moon understood.
 	
 Report filling it out on:
 	say "You write [moon understood] firmly on the label."
@@ -2952,7 +2953,7 @@ Before a creature trying filling  moon understood out on the blank label when th
 Carry out someone trying filling the moon of the creature out on the blank label:
 	fix blank label;
 	now the filled label is alien-marked;
-	change moon of the second noun to the moon of the creature.
+	now moon of the second noun is the moon of the creature.
 	
 Report a creature trying filling the moon of the creature out on something:
 	let destination be the moon of the creature;
@@ -2974,17 +2975,17 @@ Instead of switching on the propulsion unit when the player carries the propulsi
 	say "Throwing caution to the wind, you turn on the propulsion unit while it is still in your possession.
 	
 The last thing you feel is a searing blast against your midriff...";
-	end the game in death.
+	end the story saying "You have died".
 	
 Instead of switching on the propulsion unit when the propulsion unit is in a container:
 	say "It turns out that firing a propulsion unit which is inside [a holder of the propulsion unit] is not a good idea, and in fact produces a deadly explosion...";
-	end the game in death.
+	end the story saying "You have died".
 	
 Instead of switching on the propulsion unit when the propulsion unit is not stuck to the egg:
 	say "You turn on the propulsion unit, which -- lacking the steadying influence and guidance system of the egg pod -- flies around the room like a punctured balloon; crashes through the plate glass window; and is last seen buzzing along over the tops of cars down on Fifth Avenue.
 	
 It takes the boys from A. P. six minutes and twenty-seven seconds to turn up in your office and fire you.";
-	end the game saying "This terminates your A. P. contract"
+	end the story saying "This terminates your A. P. contract"
 
 Instead of switching on the propulsion unit when the propulsion unit is stuck to the egg and the creature lies outside the egg:
 	say "The propulsion unit lifts the egg off and guides it safely through the window, which automatically opens to allow for the departure. It's a thing of beauty, really. 
@@ -2992,11 +2993,11 @@ Instead of switching on the propulsion unit when the propulsion unit is stuck to
 You watch, entranced, as it floats off towards the Empire State Building[if the creature is visible]. 
 
 So does the creature[end if].";
-	end the game saying "You just threw away a very expensive piece of equipment"
+	end the story saying "You just threw away a very expensive piece of equipment"
 	
 Instead of switching on the propulsion unit when the creature is in the egg and the propulsion unit is stuck to the egg and the egg is open:
 	say "You flip the switch, and the egg jets off. The creature, deciding that it does not want to go to space in an open egg pod, leaps lightly out and lands beside you, while the egg goes its own way...";
-	end the game saying "You just threw away a very expensive piece of equipment"
+	end the story saying "You just threw away a very expensive piece of equipment"
 	
 Instead of switching on the propulsion unit when the creature is in the egg and the propulsion unit is stuck to the egg and the blank label is stuck to the egg:
 	say "You flip the switch, and the egg jets off -- just slowly enough for you to get a long last look at the blank label on the side. The creature presses its nose pathetically against the inner surface of the egg as you send it off to an eternal oblivion in the nowhere of space... ";
@@ -3014,7 +3015,7 @@ You admit that the label never got filled out. The man frowns -- no, perhaps gla
 'What did you just do?' Esther asks him. 'Can you fix it?'
 
 'In a manner of speaking,' he says. 'But it is no longer your business. I'm afraid we cannot continue to work with someone who has made an error of this level.'";
-	end the game saying "This terminates your A. P. contract"
+	end the story saying "This terminates your A. P. contract"
 	
 Instead of switching on the propulsion unit when the creature is in the egg and the propulsion unit is stuck to the egg and the blank label is not stuck to the egg and the filled label is not stuck to the egg:
 	say "You flip the switch, and the egg jets off -- just slowly enough for you to remember that you never did label the thing. 
@@ -3040,7 +3041,7 @@ You consider trying to conceal this from the boys at Alien Protocol, but when yo
 Not likely. 'What happens now?' you ask. 'Will there be-- that is, do you think there will be reprisals?'
 
 Their expressions are vague. 'We intercepted the outgoing pod,' says the blond one after a moment. 'The body will never reach the creature's home; it will be presumed lost.'";
-	end the game saying "Your contract with A. P. is dissolved"
+	end the story saying "Your contract with A. P. is dissolved"
 	
 Instead of switching on the propulsion unit when the egg is ready and the moon of the filled label is not the moon of the creature:
 	say "You flip the switch, and the egg jets off to [moon of the filled label]. 
@@ -3054,7 +3055,7 @@ This turns out to have been a mistake, though one of those mistakes that, like c
 From his expression, you can see he realizes you will find this extremely exasperating. He lifts his hat to you, kisses Esther's hand, and leaves.
 
 'Well, that's that,' says Esther, wiping her hand on a handkerchief. 'Now I can finally pursue my life-long ambition and marry a doctor.'";
-	end the game saying "This terminates your A. P. contract"
+	end the story saying "This terminates your A. P. contract"
 	
 Definition: the egg is ready:
 	if the egg is open, no;
@@ -3070,8 +3071,8 @@ After switching on the propulsion unit:
 	choose row with moon column of destiny in the Table of Happy Endings;
 	say "You touch the propulsion and the pod blasts off, slipping through the window as though it were not made of glass at all; as though it were a curtain of water. And the creature is on its way back to [destiny]. ";
 	say "[ending entry]";
-	change the left hand status line to "Tuesday, July 20, 1954";
-	change the time of day to 5:52 PM;
+	now the left hand status line is "Tuesday, July 20, 1954";
+	now the time of day is 5:52 PM;
 	move Esther to Reception;
 	make scene break.
 		
@@ -3140,7 +3141,7 @@ Instead of singing:
 
 Instead of singing for the first time:
 	say "You perform a rousing chorus of 'Take Me Out To The Ballgame'.";
-	change Esther's utterance to "'I can hear you,' yells Esther from the other room. 'And Perry Como you aren't.' Subtle, that woman."
+	now Esther's utterance is "'I can hear you,' yells Esther from the other room. 'And Perry Como you aren't.' Subtle, that woman."
 
 Instead of listening in the presence of a slow creature:
 	say "[if creature is weak]It is still and sluggish[otherwise]Its breath is slow and deep[end if]."
@@ -3202,8 +3203,7 @@ Instead of asking a friendly smart creature about something:
 	
 Instead of asking a creature to try doing something: say "The creature either fails to understand your instruction or feels no need to obey."
 
-
-Procedural rule: ignore the can't take other people rule.
+The can't take other people rule does nothing.
 
 Instead of taking a hostile creature:
 	if the creature is poisoned, continue the action;
@@ -3270,28 +3270,28 @@ Instead of attacking a container which contains a timid creature when the noun i
 
 Instead of attacking a poisoned creature:
 	say "Taking advantage of the critter's inability to fight back, you bludgeon it repeatedly until its moans and twitches stop.";
-	end the game saying "You have successfully slaughtered your little Visitor, which displeases A. P. extremely"
+	end the story saying "You have successfully slaughtered your little Visitor, which displeases A. P. extremely"
 
 Instead of attacking a negligible creature:
 	say "Your patience gone, you attack [the creature]. It is much too weak to put up a significant fight, and you soon render it unconscious.";
-	end the game saying "The boys don't like it when you harm the creatures"
+	end the story saying "The boys don't like it when you harm the creatures"
 	
 Instead of attacking a fidgety person which is not vast:
 	say "You try to hit [the creature], but it gets away from you too fast, scurrying into the far corner of the room and dodging over furniture."
 
 Instead of attacking a vast creature:
 	say "You hit [the creature]. It looks at you, puzzled. Then it hits back approximately five times as hard. The world fades out...";
-	end the game saying "You wake up sometime later in the hospital..."
+	end the story saying "You wake up sometime later in the hospital..."
 	
 Instead of attacking a meaty creature:
 	say "You hit [the creature]. 
 	
 It grins with many many teeth, and then takes a tremendous bite out of your left leg. The blood loss and shock put you out almost immediately.";
-	end the game saying "You wake up sometime later in the hospital..."
+	end the story saying "You wake up sometime later in the hospital..."
 
 Instead of attacking a person:
 	say "You attack [the noun], which fights back for a few minutes before becoming too bruised. It then sets up a hideous squealing and whining, bringing Esther in to discover what you're doing...";
-	end the game saying "This will lose you your job for sure".
+	end the story saying "This will lose you your job for sure".
 
 Instead of smelling something stinky:
 	say "Phew!"
@@ -3353,7 +3353,7 @@ Instead of throwing something heavy at a slow creature:
 	say "You fling [the noun] at [the creature], and connect successfully with its head, to disastrous effect.
 	
 [if creature is red]Funny, it bleeds red[otherwise]Now you know what [color of creature] blood looks like[end if].";
-	end the game saying "You aren't supposed to harm them"
+	end the story saying "You aren't supposed to harm them"
 
 Instead of throwing something heavy at a moderate creature:
 	silently try dropping the noun;
@@ -3419,27 +3419,28 @@ The current level is medium.
 
 To simplify the game: 
 	choose a random row in the Table of Alien Characteristics; 
-	while the difficulty entry is not the current level, choose a random row in the Table of Alien Characteristics; 
-	change moon of the creature to moon entry;
-	change mood of the creature to attitude entry;
-	change the odor sensitivity of the creature to nostrils entry;
-	change metabolism of the creature to feed time entry;
-	change gravity of the creature to the mass entry;
-	change speed of the creature to the dexterity entry;
-	change carrying capacity of the creature to the arms entry;
-	if carrying capacity of the creature is 0, change carrying capacity of the creature to 2;
+	while the difficulty entry is not the current level:
+		choose a random row in the Table of Alien Characteristics; 
+	now moon of the creature is moon entry;
+	now mood of the creature is attitude entry;
+	now the odor sensitivity of the creature is nostrils entry;
+	now metabolism of the creature is feed time entry;
+	now gravity of the creature is the mass entry;
+	now speed of the creature is the dexterity entry;
+	now carrying capacity of the creature is the arms entry;
+	if carrying capacity of the creature is 0, now carrying capacity of the creature is 2;
 	follow the setup rules;
-	change food of the creature to taste entry;
-	if food of creature is meaty, change tongue of creature to "sharp carnivore teeth";
-	if food of creature is wood-pulpy, change tongue of creature to "a long raspy tongue";
-	if food of creature is earthly, change tongue of creature to "a round pink tongue";
-	if food of creature is textile, change tongue of creature to "a forked tongue";
-	change intelligence of the creature to brain entry; 
-	if the creature lies nearer than Luna, change the color of the creature to a random color between red and yellow;
-	if the creature lies beyond Venus and creature lies nearer than Mars, change the color of the creature to a random color between yellow and cyan;
-	if the creature lies beyond Luna and creature lies nearer than Saturn, change the color of the creature to a random color between green and purple;
-	if the creature lies beyond  Jupiter, change the color of the creature to a random color between tan and grey;
-	if the moon of the creature is Triton, change the color of the creature to grey.
+	now food of the creature is taste entry;
+	if food of creature is meaty, now tongue of creature is "sharp carnivore teeth";
+	if food of creature is wood-pulpy, now tongue of creature is "a long raspy tongue";
+	if food of creature is earthly, now tongue of creature is "a round pink tongue";
+	if food of creature is textile, now tongue of creature is "a forked tongue";
+	now intelligence of the creature is brain entry; 
+	if the creature lies nearer than Luna, now the color of the creature is a random color between red and yellow;
+	if the creature lies beyond Venus and creature lies nearer than Mars, now the color of the creature is a random color between yellow and cyan;
+	if the creature lies beyond Luna and creature lies nearer than Saturn, now the color of the creature is a random color between green and purple;
+	if the creature lies beyond  Jupiter, now the color of the creature is a random color between tan and grey;
+	if the moon of the creature is Triton, now the color of the creature is grey.
 	
 
 The sampler platter is a portable supporter.  The description of the sampler platter is "One of Esther's brainwaves, based on a few months of this work. If you let her, she'd probably add toothpicks and pimientoed olives."  
@@ -3449,9 +3450,10 @@ After examining the platter when something is on the platter: say "Arrayed on th
 The scrap of wrapping paper is a papery thing on the platter. The knitted scarf is a wearable thing on the platter. The meatball is an edible thing on the platter. The meatball is stinky and fleshy. The carrot is an edible thing on the platter. The description of the carrot is "It looks almost distressingly healthy: if you were an alien, you wouldn't want any part of it." The description of the meatball is "Fetched from the shop down the road, which is more than Esther will do for you these days. It is spiced." The description of the scarf is "Unattractively tartan[if we have not examined the scarf]. Esther has a variety of hideous accessories, gifts from her mother. 'She doesn't want me dating,' was Esther's response, when you dared comment[end if]." The description of the wrapping paper is "Festive, with little snowflakes on the outside."
 
 
-When play begins: change the right hand status line to "[time of day]";
+When play begins:
+	now the right hand status line is "[time of day]";
 	remove the sack from play; remove the salami from play; 
-	change the time of day to 10:13 AM;
+	now the time of day is 10:13 AM;
 	move slide to the player; move ballpoint to player;
 	move sampler platter to the desk;
 	move the glue to the drawer; move the Guide to the drawer; 
@@ -3459,7 +3461,7 @@ When play begins: change the right hand status line to "[time of day]";
 	move the paperwork to the drawer; move the lamp to the desk;
 	move the creature to the Office;
 	if the player wears the jacket, silently try taking off the jacket; if the player wears the fedora, silently try taking off the fedora; remove the jacket from play; remove the fedora from play; 
-	change the left hand status line to "Tuesday, July 13, 1954";
+	now the left hand status line is "Tuesday, July 13, 1954";
 	simplify the game.
 	 
 When play begins:
@@ -3570,12 +3572,10 @@ Instead of asking someone about something:
 		if there is a turn stamp entry:
 			say "[The noun] has already told you [summary entry].";
 		otherwise:
-			change turn stamp entry to the turn count;
+			now turn stamp entry is the turn count;
 			say "[reply entry][paragraph break]";
 	otherwise:
 		say "[The noun] stares at you blankly."
-
-Definition: a person is other if it is not the player.
 
 Understand "ask [someone] about [something]" as asking it about specified object. Understand "tell [someone] about [something]" as asking it about specified object. Asking it about specified object is an action applying to two visible things. Carry out asking it about specified object: say "[The noun] just shrugs." Asking something about specified object something is useless action. 
 
@@ -3601,8 +3601,10 @@ Carry out recalling conversations:
 The conversation of Esther is Table of Esther Conversation.
 
 After reading a command:
-	while the player's command includes "the", cut the matched text;
-	while the player's command includes "a", cut the matched text. [* Again, some trimming for ease of topic-handling.]
+	while the player's command includes "the":
+		cut the matched text;
+	while the player's command includes "a":
+		cut the matched text. [* Again, some trimming for ease of topic-handling.]
 
 Table of Esther Conversation
 topic	reply	summary	turn stamp
@@ -3642,7 +3644,7 @@ A man from A. P. appears in the doorway: not Max, but one of his lower-browed su
 
 Esther raises her eyebrows and mouths, 'Dog-catcher scenario?'
 
-Yes, this should be good for your dignity..."; end the game saying "To be continued".
+Yes, this should be good for your dignity..."; end the story saying "To be continued".
 
 A persuasion rule for asking Esther to try doing something:
 	say "'Funny,' says Esther, brushing you off."
@@ -3668,7 +3670,7 @@ To decide whether creature is well-dressed:
 	
 When disguise begins:
 	increase plot depth by 1;
-	change Esther's utterance to "'Hey,' says Esther, just outside the door. 'The chief called down and--'
+	now Esther's utterance is "'Hey,' says Esther, just outside the door. 'The chief called down and--'
 	
 At this moment her head pokes through and she gets a good look at the creature in [a list of things worn by the creature]. She leans against the doorframe, grinning. 'If you think you can disguise the creature as you, you've got another think coming.'
 	
@@ -3686,7 +3688,7 @@ To decide whether creature gets interrogated:
 	
 When Communism ends:
 	increase plot depth by 1;
-	if the creature is blinded, change Esther's utterance to "Esther pokes her head in on the way past your office. 'Well, for gosh sakes!' she exclaims, looking at the creature huddled out of the glare of the lights. 'What's the matter, you suspect it of being a member of the Communist party?'
+	if the creature is blinded, now Esther's utterance is "Esther pokes her head in on the way past your office. 'Well, for gosh sakes!' she exclaims, looking at the creature huddled out of the glare of the lights. 'What's the matter, you suspect it of being a member of the Communist party?'
 	
 You give a little jerk of the head to tell Esther to scram. She shrugs and goes out."
 
@@ -3695,8 +3697,8 @@ Nudism is a scene. Nudism ends when the time since Nudism began is 2 minutes. Nu
 
 When Nudism ends:
 	increase plot depth by 1;
-	if the player is nude,
-		change Esther's utterance to "Esther's voice suddenly becomes audible in the hall. 'Yes, no trouble, he's right through here--'
+	if the player is nude:
+		now Esther's utterance is "Esther's voice suddenly becomes audible in the hall. 'Yes, no trouble, he's right through here--'
 		
 She becomes visible in the doorway[if the player is carrying something]. You move to cover yourself with [the random thing carried by the player][end if]. Her eyes go very wide, and she backs up.
 
@@ -3712,11 +3714,11 @@ When Nutty ends:
 	if the player is in the egg:
 		if the egg is openable:
 			if the egg is open:
-				change Esther's utterance to "'I tell you what,' says Esther from the doorway, catching your attention. 'I've soured on this job. It's made you barmy and it's going to do the same to me if I don't take immediate action. I need a vacation. Rest and relaxation.'";
+				now Esther's utterance is "'I tell you what,' says Esther from the doorway, catching your attention. 'I've soured on this job. It's made you barmy and it's going to do the same to me if I don't take immediate action. I need a vacation. Rest and relaxation.'";
 			otherwise:
-				change Esther's utterance to "Esther stands in the doorway reading a short speech which, mercifully, the egg prevents you from hearing. The gist of it from the circling motion she makes at her head would seem to be that she thinks you've gone crazy."; 
+				now Esther's utterance is "Esther stands in the doorway reading a short speech which, mercifully, the egg prevents you from hearing. The gist of it from the circling motion she makes at her head would seem to be that she thinks you've gone crazy."; 
 		otherwise:
-			change Esther's utterance to "Esther stands in the doorway looking over you and the alien, and the pod you're in. Then a very very strange expression crosses her face, and she goes out."
+			now Esther's utterance is "Esther stands in the doorway looking over you and the alien, and the pod you're in. Then a very very strange expression crosses her face, and she goes out."
   
 
 Housekeeping is a scene. Housekeeping begins when the number of grabbable things in the location is greater than 6 and Housekeeping has not happened and Glue Return is not happening and plot depth is less than 2. Housekeeping ends when the time since Housekeeping began is 1 minute.
@@ -3724,7 +3726,7 @@ Housekeeping is a scene. Housekeeping begins when the number of grabbable things
 When Housekeeping begins:
 	if the player is nude, make no decision;
 	increase plot depth by 1;
-	change Esther's utterance to "Esther passes the door at this inopportune moment and makes one or two tart comments on the state of your house-keeping. 
+	now Esther's utterance is "Esther passes the door at this inopportune moment and makes one or two tart comments on the state of your house-keeping. 
 
 'And don't think I'm staying late to tidy it up, either,' she says, on her way back to the typewriter. 'I'm meeting a couple of the girls tonight.'
 
@@ -3745,10 +3747,10 @@ When Glue Return begins:
 Every turn during Glue Return:
 	if the time since Glue Return began is the patience of Esther, make no decision;
 	repeat through Table of Esther Business:
-		change Esther's utterance to reaction entry;
+		now Esther's utterance is reaction entry;
 		blank out the whole row;
 		make no decision;
-	change Esther's utterance to "Esther's typing goes on."
+	now Esther's utterance is "Esther's typing goes on."
 	
 Table of Esther Business
 reaction
@@ -3787,7 +3789,7 @@ Disaster Zone is a scene. Disaster Zone begins when the player can see at least 
 When Disaster Zone ends:
 	increase plot depth by 1;
 	if the number of visible damaged things is less than 3, do nothing;
-	otherwise change Esther's utterance to "Esther pokes her head in. 'Whee-oo,' she says, crossing her arms and staring hard at [the list of damaged things in the location]. 'I see I'm going to enjoy filling out the expense report this week.'
+	otherwise now Esther's utterance is "Esther pokes her head in. 'Whee-oo,' she says, crossing her arms and staring hard at [the list of damaged things in the location]. 'I see I'm going to enjoy filling out the expense report this week.'
 
 'Do you mind? I'm trying to work here,' you say, a little stiffly.
 
@@ -3798,7 +3800,7 @@ Imprisonment is a scene. Imprisonment begins when the creature is in an unopenab
 
 When imprisonment ends:
 	increase plot depth by 1;
-	change Esther's utterance to "'I'm not sure that's legit,' Esther says, stopping in long enough to eye the situation. 'I thought you weren't supposed to coerce any of them.'
+	now Esther's utterance is "'I'm not sure that's legit,' Esther says, stopping in long enough to eye the situation. 'I thought you weren't supposed to coerce any of them.'
 	
 'That's a wonderful idea,' you reply, wiping your forehead. 'Care to demonstrate your methods?'
 
@@ -3810,7 +3812,7 @@ Ark is a scene. Ark begins when Glue Return is not happening and plot depth is l
 When Ark ends:
 	if the pod is visible and the number of things in the pod is greater than 3:
 		increase plot depth by 1;
-		change Esther's utterance to "'I thought those were supposed to be escape pods, not Noah's ark,' remarks Esther from the door. 'Look at all that stuff you got in there.' She casts a fascinated glance over [the list of things in the pod], all stuffed into the pod.
+		now Esther's utterance is "'I thought those were supposed to be escape pods, not Noah's ark,' remarks Esther from the door. 'Look at all that stuff you got in there.' She casts a fascinated glance over [the list of things in the pod], all stuffed into the pod.
 		
 'You want to get in too?' you offer. 'We're supposed to have a male and female of each kind.'
 
@@ -3821,7 +3823,7 @@ Chapter 11 - Help System
 
 When play begins:
 	choose row 1 in the Table of Basic Help Options;
-	change description entry to "[story description]".
+	now description entry is "[story description]".
 	
 Table of Basic Help Options (continued)
 title	subtable	description	toggle
@@ -3905,3 +3907,4 @@ hint	used
 Chapter 12 - Testing - Not for Release
 
 [When play begins: change command prompt to "[moon of the creature] > ".]
+

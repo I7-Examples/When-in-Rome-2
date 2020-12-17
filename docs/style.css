@@ -7,8 +7,9 @@ Standard CSS file for use with Standard.html and Standard-Source.html.
 
 body
 {
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-family: Georgia, Palatino, "Times New Roman", Times, serif;
 	font-size: 100%;
+	-webkit-text-size-adjust: none;
 }
 
 .container
@@ -389,4 +390,61 @@ p.indent9
 	text-indent: -.7em;
 	margin-bottom: 0;
 	margin-top: 0;
+}
+
+/*
+Styles for play.html
+*/
+.play .coverimage
+{
+	position: fixed;
+}
+.play .links
+{
+	margin-top: 200px;
+	position: fixed;
+}
+
+.interpretercredit
+{
+	bottom: 1em;
+	font-size: 80%;
+	position: fixed;
+}
+
+#gameport
+{
+	background: white;
+	bottom: 0px;
+	left: 15.4em;
+	line-height: 1.4;
+	margin: 0px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+/*
+Styles for mobile browsers: change to a one-column layout.
+*/
+
+@media screen and (max-device-width: 480px)
+{
+	.coverimage, .introduction, .links, .about, .playinfo, .source, .sourceintroduction, .sourcecoverimage, .notes
+	{
+		float: none;
+		margin-left: 1em;
+		text-align: left;
+	}
+
+	.play .coverimage, .play .links, .play .interpretercredit
+	{
+		display: none;
+	}
+	
+	#gameport
+	{
+		left: 0px;
+		width: auto;
+	}
 }
