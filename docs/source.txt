@@ -1,7 +1,6 @@
 "When in Rome 2: Far from Home" by Emily Short
 
-Include (- Serial "201217"; -).
-The release number is 3.
+The release number is 4.
 
 The story genre is "Science Fiction". The story headline is "A Puzzle Game in Five Brief Episodes". The story is episode 2 of "When in Rome". The story creation year is 2006. The story description is "Manhattan, 1954. 
 
@@ -1374,28 +1373,28 @@ Report sneaking something under something:
 	say "You tuck [the noun] under [the second noun]."
 
 
-Launching us is an action applying to nothing.
+Launching [us] is an action applying to nothing.
 
-Before a hostile person trying launching us: act creepy instead.
+Before a hostile person trying launching [us]: act creepy instead.
 	
 To act creepy:
 	if the person asked is visible, say "[The person asked] looks at you for a long time through bright eyes and then smiles very pleasantly.";
 	now the person asked is passive;
 	now the person asked is secretive.
 
-Before a creature trying launching us when the egg is not in the location and the egg is not carried by the person asked:
+Before a creature trying launching [us] when the egg is not in the location and the egg is not carried by the person asked:
 	try the person asked trying taking the egg instead.
 	
-Before a creature trying launching us when the person asked is carrying the egg:
+Before a creature trying launching [us] when the person asked is carrying the egg:
 	try the person asked trying dropping the egg instead.
 
-Instead of a creature trying launching us when the propulsion is not stuck to the egg:
+Instead of a creature trying launching [us] when the propulsion is not stuck to the egg:
 	try the person asked trying affixing propulsion.
 
-Before a creature trying launching us when the egg is closed and the player is not in the egg:
+Before a creature trying launching [us] when the egg is closed and the player is not in the egg:
 	try the person asked trying opening the egg instead.
 	
-Instead of a creature trying launching us when the egg is open and the player is not in the egg and the person asked is not in the egg:
+Instead of a creature trying launching [us] when the egg is open and the player is not in the egg and the person asked is not in the egg:
 	if the propulsion unit is not stuck to the egg and the person asked can touch the propulsion unit:
 		try the person asked trying affixing the propulsion unit;
 	otherwise:
@@ -1433,20 +1432,20 @@ To make scene break:
 	say paragraph break;
 	say paragraph break. 
 
-Instead of a creature trying launching us when the player is in the egg and the egg is open:
+Instead of a creature trying launching [us] when the player is in the egg and the egg is open:
 	try the person asked trying closing the egg.
 	
-Instead of a creature trying launching us when the player is in the egg and the egg is closed and the egg is openable and the person asked is carrying the glue:
+Instead of a creature trying launching [us] when the player is in the egg and the egg is closed and the egg is openable and the person asked is carrying the glue:
 	try the person asked trying gluing the egg shut.
 	
-Check a creature trying launching us:
+Check a creature trying launching [us]:
 	if the propulsion is not stuck to the egg, stop the action;
 	if the egg is not closed, stop the action;
 	if the player is not in the egg, stop the action;
 
-Carry out a creature trying launching us: do nothing.
+Carry out a creature trying launching [us]: do nothing.
 
-Report a creature trying launching us: 
+Report a creature trying launching [us]: 
 	try the person asked trying switching on the propulsion instead.
 	
 After a secretive creature trying switching on the propulsion when the player is in the egg and propulsion is stuck to the egg:
@@ -1802,7 +1801,7 @@ A creature behavior rule (this is the contrary creature rule):
 			if the creature is active, try the creature trying taking the noun.
 	
 A creature behavior rule (this is the evil creature rule): 
-	if the creature is secretive and the creature is active and the creature is smart, try the creature trying launching us.
+	if the creature is secretive and the creature is active and the creature is smart, try the creature trying launching [us].
 
 A creature behavior rule (this is the acquisitive creature environment rule):
 	if the creature is not visible, make no decision;
@@ -1842,7 +1841,7 @@ A creature behavior rule (this is the creature escape rule):
 	
 A creature behavior rule:
 	if the creature is homebound and the creature is active and location is the Office, try the creature trying preparing for launch;
-	if the creature is hostile and the creature is active and the creature is smart, try the creature trying launching us.
+	if the creature is hostile and the creature is active and the creature is smart, try the creature trying launching [us].
 	
 A creature behavior rule (this is the hostile action rule):
 	if the creature is active and the creature is hostile
