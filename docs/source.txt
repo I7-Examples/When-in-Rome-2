@@ -1,6 +1,6 @@
 "When in Rome 2: Far from Home" by Emily Short
 
-The release number is 4.
+The release number is 3.
 
 The story genre is "Science Fiction". The story headline is "A Puzzle Game in Five Brief Episodes". The story is episode 2 of "When in Rome". The story creation year is 2006. The story description is "Manhattan, 1954. 
 
