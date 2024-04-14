@@ -1,21 +1,19 @@
 # When in Rome 2: Far from Home
 
-_Here is some useful information from the When in Rome manual._
+An Inform 7 Standard Example
 
-## About the Making of _When in Rome_
+## Description
 
-_When in Rome_ was written in part as a demonstration of Inform7, a programming language created by Graham Nelson for interactive fiction. The annotated source code for _When in Rome_ is available online.
+Manhattan, 1954. 
 
-This game would not have been possible without the efforts of its beta-testing team; for a complete set of credits, consult the menu in the game.
+You have just been brought on to do some special work for the Office of Alien Protocol. No one can know the truth -- that there are little green men on Earth. And blue. And purple. Even your mother thinks you've set yourself up as a Private Investigator.
 
-We have of course done our best to stomp out problems, but if you do find any errors, feel free to contact the author (Emily Short, emshort@mindspring.com) to report them (and earn your own place in the testing credits).
+The rest of the secret had better stay between you, your secretary Esther, and your autographed photo of Joe DiMaggio.
 
-## Distribution
+When in Rome is designed as a lunchtime game: there are five episodes, each of which may be played to a conclusion within about fifteen minutes, requiring no saves. A player may also try this episode several times if he wishes, as the puzzles are partially randomized.
 
-While _When in Rome_ remains copyright of its author, anyone is welcome to make copies and distribute them freely, in physical or electronic form, without charge, as long as the following conditions are met:
+## Development
 
-You may not alter the game or remove the authorship attribution.
+The Source Text is compatible with Inform 7 build 6M62.
 
-You may not distribute the game for profit without the author’s explicit written permission. Charging a fee to cover physical media or shipping is acceptable.
-
-Notifying the author before including _When in Rome_ in any compilations would be a welcome courtesy, but is not required.
+The Story File Format should be set to Blorbed Glulx.
